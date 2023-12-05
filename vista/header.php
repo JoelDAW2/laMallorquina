@@ -24,37 +24,25 @@
   </div>
 
   <!--MENU INFO SUPERIOR-->
-  <div class="row mt-4 filaMenuInfo">
+  <div id="desaparecer" class="row mt-4 filaMenuInfo">
     <div class="col-12 col-md-4 col-lg-4 d-flex align-items-center">
       <ul class="list-group list-group-horizontal-sm primera lista">
-        <li>ATT. AL CLIENTE <b>673 482 995</b></li>
+        <li>ATT. AL CLIENTE <b> 673 482 995</b></li>
         <li>CONTACTO</li>
         <li>TARJETA REGALO</li>
         <li id="sinBorde">TIENDAS</li>
       </ul>
     </div>
 
-  <div class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center imgLogo">
+  <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center imgLogo">
     <img id="imgLogoPagina" class="img-fluid" src="../img/logoMallorquina.svg" alt="">
   </div>
 
-    <div class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
+    <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
       <ul class="d-flex justify-content-end list-group list-group-horizontal-sm lista">
-        <!--
-        <form action="tablaAdmin.php" method="post">
-          <input type="<?php ?>" name="btnAdmin" value="">
-        </form>
-        -->
         <?php btnSesion::btnAdmin() ?>
         <li>ES / CA / EN</li>
         <?php btnSesion::btnSesion() ?>
-        <!--
-        <li>
-          <form action="iniciarSesion.php" method="post">
-            <input id="headerInput" type="submit" name="btnSesiones" value="<?php //btnSesion::btnSesion() ?>">
-          </form>
-        </li>
-        -->
         <li id="iconoAccion">
           <img class="iconoAccion imgLinks" src="../img/logoUsuario.svg" alt="">
         </li>
@@ -70,7 +58,7 @@
   </div>
 
   <!--MENÚ DE LINKS-->
-  <div class="row">
+  <div id="desaparecer" class="row">
     <ul class="nav my-3 justify-content-center">
       <li class="nav-item">
         <a class="nav-link active" href="cuerpo.php">RESTAURANTE</a>
@@ -84,43 +72,37 @@
     </ul>
   </div>
 
-  <!--MENU DEL CAMPUS-->
-  <!--
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">RESTAURANTE</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            LA CARTA
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Ensaladas</a></li>
-            <li><a class="dropdown-item" href="#">Sopas</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Cremas</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">CARRITO</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">BUSCAR  </button>
-      </form>
+  <!--NAVEGADOR PARA TLF-->
+  <nav id="movil" class="navbar navbar-expand-lg bg-white mt-4">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <?php btnSesion::btnAdmin() ?>  
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="cuerpo.php">RESTAURANTE</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-dark" href="carta.php">LA CARTA</a>
+          </li>
+
+          <?php btnSesion::btnSesion() ?>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="carrito.php" aria-disabled="true">CESTA DE LA COMPRA</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">BUSCAR</button>
+        </form>
+      </div>
     </div>
-  </div>
-</nav>
--->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  </nav>
+
+   
 </body>
 </html>

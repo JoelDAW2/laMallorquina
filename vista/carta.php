@@ -95,6 +95,7 @@
     </div>
 
     <!--NAV NUMERO DE PAGINAS NO FUNCIONA EL RESPONSIVE-->
+    <!--
     <div class="row px-5">
         <nav class="d-flex justify-content-center align-items-center paginacion" aria-label="Page navigation example">
             <ul class="pagination py-3">
@@ -115,6 +116,7 @@
             </ul>
         </nav>
     </div>
+    -->
 
     <!--SCRIPTS BOOTSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
