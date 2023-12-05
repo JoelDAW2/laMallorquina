@@ -9,9 +9,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/mLogo.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../estilos/estiloHeaderSup.css">
-    <title>La Mallorquina</title>
+    <title>La Mallorquina | Restaurante</title>
 </head>
 <body>
   <!--LINEA GRIS PROPAGANDA SUPERIOR-->
@@ -66,14 +67,11 @@
       <li class="nav-item">
         <a class="nav-link" href="carta.php">LA CARTA</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="carrito.php">CARRITO</a>
-      </li>
     </ul>
   </div>
 
   <!--NAVEGADOR PARA TLF-->
-  <nav id="movil" class="navbar navbar-expand-lg bg-white mt-4">
+  <nav id="movil" class="navbar navbar-expand-lg bg-white mt-4 mb-4">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
