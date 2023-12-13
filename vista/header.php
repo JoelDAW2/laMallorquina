@@ -1,5 +1,6 @@
 <?php
   require_once("../controlador/sesionesControlador.php");
+  include("../controlador/cantidadesControlador.php");
   sesionesControlador::crearSesion();
   include("../controlador/btnSesion.php");
 ?>
@@ -36,7 +37,7 @@
     </div>
 
   <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center imgLogo">
-    <img id="imgLogoPagina" class="img-fluid" src="../img/logoMallorquina.svg" alt="">
+    <a href="cuerpo.php"><img id="imgLogoPagina" class="img-fluid" src="../img/logoMallorquina.svg" alt=""></a>
   </div>
 
     <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
@@ -51,7 +52,7 @@
         <li id="iconoAccion">
           <div class="packCarrito">
             <img class="imgLinks" src="../img/logoCarrito.svg" alt="">
-            <p>1</p>
+            <?php cantidadesControlador::cantidadCarrito($_SESSION['lista']) ?>
           </div>
         </li>
       </ul>
@@ -71,7 +72,7 @@
   </div>
 
   <!--NAVEGADOR PARA TLF-->
-  <nav id="movil" class="navbar navbar-expand-lg bg-white mt-4 mb-4">
+  <nav id="movil" class="navbar navbar-expand-lg bg-white mt-5 mb-4">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

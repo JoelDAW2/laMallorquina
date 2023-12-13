@@ -26,7 +26,8 @@
 
         public static function modificar($nombre, $descripcion, $precio, $categoria, $img, $id){
             $con = dataBase::connect();
-            $con->query("UPDATE producto SET `nombre_producto` = $nombre, `descripcion` = $descripcion, `precio_unidad` = $precio,`categoria_id` = $categoria, `img` = $img  WHERE producto_id = $id");
+            $con->query("UPDATE `producto` SET `nombre_producto` = '$nombre', `descripcion` = '$descripcion', `precio_unidad` = '$precio', `categoria_id` = '$categoria', `img` = '$img' WHERE `producto_id` = $id");
         }
+        
     }
 ?>

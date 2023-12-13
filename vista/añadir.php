@@ -9,22 +9,25 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../estilos/estiloAñadir.css">
+    <link rel="stylesheet" href="../estilos/estiloAccionesAdmin.css">
+    <!--<link rel="stylesheet" href="../estilos/estiloAñadir.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <h1>INTRODUCE LOS PARÁMETROS</h1>
-    <div class="row">
-        <form class="formulario" action="" method="post">
-            <input type="text" name="nombre" placeholder="Nombre"><br>
-            <input type="text" name="descripcion" placeholder="Descripción"><br>
-            <input type="text" name="precioUnitario" placeholder="Precio unitario"><br>
-            <input type="text" name="categoria" placeholder="Categoría"><br>
-            <input type="text" name="img" placeholder="Imagen"><br>
-            <input type="submit" name="btnInsertar" value="INSERTAR">
-            <?php tablaAdminControlador::insertarProducto($_POST['nombre'], $_POST['descripcion'], $_POST['precioUnitario'], $_POST['categoria'], $_POST['img']) ?>
-        </form>
+    <div class="row d-flex justify-content-center">
+        <div class="d-flex justify-content-center px-0 contenedor">
+            <form class="formulario" action="" method="post">
+                <input type="text" name="nombre" placeholder="Nombre">
+                <input type="text" name="descripcion" placeholder="Descripción">
+                <input type="text" name="precioUnitario" placeholder="Precio unitario">
+                <input type="text" name="categoria" placeholder="Categoría">
+                <input type="text" name="img" placeholder="Imagen">
+                <input type="submit" name="btnInsertar" value="INSERTAR">
+                <?php tablaAdminControlador::procesarFormularioInsertar() ?>
+            </form>
+        </div>
     </div>
 
     <!--SCRIPTS BOOTSTRAP-->
@@ -32,4 +35,3 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 </body>
 </html>
-

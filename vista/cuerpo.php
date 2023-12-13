@@ -13,6 +13,7 @@
 </head>
 <body>
     <main class="container-fluid">
+        
         <!--CARRUSEL-->
         <section class="row px-3 pb-4">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -24,14 +25,16 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <div class="parche d-flex justify-content-center align-items-center flex-column">
-                        <h1>NUESTRO <br> RESTAURANTE</h1>
-                        <p>Nuestra cocina ofrece todo tipo de <br> platos veganos, confeccionados a <br> partir de productos naturales y por <br> las manos de nuestros profesionales.</p>
+                        <div class="d-flex flex-column justify-content-start">
+                            <h1><b>NUESTRO <br> RESTAURANTE</b></h1>
+                            <p>Nuestra cocina ofrece todo tipo de <br> platos veganos, confeccionados a <br> partir de productos naturales y por <br> las manos de nuestros profesionales.</p>
+                        </div>
                     </div>
                     <img src="../img/b1.jpg" class="d-block w-100" alt="...">
                   </div>
                   <div class="carousel-item">
                     <div class="parche d-flex justify-content-center align-items-center flex-column">
-                        <h1>LOS MEJORES <br> MENÚS VEGANOS</h1>
+                        <h1><b>LOS MEJORES <br> MENÚS VEGANOS</b></h1>
                         <img src="../img/decoracionFaja.svg" alt="">
                     </div>
                     <img src="../img/b2.jpg" class="d-block w-100" alt="...">
@@ -50,15 +53,7 @@
                 </button>
               </div>
         </section>
-        <!--BANNER 2 IMGS-->
-        <!--
-        <section class="container-fluid bannerInferior">
-            <div class="row bannerInf">
-                <div class="col-md-8 col-sm-12 photoLeft"></div>
-                <div class="col-md-4 col-sm-12 d-flex justify-content-end photoRight"></div>
-            </div>
-        </section>
-        -->
+
         <!--BANNER FOTOS BUENO-->
         <section>
             <div class="row px-5 fotos">
@@ -66,8 +61,9 @@
                 <div class="col-md-4 col-sm-12"></div>
             </div>
         </section>
+
         <!--PRODUCTOS NUESTRA SELECCION-->
-        <h2>NUESTRA SELECCIÓN PARA TI</h2>
+        <h2><b>NUESTRA SELECCIÓN PARA TI</b></h2>
         <section>
             <div class="row px-5">
                 <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column seleccion">
@@ -92,13 +88,14 @@
                 </div>
             </div>
         </section>
+
         <!--SECCION HISTORIA-->
-        <h3>COME Y BEBE COMO EN TU CASA</h3>
+        <h3><b>COME Y BEBE COMO EN TU CASA</b></h3>
         <section>
             <div class="row px-lg-5 historiaRestaurante">
-                <h4 class="pt-4 pb-2">Restaurante La Mallorquina</h4>
+                <h4 class="pt-4 pb-2"><b>Restaurante La Mallorquina</b></h4>
                 <div class="col-12 col-lg-4">
-                    <p class="pt-3 pb-3">
+                    <p class="pt-3 pb-3 textoHistoria">
                         El restaurante La Mallorquina destaca por su variedad de platos donde cuyos ingredientes mantienen lo verde y natural. <br>
                         <br>Por supuesto, nuestras instalaciones cuentan con herramientas nuevas y siempre en perfectas condiciones, para llevar a cabo la preparación de cada plato. <br>
                         <br> Desde hace más de 75 años, La Mallorquina proporciona productos de calidad, preocupandose a la vez, por el orígen de sus productos con el objetivo de proporcionar al cliente lo mejor del mercado. 
@@ -108,8 +105,7 @@
                     <img id="cocineros" src="../img/cocineros.png" alt="">
                 </div>
                 <div class="col-12 col-lg-4">
-                    <p>
-                        <h5 class="pt-2 pb-2">Historia del restaurante</h5>
+                    <p class="pt-3 pb-3 textoHistoria">
                         <span>Historia del restaurante</span>
                         <br> Ya hace más de 20 años que los hermanos Jené decidieron iniciarse en el negocio de la hostelería, abriendo el primer restaurante vegano en el centro de Barcelona. <br>
                         <br> A pesar de las dificultades iniciales, con el paso del tiempo han logrado crear un espacio perfecto para disfrutar de sus mejores platos. <br>
@@ -118,9 +114,11 @@
                 </div>
             </div>
         </section>
+
         <!--SECCION ENVIOS-->
+        <!--
         <section>
-            <div class="row px-5 py-5">
+            <div class="row px-5 py-5 seccionLogosRedes">
                 <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
                     <img src="../img/info1.svg" alt="">
                     <p>PAGO<br>100% SEGURO</p>
@@ -139,25 +137,6 @@
                 </div>
             </div>
         </section>
-        <!--SECCION SUSCRIBETE-->
-        <!--
-        <section>
-            <div class="row px-5 py-4 redes">
-                <div class="col-12 col-md-6 d-flex justify-content-start">
-                    <ul class="d-flex flex-wrap">
-                        <li>SÍGUENOS</li>
-                        <li><img src="../img/logoFacebook.svg" alt=""></li>
-                        <li><img src="../img/logoInsta.svg" alt=""></li>
-                        <li><img src="../img/logoTwitter.svg" alt=""></li>
-                        <li><img src="../img/logoPinterest.svg" alt=""></li>
-                        <li><img src="../img/logoYoutube.svg" alt=""></li>
-                    </ul>
-                </div>
-                <div class="col-12 col-md-6 d-flex justify-content-end imgSub">
-                    <img src="../img/logoSuscribete.svg" alt="">
-                </div>
-            </div>
-        </section>
         -->
     </main>
     
@@ -169,6 +148,7 @@
 </html>
 
 <?php
+    include("seccionInfoEnvio.php");
     include('footer.php');
 ?>
 

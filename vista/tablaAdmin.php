@@ -39,8 +39,8 @@
                 <td><?php echo $product->getCategoriaId()?></td>
                 <td><?php echo $product->getImg()?></td>
                 <td class="btnsAcciones">
-                    <form action="modificar.php" method="post">
-                        <input type="hidden" name="escondido" value="<?= $product->getProductoId()?>">
+                    <form action="modificar.php" method="get">
+                        <input type="hidden" name="escondidoModificar" value="<?= $product->getProductoId()?>">
                         <input type="submit" name="modificar" value="MODIFICAR">
                     </form>
                     <form action="" method="post">

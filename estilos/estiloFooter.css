@@ -30,7 +30,7 @@ li img{
 }
 
 p{
-    font-size: 100%;
+    font-size: 100% !important;
     margin: 0;
     padding: 0;
 }

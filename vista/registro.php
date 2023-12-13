@@ -53,5 +53,6 @@
 </html>
 
 <?php
+    include("seccionInfoEnvio.php");
     include('footer.php');
 ?>

@@ -23,23 +23,6 @@
             productoDAO::modificar($nombre, $descripcion, $precio, $categoria, $id);
         }
 
-        /*
-        public static function crearSesion(){
-            session_start();
-            if(!isset($_SESSION['lista'])){
-                $_SESSION['lista'] = array();
-            }
-        }
-        */
-
-        /*
-        public static function destruirSesion(){
-            if(isset($_POST['confirmar'])){
-                session_destroy();
-            }
-        }
-        */
-
         public static function botonBasura(){
             if(isset($_POST['productoBasura_x'])){
                 $idBasura = $_POST['basura'];
@@ -52,7 +35,6 @@
             }
         }
 
-        //-----NO ACABA DE FUNCIONAR
         public static function sumarPlaceholder(){
             if(isset($_POST['sumarPlaceholder_x'])){
                 $idBasura = $_POST['cogerIdArray'];
@@ -77,6 +59,26 @@
                     }
                 }
             }
-        }    
+        }  
+        
+        public static function añadirProductoArray(){
+            if(isset($_POST['añadirCarrito'])){
+                $idAñadir = $_POST['añadirCarrito'];
+                
+                echo $idAñadir;
+                $encontrado = false;
+                
+                for ($i=0; $i < count($_SESSION['lista']); $i++) { 
+                    if($_SESSION['lista'][$i]['id'] == $idAñadir){
+                        $_SESSION['lista'][$i]['cantidada'] = $_SESSION['lista'][$i]['cantidada']  + 1;
+                        $encontrado = true;
+                    }
+                }
+        
+                if(!$encontrado){
+                    array_push($_SESSION['lista'], ['id' => $idAñadir , 'cantidada'=> 1]);
+                }
+            }
+        }
     }
 ?>

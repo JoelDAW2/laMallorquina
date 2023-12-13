@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'brandonRegular';
+    src: url('C:/xampp/htdocs/laMallorquina/fuentes/BrandonGrotesqueCond-Regular.ttf') format('truetype');
+}
+
+body{
+    font-family: 'brandonRegular', sans-serif !important;
+}
+
 #linkSesionHeader{
     color: black;
     text-decoration: none;
@@ -6,7 +15,6 @@
 /*---PROPAGANDA SUPERIOR---*/
 .propaganda p{
     padding: 4px 0 6px 0;
-    max-height: 30px;
     text-align: center;
     background-color: #ebe8e3;
     position: fixed;
@@ -14,7 +22,7 @@
     left: 0;
     right: 0;
     z-index: 9999;
-    font-size: 81%;
+    font-size: 81% !important;
 }
 
 .filaMenuInfo{
@@ -31,10 +39,15 @@
     padding: 0;
 }
 
+
 li{
     display: flex;
     align-items: center;
     padding: 5px 10px;
+}
+
+.filaMenuInfo .primera:first-child li{
+    border-right: solid 1px #D9D9D9;
 }
 
 .lista li:first-child{
@@ -126,6 +139,14 @@ li{
 @media screen and (max-width: 800px) {
     #desaparecer{
         display: none;
+    }
+
+    #navbarScroll ul{
+        padding-left: 5px;
+    }
+
+    li{
+        padding-left: 0;
     }
 }
 

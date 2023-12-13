@@ -16,7 +16,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="row mx-4">
+    <div class="row mx-4 mt-5">
         <h2 class="titulo">Iniciar sesión con su cuenta</h2>
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-3">
@@ -24,11 +24,11 @@
                 <form action="" method="post" id="formularioIniciar">
                     <input type="email" name="correo" placeholder="Dirección de correo electrónico">
                     <input type="password" name="contraseña" placeholder="Contraseña">
+                    <p class="texto">¿Olvidó su contraseña?</p>
                     <input type="submit" name="iniciarSesion" value="INICIAR SESIÓN">
                 </form>
                 <div class="centrado">
                     <form action="" method="post">
-                        <p class="texto">¿Olvidó su contraseña?</p>
                         <hr>
                         <a href="registro.php"><p class="texto">¿No tiene una cuenta? Cree una aquí</p></a>
                     </form>
@@ -76,6 +76,6 @@
 </html>
 
 <?php
-    
+    include("seccionInfoEnvio.php");
     include('footer.php');
 ?>
