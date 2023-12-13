@@ -5,10 +5,10 @@
     include("controlador");
     include("vista/header.php");
 
-    if(!isset($_GET['controller'])) {
-        header("Location:" . URL . "?controller=home");
+    if(!isset($_GET['Controlador'])) {
+        header("Location:" . URL . "?Controlador=home");
     } else {
-        $nombre_controller = $_GET['controller'] . "Controller";
+        $nombre_Controlador = $_GET['Controlador'] . "Controlador";
 
         if(class_exists($nombre_controller)) {
             $controller = new $nombre_controller;
@@ -22,7 +22,7 @@
             $controller->$action();
 
         } else {
-            header("Location:".URL."?controller=home");
+            header("Location:".URL."?Controlador=home");
         }
     }
 
