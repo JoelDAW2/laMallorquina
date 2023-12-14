@@ -10,7 +10,7 @@
             } else {
                 //echo "INICIAR SESIÓN";
                 echo("
-                    <li><a id='linkSesionHeader' href='iniciarSesion.php'>INICIAR SESIÓN</a></li>
+                    <li><a id='linkSesionHeader' href='vista/iniciarSesion.php'>INICIAR SESIÓN</a></li>
                 ");
             }
         }

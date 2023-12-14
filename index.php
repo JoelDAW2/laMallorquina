@@ -3,7 +3,6 @@
     include("controlador/cuerpoControlador.php");
     include("controlador/productoControlador.php");
     include("controlador/inicioSesionControlador.php");
-    include("controlador/inicioSesionControlador.php");
     include("controlador/carritoControlador.php");
 
     if(!isset($_GET['controller'])) {
