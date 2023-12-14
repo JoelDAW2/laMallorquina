@@ -5,7 +5,7 @@
             if (isset($_SESSION['idCliente'])) {
                 //echo "CERRAR SESIÓN";
                 echo("
-                    <li><a id='linkSesionHeader' href='../controlador/cerrarSesion.php'>CERRAR SESIÓN</a></li>
+                    <li><a id='linkSesionHeader' href='controlador/cerrarSesion.php'>CERRAR SESIÓN</a></li>
                 ");
             } else {
                 //echo "INICIAR SESIÓN";

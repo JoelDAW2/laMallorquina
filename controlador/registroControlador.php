@@ -2,6 +2,15 @@
     include('modelo/registroDAO.php');
 
     class registroControlador{
+
+        public static function index(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                include_once 'vista/registro.php';
+            }
+        }
+
         public static function registrar(){
             if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']) && isset($_POST['contraseña']) && isset($_POST['suscribirse']) && isset($_POST['tratoDatos']) && isset($_POST['btnRegistrar'])){
                 $nombre = $_POST['nombre'];

@@ -48,7 +48,7 @@
         <li id="iconoAccion">
           <img class="iconoAccion imgLinks" src="img/logoUsuario.svg" alt="">
         </li>
-        <li id="sinBorde"><a id="linkCarrito" href="carrito.php">CESTA DE LA COMPRA</a></li>
+        <li id="sinBorde"><a id="linkCarrito" href="<?php URL ?>?controller=carrito">CESTA DE LA COMPRA</a></li>
         <li id="iconoAccion">
           <div class="packCarrito">
             <img class="imgLinks" src="img/logoCarrito.svg" alt="">
@@ -63,7 +63,7 @@
   <div id="desaparecer" class="row">
     <ul class="nav my-3 justify-content-center">
       <li class="nav-item">
-        <a class="nav-link active" href="cuerpo.php">RESTAURANTE</a>
+        <a class="nav-link active" href="<?php URL ?>?controller=cuerpo">RESTAURANTE</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?php URL ?>?controller=producto">LA CARTA</a>
