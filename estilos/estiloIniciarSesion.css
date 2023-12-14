@@ -37,8 +37,13 @@ input[type='password']{
     width: 100%;
 }
 
-.centrado p{
+.centrado p, #formularioIniciar p{
     text-align: center;
+}
+
+a{
+    text-decoration: none !important;
+    color: black !important;
 }
 
 input[name='iniciarSesion']{
@@ -47,6 +52,10 @@ input[name='iniciarSesion']{
     color: white;
     text-align: center;
     padding: 8px 20px;
+}
+
+input[name='iniciarSesion']:hover{
+    background-color: #2592a9;
 }
 
 input[name='google']{

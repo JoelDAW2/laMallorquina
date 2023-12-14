@@ -3,42 +3,17 @@
     // modelo -todas las consultas bbdd
     // vista - lo que ve el usuario, y normalmente se carga al final de la funcion en el controlador para tener acceso a todas las variables
    
-    include_once '../modelo/productoDAO.php';
+    include_once 'modelo/productoDAO.php';
     
     //Crearemos el controlador de pedidos.
     class productoControlador {
-        public static function index() {
-            productoDAO::getAllProducts();
-        }
-
-        public static function insertarProducto($nombre, $descripcion, $precio, $categoria){
-            productoDAO::insertar($nombre, $descripcion, $precio, $categoria);
-        }
-
-        public static function eliminarProducto($id){
-            productoDAO::eliminar($id);
-        }
-
-        public static function modificarProducto($nombre, $descripcion, $precio, $categoria, $id){
-            productoDAO::modificar($nombre, $descripcion, $precio, $categoria, $id);
-        }
-
-        /*
-        public static function crearSesion(){
-            session_start();
-            if(!isset($_SESSION['lista'])){
-                $_SESSION['lista'] = array();
+        public static function index(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                include_once 'vista/carta.php';
             }
         }
-        */
-
-        /*
-        public static function destruirSesion(){
-            if(isset($_POST['confirmar'])){
-                session_destroy();
-            }
-        }
-        */
 
         public static function botonBasura(){
             if(isset($_POST['productoBasura_x'])){
@@ -52,7 +27,6 @@
             }
         }
 
-        //-----NO ACABA DE FUNCIONAR
         public static function sumarPlaceholder(){
             if(isset($_POST['sumarPlaceholder_x'])){
                 $idBasura = $_POST['cogerIdArray'];
@@ -77,6 +51,26 @@
                     }
                 }
             }
-        }    
+        }  
+        
+        public static function añadirProductoArray(){
+            if(isset($_POST['añadirCarrito'])){
+                $idAñadir = $_POST['añadirCarrito'];
+                
+                echo $idAñadir;
+                $encontrado = false;
+                
+                for ($i=0; $i < count($_SESSION['lista']); $i++) { 
+                    if($_SESSION['lista'][$i]['id'] == $idAñadir){
+                        $_SESSION['lista'][$i]['cantidada'] = $_SESSION['lista'][$i]['cantidada']  + 1;
+                        $encontrado = true;
+                    }
+                }
+        
+                if(!$encontrado){
+                    array_push($_SESSION['lista'], ['id' => $idAñadir , 'cantidada'=> 1]);
+                }
+            }
+        }
     }
 ?>

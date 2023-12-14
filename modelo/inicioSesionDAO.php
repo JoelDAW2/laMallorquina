@@ -1,6 +1,6 @@
 <?php
-    include("../config/dataBase.php");
-    include("../modelo/crearSesion.php");
+    include("config/dataBase.php");
+    include("modelo/crearSesion.php");
     class inicioSesionDAO{
         public static function iniciarSesion($correo, $contraseña){
             $con = dataBase::connect();

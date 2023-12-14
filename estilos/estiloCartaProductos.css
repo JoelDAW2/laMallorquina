@@ -5,17 +5,34 @@
 }
 
 /*---TARJETAS PRODUCTOS---*/
+
+.tarjeta{
+    padding-right: 0;
+}
+
+.tarjeta:hover{
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.tarjeta p:nth-child(2){
+    margin-top: 20px !important;
+}
+
+.tarjeta p:nth-child(3){
+    margin-bottom: 20px !important;
+}
+
 p{
     text-align: center;
 }
 
 h1{
-    font-size: 162%;
+    font-size: 162% !important;
     text-align: center;
     padding-bottom: 34px;
 }
 
-img{
+.imgProducto{
     width: 100%;
 }
 
@@ -24,6 +41,7 @@ img{
 }
 
 .tarjeta p:nth-child(3){
+    font-size: 12px !important;
     color: #F69100;
 }
 
@@ -48,12 +66,12 @@ img{
 #btnLupa, #btnCesta{
     width: 100%;
     height: 100%;
-    background-color: black;
     border: 0;
-    color: black;
-    background-image: url("../img/logoLupaPlato.png");
+    background-color: white;
+    color: transparent;
+    background-image: url("../img/lupaProducto.svg");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 23px 23px;
     background-position: center;
     padding: 0;
 }
@@ -65,35 +83,13 @@ img{
     background-position: center;
 }
 
-#btnLupa:hover, #btnCesta:hover{
+.tarjeta:hover #btnLupa, .tarjeta:hover #btnCesta{
+    background-color: black;
+}
+
+.tarjeta:hover #btnLupa:hover, .tarjeta:hover #btnCesta:hover{
     background-color: #2592A9;
-    color: #2592A9;
     cursor: pointer;
 }
-
-/*---SECCION PAGINACION---*/
-.paginacion{
-    border-top: dashed 1px black;
-    border-bottom: dashed 1px black;
-}
-
-.paginacion ul{
-    margin: 0;
-}
-
-.pagination{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.pagination li a{
-    border: 0;
-    color: black;
-}
-
-.pagination li:first-child a{
-    color: #7A7A7A;
-}
-
 
 

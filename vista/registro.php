@@ -1,5 +1,5 @@
 <?php
-    include('../controlador/registroControlador.php');
+    include('controlador/registroControlador.php');
     include('header.php');
     registroControlador::registrar();
 ?>
@@ -53,5 +53,6 @@
 </html>
 
 <?php
+    include("seccionInfoEnvio.php");
     include('footer.php');
 ?>

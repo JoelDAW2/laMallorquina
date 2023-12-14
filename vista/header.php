@@ -1,7 +1,8 @@
 <?php
-  require_once("../controlador/sesionesControlador.php");
+  require_once("controlador/sesionesControlador.php");
+  include("controlador/cantidadesControlador.php");
   sesionesControlador::crearSesion();
-  include("../controlador/btnSesion.php");
+  include("controlador/btnSesion.php");
 ?>
 
 <!DOCTYPE html>
@@ -9,9 +10,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../img/mLogo.svg">
+    <link rel="icon" type="image/x-icon" href="img/mLogo.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../estilos/estiloHeaderSup.css">
+    <link rel="stylesheet" href="estilos/estiloHeaderSup.css">
     <title>La Mallorquina | Restaurante</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
     </div>
 
   <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center imgLogo">
-    <img id="imgLogoPagina" class="img-fluid" src="../img/logoMallorquina.svg" alt="">
+    <a href="cuerpo.php"><img id="imgLogoPagina" class="img-fluid" src="img/logoMallorquina.svg" alt=""></a>
   </div>
 
     <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
@@ -45,13 +46,13 @@
         <li>ES / CA / EN</li>
         <?php btnSesion::btnSesion() ?>
         <li id="iconoAccion">
-          <img class="iconoAccion imgLinks" src="../img/logoUsuario.svg" alt="">
+          <img class="iconoAccion imgLinks" src="img/logoUsuario.svg" alt="">
         </li>
         <li id="sinBorde"><a id="linkCarrito" href="carrito.php">CESTA DE LA COMPRA</a></li>
         <li id="iconoAccion">
           <div class="packCarrito">
-            <img class="imgLinks" src="../img/logoCarrito.svg" alt="">
-            <p>1</p>
+            <img class="imgLinks" src="img/logoCarrito.svg" alt="">
+            <?php cantidadesControlador::cantidadCarrito($_SESSION['lista']) ?>
           </div>
         </li>
       </ul>
@@ -65,13 +66,13 @@
         <a class="nav-link active" href="cuerpo.php">RESTAURANTE</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="carta.php">LA CARTA</a>
+        <a class="nav-link" href="<?php URL ?>?controller=producto">LA CARTA</a>
       </li>
     </ul>
   </div>
 
   <!--NAVEGADOR PARA TLF-->
-  <nav id="movil" class="navbar navbar-expand-lg bg-white mt-4 mb-4">
+  <nav id="movil" class="navbar navbar-expand-lg bg-white mt-5 mb-4">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

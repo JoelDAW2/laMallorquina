@@ -1,5 +1,5 @@
 <?php
-    include('../config/dataBase.php');
+    include('config/dataBase.php');
 
     class registroDAO{
         public static function insertarCliente($nombre, $apellido, $sexo, $correo_electronico, $rol, $contraseña){
