@@ -41,6 +41,13 @@
             }
         }
 
+
+
+
+
+
+
+
         public static function insertar($nombre, $descripcion, $precio, $categoria, $img){
             $con = dataBase::connect();
             $con->query("INSERT INTO producto (`nombre_producto`, `descripcion`, `precio_unidad`, `categoria_id`, `img`) VALUES ('$nombre', '$descripcion', '$precio', '$categoria', '$img')");
@@ -56,6 +63,13 @@
             $con->query("UPDATE producto SET `nombre_producto` = $nombre, `descripcion` = $descripcion, `precio_unidad` = $precio,`categoria_id` = $categoria, `img` = $img  WHERE producto_id = $id");
         }
 
+
+
+
+
+
+
+        
         public static function getProductoById($id) {
             $con = dataBase::connect();
             $stmt = $con->prepare("SELECT * FROM producto WHERE producto_id = ?");

@@ -11,10 +11,15 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                $ensaladas = productoDAO::getEnsaladas();
+                $sopas = productoDAO::getSopas();
+                $cremas = productoDAO::getCremas();
                 include_once 'vista/carta.php';
             }
         }
-
+        
+        //--------BOTONES CARRITO -- SE CAMBIA A CARRITO CONTROLADOR
+        /*
         public static function botonBasura(){
             if(isset($_POST['productoBasura_x'])){
                 $idBasura = $_POST['basura'];
@@ -26,7 +31,8 @@
                 }
             }
         }
-
+        */
+        /*
         public static function sumarPlaceholder(){
             if(isset($_POST['sumarPlaceholder_x'])){
                 $idBasura = $_POST['cogerIdArray'];
@@ -38,7 +44,8 @@
                 }
             }
         }
-
+        */
+        /*
         public static function restarPlaceholder(){
             if(isset($_POST['restarPlaceholder_x'])){
                 $idBasura = $_POST['cogerIdArray'];
@@ -51,26 +58,31 @@
                     }
                 }
             }
-        }  
+        } 
+        */ 
         
+
+        //--------AÑADIR PRODUCTOS EN EL ARRAY DE LA SESSION 
         public static function añadirProductoArray(){
-            if(isset($_POST['añadirCarrito'])){
-                $idAñadir = $_POST['añadirCarrito'];
-                
-                echo $idAñadir;
-                $encontrado = false;
-                
-                for ($i=0; $i < count($_SESSION['lista']); $i++) { 
-                    if($_SESSION['lista'][$i]['id'] == $idAñadir){
-                        $_SESSION['lista'][$i]['cantidada'] = $_SESSION['lista'][$i]['cantidada']  + 1;
-                        $encontrado = true;
-                    }
-                }
-        
-                if(!$encontrado){
-                    array_push($_SESSION['lista'], ['id' => $idAñadir , 'cantidada'=> 1]);
+            
+            $idAñadir = $_POST['añadirCarrito'];
+            
+            echo $idAñadir;
+            $encontrado = false;
+            
+            for ($i=0; $i < count($_SESSION['lista']); $i++) { 
+                if($_SESSION['lista'][$i]['id'] == $idAñadir){
+                    $_SESSION['lista'][$i]['cantidada'] = $_SESSION['lista'][$i]['cantidada']  + 1;
+                    $encontrado = true;
                 }
             }
+    
+            if(!$encontrado){
+                array_push($_SESSION['lista'], ['id' => $idAñadir , 'cantidada'=> 1]);
+            }
+
+            header("Location:".URL."?controller=producto");
+            
         }
     }
 ?>

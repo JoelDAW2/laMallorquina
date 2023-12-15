@@ -3,7 +3,10 @@
     include("controlador/cuerpoControlador.php");
     include("controlador/productoControlador.php");
     include("controlador/inicioSesionControlador.php");
+    include("controlador/registroControlador.php");
     include("controlador/carritoControlador.php");
+    include("controlador/sesionesControlador.php");
+    sesionesControlador::crearSesion();
 
     if(!isset($_GET['controller'])) {
         header("Location:" . URL . "?controller=cuerpo");

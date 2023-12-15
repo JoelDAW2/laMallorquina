@@ -19,8 +19,7 @@
     <h1 class="pt-4">ENSALADAS</h1>
     <div class="row px-5">
         <?php
-            $products = productoDAO::getEnsaladas();  
-            foreach ($products as $product){      
+            foreach ($ensaladas as $product){      
         ?>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center my-3 px-0 flex-column align-items-center tarjeta">
                 <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="">
@@ -33,7 +32,7 @@
                         </form>
                     </div>
                     <div class="col-6 d-flex p-0 justify-content-center accion">
-                        <form class="w-100" action="" method="post">
+                        <form class="w-100" action="<?= URL ?>?controller=producto&action=añadirProductoArray" method="post">
                             <input id="btnCesta" type="submit" name="añadirCarrito" value="<?php echo $product->getProductoId()?>">                            
                         </form>
                     </div>
@@ -45,8 +44,7 @@
     <h1 class="pt-4">SOPAS</h1>
     <div class="row px-5">
         <?php
-            $products = productoDAO::getSopas();  
-            foreach ($products as $product){      
+            foreach ($sopas as $product){      
         ?>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center my-3 px-0 flex-column align-items-center tarjeta">
                 <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="">
@@ -59,7 +57,7 @@
                         </form>
                     </div>
                     <div class="col-6 d-flex p-0 justify-content-center accion">
-                        <form class="w-100" action="" method="post">
+                        <form class="w-100" action="<?= URL ?>?controller=producto&action=añadirProductoArray" method="post">
                             <input id="btnCesta" type="submit" name="añadirCarrito" value="<?php echo $product->getProductoId()?>">                            
                         </form>
                     </div>
@@ -71,8 +69,7 @@
     <h1 class="pt-4">CREMAS</h1>
     <div class="row px-5">
         <?php
-            $products = productoDAO::getCremas();  
-            foreach ($products as $product){      
+            foreach ($cremas as $product){      
         ?>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center my-3 px-0 flex-column align-items-center tarjeta">
                 <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="">
@@ -85,7 +82,7 @@
                         </form>
                     </div>
                     <div class="col-6 d-flex p-0 justify-content-center accion">
-                        <form class="w-100" action="" method="post">
+                        <form class="w-100" action="<?= URL ?>?controller=producto&action=añadirProductoArray" method="post">
                             <input id="btnCesta" type="submit" name="añadirCarrito" value="<?php echo $product->getProductoId()?>">                            
                         </form>
                     </div>
@@ -102,7 +99,7 @@
 
 <?php
 
-    productoControlador::añadirProductoArray();
+    //productoControlador::añadirProductoArray();
 
     /*
     if(isset($_POST['añadirCarrito'])){

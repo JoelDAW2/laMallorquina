@@ -7,19 +7,6 @@
     include("controlador/pedidoProductoControlador.php");
     include("controlador/cookie.php");
     include('header.php');
-    
-
-    if(isset($_POST['productoBasura_x'])){
-        $eliminarBasura = productoControlador::botonBasura();
-    }
-    
-    if(isset($_POST['sumarPlaceholder_x'])){
-        productoControlador::sumarPlaceholder();
-    }
-
-    if(isset($_POST['restarPlaceholder_x'])){
-        productoControlador::restarPlaceholder();
-    } 
 
     cookie::crearCookie();
 ?>
@@ -51,13 +38,13 @@
                     </div>
 
                     <div class="col-5 d-flex justify-content-end">
-                        <form class="d-flex align-items-center" action="" method="post">
+                        <form class="d-flex align-items-center" action="<?= URL ?>?controller=carrito&action=panelSumaResta" method="post">
                             <input type="hidden" name="cogerIdArray" value="<?php echo $_SESSION['lista'][$key]['id'] ?>">
                             <input type="number" name="" placeholder="<?php echo $_SESSION['lista'][$key]['cantidada'] ?>" min="1">
-                            <input type="image" name="sumarPlaceholder" src="img/logoSumar.png" alt="">
-                            <input type="image" name="restarPlaceholder" src="img/logoRestar.png" alt="">
+                            <input type="image" name="sumarPlaceholder_x" src="img/logoSumar.png" alt="">
+                            <input type="image" name="restarPlaceholder_x" src="img/logoRestar.png" alt="">
                         </form>
-                        <form id="formularioBasura" action="" method="post">
+                        <form id="formularioBasura" action="<?= URL ?>?controller=carrito&action=botonBasura" method="post">
                             <input type="hidden" name="basura" value="<?php echo $producto->getProductoId()?>">
                             <input type="image" src="img/logoBasura.png" name="productoBasura" >
                         </form>
