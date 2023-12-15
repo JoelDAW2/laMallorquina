@@ -37,7 +37,7 @@
     </div>
 
   <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center imgLogo">
-    <a href="cuerpo.php"><img id="imgLogoPagina" class="img-fluid" src="img/logoMallorquina.svg" alt=""></a>
+    <a href="<?php URL ?>?controller=cuerpo"><img id="imgLogoPagina" class="img-fluid" src="img/logoMallorquina.svg" alt=""></a>
   </div>
 
     <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">

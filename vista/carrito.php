@@ -46,7 +46,7 @@
             <div class="row fila-producto">
                 <div class="col-12 d-flex justify-content-between align-items-center px-0 productoAñadido">
                     <div class="col-5 d-flex align-items-center">
-                        <img class="py-3" src="../img/<?php echo $producto->getImg()?>.jpg" alt="">
+                        <img class="py-3" src="img/<?php echo $producto->getImg()?>.jpg" alt="">
                         <p class="ps-2"><b><?php echo $producto->getNombre()?></b></p>
                     </div>
 
@@ -54,12 +54,12 @@
                         <form class="d-flex align-items-center" action="" method="post">
                             <input type="hidden" name="cogerIdArray" value="<?php echo $_SESSION['lista'][$key]['id'] ?>">
                             <input type="number" name="" placeholder="<?php echo $_SESSION['lista'][$key]['cantidada'] ?>" min="1">
-                            <input type="image" name="sumarPlaceholder" src="../img/logoSumar.png" alt="">
-                            <input type="image" name="restarPlaceholder" src="../img/logoRestar.png" alt="">
+                            <input type="image" name="sumarPlaceholder" src="img/logoSumar.png" alt="">
+                            <input type="image" name="restarPlaceholder" src="img/logoRestar.png" alt="">
                         </form>
                         <form id="formularioBasura" action="" method="post">
                             <input type="hidden" name="basura" value="<?php echo $producto->getProductoId()?>">
-                            <input type="image" src="../img/logoBasura.png" name="productoBasura" >
+                            <input type="image" src="img/logoBasura.png" name="productoBasura" >
                         </form>
                     </div>
 
@@ -94,25 +94,10 @@
             <div class="d-flex justify-content-between contenedorTotal">
                 <?php cookie::imprimirValorCookie(); ?>
             </div>
-            <?php
-                //pedidoControlador::crearCookie();
-                /*
-                $total = $_SESSION['lista'];
-                $cantidadProducto = 0;
-                $sumaPrecio = 0;
-                $sumaTotal = 0;
-                foreach ($total as $key => $value) {
-                    $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
-                    $cantidadProducto = $total[$key]['cantidada'];
-                    $sumaPrecio = $cantidadProducto * $producto->getPrecioUnidad();
-                    $sumaTotal = $sumaTotal + $sumaPrecio; 
-                } 
-                echo $sumaTotal." €";
-                */
-            ?>
+            
             <div class="d-flex justify-content-between mt-4 codigoPromocional">
                 <h3 class="tituloCodigo">¿TIENE UN CÓDIGO PROMOCIONAL?</h3>
-                <img src="../img/flechaCodigo.svg" alt="">
+                <img src="img/flechaCodigo.svg" alt="">
             </div>
             <form action="" method="post">
                 <input class="py-3 mt-4" type="submit" name="confirmar" value="CONFIRMAR Y PAGAR PEDIDO">
