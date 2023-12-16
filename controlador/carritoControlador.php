@@ -29,7 +29,7 @@
             }
             header("Location:".URL."?controller=carrito");
         }
-
+        
         public static function restarPlaceholder(){
             $idBasura = $_POST['cogerIdArray'];
             foreach($_SESSION['lista'] as $key => $value){
@@ -42,16 +42,14 @@
             }
             header("Location:".URL."?controller=carrito");
         }  
-
+        
         public static function panelSumaResta(){
-            //foreach ($_POST as $key => $value) { echo "Field ".htmlspecialchars ($key). " is ".htmlspecialchars ($value). "<br>" ;}
-            echo $_POST['sumarPlaceholder_x'];
-            if(isset($_POST['sumarPlaceholder_x'])){
-                echo "prueba";
-                //sumarPlaceholder();
-            }else if(isset($_POST['restarPlaceholder_x'])){
-                restarPlaceholder();
+            if(isset($_POST['sumarPlaceholder'])){
+                self::sumarPlaceholder();
+            }else if(isset($_POST['restarPlaceholder'])){
+                self::restarPlaceholder();
             }
         }
+        
     }
 ?>

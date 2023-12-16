@@ -24,7 +24,7 @@
     <div class="row d-flex justify-content-center">
         <div class="col-12 col-md-4 mt-4 mb-4 px-0 listaProductosAñadidos">
             <?php
-                cantidadesControlador::carritoVacio();
+                //cantidadesControlador::carritoVacio();
                 foreach ($_SESSION['lista'] as $key => $value) {
                     // Obtener detalles del producto utilizando el ID ($value)
                     $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
@@ -41,8 +41,8 @@
                         <form class="d-flex align-items-center" action="<?= URL ?>?controller=carrito&action=panelSumaResta" method="post">
                             <input type="hidden" name="cogerIdArray" value="<?php echo $_SESSION['lista'][$key]['id'] ?>">
                             <input type="number" name="" placeholder="<?php echo $_SESSION['lista'][$key]['cantidada'] ?>" min="1">
-                            <input type="image" name="sumarPlaceholder_x" src="img/logoSumar.png" alt="">
-                            <input type="image" name="restarPlaceholder_x" src="img/logoRestar.png" alt="">
+                            <input type="submit" name="sumarPlaceholder" src="img/logoSumar.png" value="+" alt="">
+                            <input type="submit" name="restarPlaceholder" src="img/logoRestar.png" value="-" alt="">
                         </form>
                         <form id="formularioBasura" action="<?= URL ?>?controller=carrito&action=botonBasura" method="post">
                             <input type="hidden" name="basura" value="<?php echo $producto->getProductoId()?>">
