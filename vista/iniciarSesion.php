@@ -26,7 +26,7 @@
                 <div class="centrado">
                     <form action="" method="post">
                         <hr>
-                        <a href="registro.php"><p class="texto">¿No tiene una cuenta? Cree una aquí</p></a>
+                        <a href="<?= URL ?>?controller=registro&action=index"><p class="texto">¿No tiene una cuenta? Cree una aquí</p></a>
                     </form>
                 </div>
             </div>

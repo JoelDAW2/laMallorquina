@@ -6,6 +6,8 @@
     include("controlador/registroControlador.php");
     include("controlador/carritoControlador.php");
     include("controlador/sesionesControlador.php");
+    include("controlador/tablaAdminControlador.php");
+    
     sesionesControlador::crearSesion();
 
     if(!isset($_GET['controller'])) {

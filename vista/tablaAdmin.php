@@ -28,7 +28,6 @@
                 <th>ACCIONES</th>
             </tr>
             <?php
-                $products = tablaAdminDAO::getAllProducts();
                 foreach ($products as $product) {      
             ?>
             <tr>
@@ -39,20 +38,19 @@
                 <td><?php echo $product->getCategoriaId()?></td>
                 <td><?php echo $product->getImg()?></td>
                 <td class="btnsAcciones">
-                    <form action="modificar.php" method="get">
+                    <form action="<?= URL ?>?controller=tablaAdmin&action=indexModificar" method="post">
                         <input type="hidden" name="escondidoModificar" value="<?= $product->getProductoId()?>">
                         <input type="submit" name="modificar" value="MODIFICAR">
                     </form>
-                    <form action="" method="post">
+                    <form action="<?= URL ?>?controller=tablaAdmin&action=eliminarProducto" method="post">
                         <input type="hidden" name="escondido" value="<?= $product->getProductoId()?>">
                         <input type="submit" name="eliminar" value="ELIMINAR">
-                        <?php tablaAdminControlador::eliminarProducto($product->getProductoId()) ?>
                     </form>
                 </td>
             </tr>
             <?php } ?>
         </table>
-        <form action="añadir.php" method="post">
+        <form action="<?= URL ?>?controller=tablaAdmin&action=indexAñadir" method="post">
             <input type="submit" value="AÑADIR">
         </form>
     </div>

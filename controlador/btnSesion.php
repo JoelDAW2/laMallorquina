@@ -19,7 +19,7 @@
         public static function btnAdmin(){
             if(isset($_SESSION['accesoAdmin'])){
                 if($_SESSION['accesoAdmin'] == true){
-                    echo ("<li><a href='tablaAdmin.php'><img src='../img/logoEditar.svg'></a></li>");
+                    echo ("<li><a href='tablaAdmin.php'><img src='img/logoEditar.svg'></a></li>");
                 }
             }
         }

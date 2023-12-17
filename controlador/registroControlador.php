@@ -26,6 +26,7 @@
                     $genero = null;
                 }
                 registroDAO::insertarCliente($nombre, $apellido, $genero, $correo_electronico, $rol, $contraseña);
+                header("Location:".URL."?controller=inicioSesion");
             }  
         }
     }

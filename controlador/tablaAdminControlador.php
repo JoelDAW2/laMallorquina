@@ -1,6 +1,32 @@
 <?php
     include("modelo/tablaAdminDAO.php");
     class tablaAdminControlador{
+
+        public static function index(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                $products = tablaAdminDAO::getAllProducts();
+                include_once 'vista/tablaAdmin.php';
+            }
+        }
+
+        public static function indexModificar(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                include_once 'vista/modificar.php';
+            }
+        }
+
+        public static function indexAñadir(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                include_once 'vista/añadir.php';
+            }
+        }
+
         public static function obtenerProductos() {
             tablaAdminDAO::getAllProducts();
         }
@@ -17,21 +43,6 @@
             }
         }
 
-        /*
-        public static function procesarFormularioModificar(){
-            echo "Formulario Modificar procesado"; // Mensaje de depuración
-            if(isset($_POST['btnActualizar'])){
-                tablaAdminControlador::modificarProducto(
-                    $_POST['nombre'],
-                    $_POST['descripcion'],
-                    $_POST['precioUnitario'],
-                    $_POST['categoria'],
-                    $_POST['img'],
-                    $_POST['escondido']
-                );             
-            }
-        }
-        */
         public static function procesarFormularioModificar(){
             if(isset($_POST['btnActualizar'])){
                 tablaAdminDAO::modificar(
@@ -53,10 +64,11 @@
             }
         }
     
-        public static function eliminarProducto($id){
+        public static function eliminarProducto(){
             if(isset($_POST['eliminar'])){
                 $id = $_POST['escondido'];
                 tablaAdminDAO::eliminar($id);
+                header("Location:".URL."?controller=tablaAdmin");
             }
         }
     

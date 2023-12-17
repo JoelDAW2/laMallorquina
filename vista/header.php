@@ -42,7 +42,15 @@
 
     <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
       <ul class="d-flex justify-content-end list-group list-group-horizontal-sm lista">
-        <?php btnSesion::btnAdmin() ?>
+        <?php if (isset($_SESSION['accesoAdmin'])) : ?>
+            <?php if ($_SESSION['accesoAdmin'] == true) : ?>
+              <li>
+                <a href="<?php URL ?>?controller=tablaAdmin">
+                  <img src="img/logoEditar.svg" alt="">
+                </a>
+              </li>
+            <?php endif; ?>    
+        <?php endif; ?>
         <li>ES / CA / EN</li>
         <?php //btnSesion::btnSesion() ?>
         <?php if (isset($_SESSION['idCliente'])) : ?>
