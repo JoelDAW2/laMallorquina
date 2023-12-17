@@ -13,9 +13,9 @@
 
                     if($row['rol'] == 'admin'){
                         $_SESSION['accesoAdmin'] = true;
-                        header("Location: ../vista/cuerpo.php");
+                        header("Location:".URL."?controller=cuerpo"); 
                     }else{
-                        header("Location: ../vista/cuerpo.php");
+                        header("Location:".URL."?controller=cuerpo"); 
                         //exit();
                     }
 
@@ -23,7 +23,7 @@
                     exit();
                 }
             }else{
-                header('Location: ../vista/iniciarSesion.php');
+                header("Location:".URL."?controller=inicioSesion"); 
                 exit();
             }
         }

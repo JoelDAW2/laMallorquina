@@ -10,8 +10,12 @@
             }
         }
 
-        public static function startSession($correo, $contraseña){
-            inicioSesionDAO::iniciarSesion($correo, $contraseña);
+        public static function startSession(){
+            if(isset($_POST['correo']) && isset($_POST['contraseña'])){
+                $correo = $_POST['correo'];
+                $contraseña = $_POST['contraseña'];
+                inicioSesionDAO::iniciarSesion($correo, $contraseña);
+            }  
         }
     }
 ?>

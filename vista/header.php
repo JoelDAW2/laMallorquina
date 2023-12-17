@@ -44,7 +44,18 @@
       <ul class="d-flex justify-content-end list-group list-group-horizontal-sm lista">
         <?php btnSesion::btnAdmin() ?>
         <li>ES / CA / EN</li>
-        <?php btnSesion::btnSesion() ?>
+        <?php //btnSesion::btnSesion() ?>
+        <?php if (isset($_SESSION['idCliente'])) : ?>
+            <!-- User is logged in, display "Cerrar Sesión" -->
+            <li id="linkSesionHeader">
+                <a href="controlador/cerrarSesionControlador.php">CERRAR SESIÓN</a>
+            </li>
+        <?php else : ?>
+            <!-- User is not logged in, display "Iniciar Sesión" -->
+            <li id="linkSesionHeader">
+                <a href="<?= URL ?>?controller=inicioSesion&action=index">INICIAR SESIÓN</a>
+            </li>
+        <?php endif; ?>
         <li id="iconoAccion">
           <img class="iconoAccion imgLinks" src="img/logoUsuario.svg" alt="">
         </li>

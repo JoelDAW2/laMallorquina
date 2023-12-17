@@ -1,9 +1,5 @@
 <?php
-    include('controlador/inicioSesionControlador.php');
-    if(isset($_POST['correo']) && isset($_POST['contraseña']) && isset($_POST['iniciarSesion'])){
-        inicioSesionControlador::startSession($_POST['correo'], $_POST['contraseña']);
-    }
-    include('header.php');
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="estilos/estiloIniciarSesion.css">
+    <!--<link rel="stylesheet" href="estilos/estiloIniciarSesion.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -21,7 +17,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-3">
                 <p class="texto">¡Inicie sesión!</p>
-                <form action="" method="post" id="formularioIniciar">
+                <form action="<?= URL ?>?controller=inicioSesion&action=startSession" method="post" id="formularioIniciar">
                     <input type="email" name="correo" placeholder="Dirección de correo electrónico">
                     <input type="password" name="contraseña" placeholder="Contraseña">
                     <p class="texto">¿Olvidó su contraseña?</p>
@@ -76,6 +72,4 @@
 </html>
 
 <?php
-    include("seccionInfoEnvio.php");
-    include('footer.php');
 ?>
