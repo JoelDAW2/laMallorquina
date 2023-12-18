@@ -16,6 +16,7 @@
             }
         }
 
+        /*
         public static function btnAdmin(){
             if(isset($_SESSION['accesoAdmin'])){
                 if($_SESSION['accesoAdmin'] == true){
@@ -23,5 +24,6 @@
                 }
             }
         }
+        */
     }
 ?>

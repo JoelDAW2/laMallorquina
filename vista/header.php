@@ -42,14 +42,12 @@
 
     <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
       <ul class="d-flex justify-content-end list-group list-group-horizontal-sm lista">
-        <?php if (isset($_SESSION['accesoAdmin'])) : ?>
-            <?php if ($_SESSION['accesoAdmin'] == true) : ?>
+        <?php if (isset($_SESSION['accesoAdmin']) && $_SESSION['accesoAdmin'] == true) : ?>
               <li>
                 <a href="<?php URL ?>?controller=tablaAdmin">
                   <img src="img/logoEditar.svg" alt="">
                 </a>
-              </li>
-            <?php endif; ?>    
+              </li> 
         <?php endif; ?>
         <li>ES / CA / EN</li>
         <?php //btnSesion::btnSesion() ?>
@@ -98,7 +96,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-          <?php btnSesion::btnAdmin() ?>  
+          <?php //btnSesion::btnAdmin() ?>
+          <?php if (isset($_SESSION['accesoAdmin']) && $_SESSION['accesoAdmin'] == true) : ?>
+            <li><a href="<?= URL ?>?controller=tablaAdmin"> <img src='img/logoEditar.svg'></a></li>
+          <?php endif; ?>
 
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="cuerpo.php">RESTAURANTE</a>
@@ -107,7 +108,7 @@
             <a class="nav-link text-dark" href="carta.php">LA CARTA</a>
           </li>
 
-          <?php btnSesion::btnSesion() ?>
+          <?php //btnSesion::btnSesion() ?>
 
           <li class="nav-item">
             <a class="nav-link active" href="carrito.php" aria-disabled="true">CESTA DE LA COMPRA</a>
