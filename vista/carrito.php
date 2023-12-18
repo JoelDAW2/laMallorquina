@@ -8,7 +8,7 @@
     include("controlador/cookie.php");
     include('header.php');
 
-    cookie::crearCookie();
+    //cookie::crearCookie();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +23,12 @@
     <h1 class="tituloPagina">CARRITO</h1>
     <div class="row d-flex justify-content-center">
         <div class="col-12 col-md-4 mt-4 mb-4 px-0 listaProductosAñadidos">
+        <?php if (empty($_SESSION['lista'])) : ?>
+            <div class="contenedorVacio">
+                <img id="fotoCarritoVacio" class="img-fluid" src="img/logoCarritoCentro.svg" alt="">
+                <p class="textoCarrito">¡No hay productos en tu carrito!</p>
+            </div>
+        <?php else : ?>
             <?php
                 //cantidadesControlador::carritoVacio();
                 foreach ($_SESSION['lista'] as $key => $value) {
@@ -56,6 +62,7 @@
                 </div>
             </div>
             <?php } ?>
+        <?php endif; ?>
             <a href="carta.php"><p class="mt-3">Seguir comprando</p></a>
         </div>
 
@@ -66,8 +73,14 @@
                 foreach ($_SESSION['lista'] as $key => $value) {
                     // Obtener detalles del producto utilizando el ID ($value)
                     $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
-                    
-                    cantidadesControlador::imprimirCantidades($producto, $_SESSION['lista'][$key]['cantidada'], $producto->getPrecioUnidad());
+                    //cantidadesControlador::imprimirCantidades($producto, $_SESSION['lista'][$key]['cantidada'], $producto->getPrecioUnidad());
+            ?>       
+                    <div id="cProductos" class="d-flex justify-content-between">
+                        <p><?php echo $producto->getNombre()?></p>
+                        <p><?php echo $_SESSION['lista'][$key]['cantidada'] ?></p>
+                        <p><?php echo $producto->getPrecioUnidad() ?></p>
+                    </div>   
+            <?php
                 } 
             ?>  
             <div class="d-flex justify-content-between contenedorTotal">
@@ -76,10 +89,10 @@
             </div>
             <div class="d-flex justify-content-between contenedorTotal">
                 <p><b>TOTAL</b> (IVA Incluido):</p>
-                <p><?php cantidadesControlador::calcularTotal(); ?></p>
+                <p><?= $cantidadTotal ?> €</p>
             </div>
             <div class="d-flex justify-content-between contenedorTotal">
-                <?php cookie::imprimirValorCookie(); ?>
+                <?php //cookie::imprimirValorCookie(); ?>
             </div>
             
             <div class="d-flex justify-content-between mt-4 codigoPromocional">

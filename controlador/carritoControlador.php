@@ -4,8 +4,23 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                $cantidadTotal = carritoControlador::calcularTotal();
                 include_once 'vista/carrito.php';
             }
+        }
+
+        public static function calcularTotal(){
+            $total = $_SESSION['lista'];
+            $cantidadProducto = 0;
+            $sumaPrecio = 0;
+            $sumaTotal = 0;
+            foreach ($total as $key => $value) {
+                $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
+                $cantidadProducto = $total[$key]['cantidada'];
+                $sumaPrecio = $cantidadProducto * $producto->getPrecioUnidad();
+                $sumaTotal = $sumaTotal + $sumaPrecio; 
+            } 
+            return $sumaTotal;
         }
 
         public static function botonBasura(){

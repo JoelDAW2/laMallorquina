@@ -18,14 +18,14 @@
     <h1>ACTUALIZA LOS PRODUCTOS</h1>
     <div class="row d-flex justify-content-center">
         <div class="d-flex justify-content-center px-0 contenedor">
-            <form action="" method="post">
+            <form action="<?= URL ?>?controller=tablaAdmin&action=procesarFormularioModificar" method="post">
                 <input type="text" name="nombre" placeholder="Nombre">
                 <input type="text" name="descripcion" placeholder="Descripción">
                 <input type="text" name="precioUnitario" placeholder="Precio unitario">
                 <input type="text" name="categoria" placeholder="Categoría">
                 <input type="text" name="img" placeholder="Imagen">
                 <input type="submit" name="btnActualizar" value="ACTUALIZAR">
-                <?php tablaAdminControlador::procesarFormularioModificar() ?>
+                <?php //tablaAdminControlador::procesarFormularioModificar() ?>
             </form>
         </div>
     </div> 

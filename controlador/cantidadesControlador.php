@@ -1,5 +1,6 @@
 <?php
     class cantidadesControlador {
+        /*
         public static function imprimirCantidades($producto, $cantidad, $precioUnidad) {
             echo ("<div id='cProductos' class='d-flex justify-content-between'>
                     <p>" . $producto->getNombre() . "</p>
@@ -7,7 +8,9 @@
                     <p>$precioUnidad €</p>
                    </div>");
         }
+        */
 
+        /*
         public static function calcularTotal(){
             $total = $_SESSION['lista'];
             $cantidadProducto = 0;
@@ -19,8 +22,9 @@
                 $sumaPrecio = $cantidadProducto * $producto->getPrecioUnidad();
                 $sumaTotal = $sumaTotal + $sumaPrecio; 
             } 
-            echo $sumaTotal." €";
+            return $sumaTotal;
         }
+        */
 
         /*
         public static function calcularTotalInsertarPedido(){

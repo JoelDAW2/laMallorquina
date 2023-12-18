@@ -32,35 +32,31 @@
         }
 
         public static function procesarFormularioInsertar(){
-            if(isset($_POST['btnInsertar'])){
-                tablaAdminControlador::insertarProducto(
-                    $_POST['nombre'],
-                    $_POST['descripcion'],
-                    $_POST['precioUnitario'],
-                    $_POST['categoria'],
-                    $_POST['img']
-                );             
-            }
+            tablaAdminControlador::insertarProducto(
+                $_POST['nombre'],
+                $_POST['descripcion'],
+                $_POST['precioUnitario'],
+                $_POST['categoria'],
+                $_POST['img']
+            );
         }
 
         public static function procesarFormularioModificar(){
-            if(isset($_POST['btnActualizar'])){
                 tablaAdminDAO::modificar(
                     $_POST['nombre'],
                     $_POST['descripcion'],
                     $_POST['precioUnitario'],
                     $_POST['categoria'],
                     $_POST['img'],
-                    $_GET['escondidoModificar']
+                    $_POST['escondidoModificar']
                 );
-                header("Location: tablaAdmin.php");             
-            }
+                header("Location:".URL."?controller=tablaAdmin");          
         }
     
         public static function insertarProducto($nombre, $descripcion, $precio, $categoria, $img){
             if(isset($_POST['btnInsertar'])  && isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['precioUnitario']) && isset($_POST['categoria']) && isset($_POST['img'])){
                 tablaAdminDAO::insertar($nombre, $descripcion, $precio, $categoria, $img);
-                header("Location: tablaAdmin.php");
+                header("Location:".URL."?controller=tablaAdmin");
             }
         }
     
