@@ -13,14 +13,16 @@
 
 
         
-
+        /*
         public static function insertarPedidoProducto($pedido_id, $producto_id, $cantidad, $precio_unidad){
             $con = dataBase::connect();
             $insertarPedidoProducto = ("INSERT INTO `pedido_producto`(`pedido_id`, `producto_id`, `cantidad`, `precio_unidad`) VALUES ('$pedido_id','$producto_id', '$cantidad', '$precio_unidad')");
             $con->query($insertarPedidoProducto);
             $con->close();
         }
+        */
 
+        /*
         public static function seleccionarPrecioUnidad($productoId){
             $con = dataBase::connect();
             $pUnidad = "SELECT `precio_unidad` FROM `producto` WHERE `producto_id` ='$productoId'";
@@ -36,6 +38,6 @@
         
             $con->close();
         }
-        
+        */
     }
 ?>      

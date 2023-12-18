@@ -4,7 +4,7 @@
     include_once 'controlador/pedidoControlador.php';
     include_once 'modelo/productoDAO.php';
     require_once("controlador/sesionesControlador.php");
-    include("controlador/pedidoProductoControlador.php");
+    //include("controlador/pedidoProductoControlador.php");
     include("controlador/cookie.php");
     include('header.php');
 
@@ -86,7 +86,7 @@
                 <h3 class="tituloCodigo">¿TIENE UN CÓDIGO PROMOCIONAL?</h3>
                 <img src="img/flechaCodigo.svg" alt="">
             </div>
-            <form action="" method="post">
+            <form action="<?= URL ?>?controller=pedido&action=insertarPedido" method="post">
                 <input class="py-3 mt-4" type="submit" name="confirmar" value="CONFIRMAR Y PAGAR PEDIDO">
                 <?php
                     //$confirmar = productoControlador::destruirSesion();
@@ -105,7 +105,7 @@
 
 <?php
 
-    pedidoControlador::insertarPedido();
+    //pedidoControlador::insertarPedido();
 
     /*
     pedidoProductoControlador::insertarPedidoProducto($_SESSION['lista']);

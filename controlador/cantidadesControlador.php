@@ -22,6 +22,7 @@
             echo $sumaTotal." €";
         }
 
+        /*
         public static function calcularTotalInsertarPedido(){
             $total = $_SESSION['lista'];
             $cantidadProducto = 0;
@@ -35,6 +36,7 @@
             } 
             return $sumaTotal;
         }
+        */
 
         public static function cantidadCarrito($array){
             $cantidad = 0;
