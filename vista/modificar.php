@@ -25,6 +25,7 @@
                 <input type="text" name="categoria" placeholder="Categoría">
                 <input type="text" name="img" placeholder="Imagen">
                 <input type="submit" name="btnActualizar" value="ACTUALIZAR">
+                <input type="hidden" name="escondidoModificar" id="" value="<?php echo $_POST['escondidoModificar'] ?>">
                 <?php //tablaAdminControlador::procesarFormularioModificar() ?>
             </form>
         </div>

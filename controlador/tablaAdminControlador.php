@@ -12,9 +12,11 @@
         }
 
         public static function indexModificar(){
+          
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                
                 include_once 'vista/modificar.php';
             }
         }
