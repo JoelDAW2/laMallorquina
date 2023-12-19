@@ -1,8 +1,11 @@
 <?php
     include_once 'producto.php';
     include_once 'ensalada.php';
+    include_once 'sopa.php';
+    include_once 'crema.php';
 
     class productoDAO {
+        /*
         public static function getEnsaladas() {
 
             $con = dataBase::connect();
@@ -41,7 +44,7 @@
                 return $products;
             }
         }
-
+        */
 
 
 
@@ -86,19 +89,46 @@
             return null;
         }
 
-        public static function getAllByType($nombre){
+        public static function getAllByType($tipo) {
             $con = dataBase::connect();
-            $stmt = $con->prepare("SELECT * FROM producto WHERE nombre_categoria = ?");
-            $stmt->bind_param("s", $nombre);
+    
+            // Obtener el ID de la categoría
+            $stmt = $con->prepare("SELECT categoria_id FROM categoria WHERE nombre_categoria = ?");
+            $stmt->bind_param("s", $tipo);
             $stmt->execute();
             $result = $stmt->get_result();
-            $con->close();
-
-            $listaProductos = [];
-            while($productoDB = $result->fetch_object($tipoProducto)){
-                $listaProductos[] = $productoDB;
+    
+            $categoria_id = null;
+            if ($row = $result->fetch_assoc()) {
+                $categoria_id = $row['categoria_id'];
             }
-
+    
+            // Obtener productos de la categoría
+            $stmt = $con->prepare("SELECT * FROM producto WHERE categoria_id = ?");
+            $stmt->bind_param("i", $categoria_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+    
+            $listaProductos = [];
+            while ($productoDB = $result->fetch_object()) {
+                // Crear instancias dinámicamente según el tipo
+                switch ($tipo) {
+                    case 'Ensalada':
+                        $listaProductos[] = new ensalada($productoDB);
+                        break;
+                    case 'Cremas':
+                        $listaProductos[] = new crema($productoDB);
+                        break;
+                    case 'Sopas':
+                        $listaProductos[] = new sopa($productoDB);
+                        break;
+                    // Agrega más casos según sea necesario para otros tipos de productos
+                }
+            }
+    
+            $stmt->close();
+            $con->close();
+    
             return $listaProductos;
         }
     }

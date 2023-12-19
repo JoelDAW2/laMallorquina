@@ -11,13 +11,13 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
-                $ensaladas = productoDAO::getEnsaladas();
-                $sopas = productoDAO::getSopas();
-                $cremas = productoDAO::getCremas();
+                // $ensaladas = productoDAO::getEnsaladas();
+                // $sopas = productoDAO::getSopas();
+                // $cremas = productoDAO::getCremas();
 
-                // $ensaladas = productoDAO::getAllByType('Ensalada');
-                // $sopas = productoDAO::getAllByType('Sopas');
-                // $cremas = productoDAO::getAllByType('Cremas');
+                $ensaladas = productoDAO::getAllByType('Ensalada');
+                $sopas = productoDAO::getAllByType('Sopas');
+                $cremas = productoDAO::getAllByType('Cremas');
 
                 include_once 'vista/carta.php';
             }

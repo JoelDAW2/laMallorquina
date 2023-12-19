@@ -1,5 +1,5 @@
 <?php
-    class ensalada extends producto{
+    class sopa extends producto{
         protected $producto_id;
         protected $nombre_producto;
         protected $descripcion;
