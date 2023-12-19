@@ -4,6 +4,11 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                if(isset($_COOKIE['totalUltimoPedido'])){
+                    $valoresCookie = explode(",", $_COOKIE["totalUltimoPedido"]);
+                    $totalUltimoPedido = $valoresCookie[1];
+                    $idUltimoUsuario = $valoresCookie[0];
+                }                
                 $cantidadTotal = carritoControlador::calcularTotal();
                 include_once 'vista/carrito.php';
             }

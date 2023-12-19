@@ -63,7 +63,7 @@
             </div>
             <?php } ?>
         <?php endif; ?>
-            <a href="carta.php"><p class="mt-3">Seguir comprando</p></a>
+            <a href="<?php URL ?>?controller=producto"><p class="mt-3">Seguir comprando</p></a>
         </div>
 
 
@@ -91,10 +91,14 @@
                 <p><b>TOTAL</b> (IVA Incluido):</p>
                 <p><?= $cantidadTotal ?> €</p>
             </div>
-            <div class="d-flex justify-content-between contenedorTotal">
-                <?php //cookie::imprimirValorCookie(); ?>
-            </div>
-            
+
+            <?php if (isset($_SESSION['idCliente']) && isset($idUltimoUsuario) && $_SESSION['idCliente'] == $idUltimoUsuario) : ?>
+                <div class="d-flex justify-content-between contenedorTotal">
+                    <?php //cookie::imprimirValorCookie(); ?>
+                    <p>ÚLTIMO PEDIDO: <?php echo $totalUltimoPedido ?> €</p>
+                </div>
+            <?php endif; ?>
+
             <div class="d-flex justify-content-between mt-4 codigoPromocional">
                 <h3 class="tituloCodigo">¿TIENE UN CÓDIGO PROMOCIONAL?</h3>
                 <img src="img/flechaCodigo.svg" alt="">

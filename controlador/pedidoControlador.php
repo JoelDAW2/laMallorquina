@@ -38,6 +38,10 @@
                     pedidoControlador::insertarPedidoProducto($pedido_id, $_SESSION['lista']);
                 }
 
+                if(!isset($_COOKIE['totalUltimoPedido'])){
+                    setcookie("totalUltimoPedido", $clienteId . "," . $total, time() + 60);
+                }
+                
                 header("Location:".URL."?controller=cuerpo");
             }
         }
