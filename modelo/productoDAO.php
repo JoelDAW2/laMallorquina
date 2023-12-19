@@ -1,5 +1,6 @@
 <?php
     include_once 'producto.php';
+    include_once 'ensalada.php';
 
     class productoDAO {
         public static function getEnsaladas() {
@@ -69,7 +70,7 @@
 
 
 
-        
+
         public static function getProductoById($id) {
             $con = dataBase::connect();
             $stmt = $con->prepare("SELECT * FROM producto WHERE producto_id = ?");
@@ -83,6 +84,22 @@
             }
     
             return null;
+        }
+
+        public static function getAllByType($nombre){
+            $con = dataBase::connect();
+            $stmt = $con->prepare("SELECT * FROM producto WHERE nombre_categoria = ?");
+            $stmt->bind_param("s", $nombre);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $con->close();
+
+            $listaProductos = [];
+            while($productoDB = $result->fetch_object($tipoProducto)){
+                $listaProductos[] = $productoDB;
+            }
+
+            return $listaProductos;
         }
     }
 ?>

@@ -14,6 +14,11 @@
                 $ensaladas = productoDAO::getEnsaladas();
                 $sopas = productoDAO::getSopas();
                 $cremas = productoDAO::getCremas();
+
+                // $ensaladas = productoDAO::getAllByType('Ensalada');
+                // $sopas = productoDAO::getAllByType('Sopas');
+                // $cremas = productoDAO::getAllByType('Cremas');
+
                 include_once 'vista/carta.php';
             }
         }
