@@ -95,7 +95,8 @@
             <?php if (isset($_SESSION['idCliente']) && isset($idUltimoUsuario) && $_SESSION['idCliente'] == $idUltimoUsuario) : ?>
                 <div class="d-flex justify-content-between contenedorTotal">
                     <?php //cookie::imprimirValorCookie(); ?>
-                    <p>ÚLTIMO PEDIDO: <?php echo $totalUltimoPedido ?> €</p>
+                    <p>ÚLTIMO PEDIDO:</p>
+                    <p><?php echo $totalUltimoPedido ?> €</p>
                 </div>
             <?php endif; ?>
 
