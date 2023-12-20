@@ -30,17 +30,17 @@
                             <p>Nuestra cocina ofrece todo tipo de <br> platos veganos, confeccionados a <br> partir de productos naturales y por <br> las manos de nuestros profesionales.</p>
                         </div>
                     </div>
-                    <img src="img/b1.jpg" class="d-block w-100" alt="...">
+                    <img src="img/b1.jpg" class="d-block w-100" alt="Banner principal">
                   </div>
                   <div class="carousel-item">
                     <div class="parche d-flex justify-content-center align-items-center flex-column">
                         <h1><b>LOS MEJORES <br> MENÚS VEGANOS</b></h1>
-                        <img src="img/decoracionFaja.svg" alt="">
+                        <img src="img/decoracionFaja.svg" alt="Decoración">
                     </div>
-                    <img src="img/b2.jpg" class="d-block w-100" alt="...">
+                    <img src="img/b2.jpg" class="d-block w-100" alt="Banner secundario">
                   </div>
                   <div class="carousel-item">
-                    <img src="img/b3.jpg" class="d-block w-100" alt="...">
+                    <img src="img/b3.jpg" class="d-block w-100" alt="Banner terciario">
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -67,22 +67,22 @@
         <section>
             <div class="row px-5">
                 <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column seleccion">
-                    <img src="img/seleccion1.jpg" alt="">
+                    <img src="img/seleccion1.jpg" alt="Producto de la selección 1">
                     <p>Sopa de miso vegano</p>
                     <p>13,95€</p>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column seleccion">
-                    <img src="img/seleccion2.jpg" alt="">
+                    <img src="img/seleccion2.jpg" alt="Producto de la selección 2">
                     <p>Sopa de miso vegano</p>
                     <p>13,95€</p>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column seleccion">
-                    <img src="img/seleccion3.jpg" alt="">
+                    <img src="img/seleccion3.jpg" alt="Producto de la selección 3">
                     <p>Sopa de miso vegano</p>
                     <p>13,95€</p>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column seleccion">
-                    <img src="img/seleccion4.jpg" alt="">
+                    <img src="img/seleccion4.jpg" alt="Producto de la selección 4">
                     <p>Sopa de miso vegano</p>
                     <p>13,95€</p>
                 </div>
@@ -102,7 +102,7 @@
                     </p>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <img id="cocineros" src="img/cocineros.png" alt="">
+                    <img id="cocineros" src="img/cocineros.png" alt="Dos cocineros trabajando en la Mallorquina">
                 </div>
                 <div class="col-12 col-lg-4">
                     <p class="pt-3 pb-3 textoHistoria">

@@ -63,11 +63,11 @@
 <div class="container-fluid d-flex justify-content-center flex-column footer">
     <div class="row">
       <ul class="list-group list-group-horizontal d-flex justify-content-center listaRedes">
-        <li class="list-group-item"><a href="https://www.facebook.com/lamallorquina?_ga=2.231470303.1713656422.1700120263-2007886821.1700120263"><img src="img/logoFacebook.svg" alt=""></a></li>
-        <li class="list-group-item"><a href="https://www.instagram.com/lamallorquina1947/?_ga=2.28966012.1713656422.1700120263-2007886821.1700120263"><img src="img/logoInsta.svg" alt=""></a></li>
-        <li class="list-group-item"><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Flamallorquina20"><img src="img/logoTwitter.svg" alt=""></a></li>
-        <li class="list-group-item"><a href="https://www.pinterest.es/lamallorquina/?_ga=2.21716987.1713656422.1700120263-2007886821.1700120263"><img src="img/logoPinterest.svg" alt=""></a></li>
-        <li class="list-group-item"><a href="https://www.pinterest.es/lamallorquina/?_ga=2.21716987.1713656422.1700120263-2007886821.1700120263"><img src="img/logoYoutube.svg" alt=""></a></li>
+        <li class="list-group-item"><a href="https://www.facebook.com/lamallorquina?_ga=2.231470303.1713656422.1700120263-2007886821.1700120263"><img src="img/logoFacebook.svg" alt="Logo Facebook"></a></li>
+        <li class="list-group-item"><a href="https://www.instagram.com/lamallorquina1947/?_ga=2.28966012.1713656422.1700120263-2007886821.1700120263"><img src="img/logoInsta.svg" alt="Logo Instagram"></a></li>
+        <li class="list-group-item"><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Flamallorquina20"><img src="img/logoTwitter.svg" alt="Logo Twitter"></a></li>
+        <li class="list-group-item"><a href="https://www.pinterest.es/lamallorquina/?_ga=2.21716987.1713656422.1700120263-2007886821.1700120263"><img src="img/logoPinterest.svg" alt="Logo Pinterest"></a></li>
+        <li class="list-group-item"><a href="https://www.pinterest.es/lamallorquina/?_ga=2.21716987.1713656422.1700120263-2007886821.1700120263"><img src="img/logoYoutube.svg" alt="Logo Youtube"></a></li>
       </ul>
     <div class="row">
       <div class="col-12 col-md-12 col-lg-12 d-flex justify-content-center">

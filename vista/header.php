@@ -37,7 +37,7 @@
     </div>
 
   <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center imgLogo">
-    <a href="<?php URL ?>?controller=cuerpo"><img id="imgLogoPagina" class="img-fluid" src="img/logoMallorquina.svg" alt=""></a>
+    <a href="<?php URL ?>?controller=cuerpo"><img id="imgLogoPagina" class="img-fluid" src="img/logoMallorquina.svg" alt="Logo de la Mallorquina"></a>
   </div>
 
     <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
@@ -45,7 +45,7 @@
         <?php if (isset($_SESSION['accesoAdmin']) && $_SESSION['accesoAdmin'] == true) : ?>
               <li>
                 <a href="<?php URL ?>?controller=tablaAdmin">
-                  <img src="img/logoEditar.svg" alt="">
+                  <img src="img/logoEditar.svg" alt="Botón del administrador">
                 </a>
               </li> 
         <?php endif; ?>
@@ -63,12 +63,12 @@
             </li>
         <?php endif; ?>
         <li id="iconoAccion">
-          <img class="iconoAccion imgLinks" src="img/logoUsuario.svg" alt="">
+          <img class="iconoAccion imgLinks" src="img/logoUsuario.svg" alt="Logo usuario">
         </li>
         <li id="sinBorde"><a id="linkCarrito" href="<?php URL ?>?controller=carrito">CESTA DE LA COMPRA</a></li>
         <li id="iconoAccion">
           <div class="packCarrito">
-            <img class="imgLinks" src="img/logoCarrito.svg" alt="">
+            <img class="imgLinks" src="img/logoCarrito.svg" alt="Logo carrito">
             <?php cantidadesControlador::cantidadCarrito($_SESSION['lista']) ?>
           </div>
         </li>
@@ -98,7 +98,7 @@
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <?php //btnSesion::btnAdmin() ?>
           <?php if (isset($_SESSION['accesoAdmin']) && $_SESSION['accesoAdmin'] == true) : ?>
-            <li><a href="<?= URL ?>?controller=tablaAdmin"> <img src='img/logoEditar.svg'></a></li>
+            <li><a href="<?= URL ?>?controller=tablaAdmin"> <img src='img/logoEditar.svg' alt="Botón del administrador"></a></li>
           <?php endif; ?>
 
           <li class="nav-item">

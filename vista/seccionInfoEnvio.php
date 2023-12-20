@@ -11,19 +11,19 @@
     <section>
         <div class="row py-5 seccionLogosRedes">
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
-                <img src="img/info1.svg" alt="">
+                <img src="img/info1.svg" alt="Información del pago">
                 <p class="parrafo">PAGO<br>100% SEGURO</p>
             </div>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
-                <img src="img/info2.svg" alt="">
+                <img src="img/info2.svg" alt="Envío gratis">
                 <p>ENVÍO GRATIS<br>A PARTIR DE 49,90€</p>
             </div>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
-                <img src="img/info3.svg" alt="">
+                <img src="img/info3.svg" alt="Cambios y devoluciones gratis">
                 <p>CAMBIOS Y DEVOLUCIONES<br>GRATIS</p>
             </div>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
-                <img src="img/info4.svg" alt="">
+                <img src="img/info4.svg" alt="Asesoramiento en tus compras">
                 <p>TE ASESORAMOS<br>EN TU COMPRA</p>
             </div>
         </div>

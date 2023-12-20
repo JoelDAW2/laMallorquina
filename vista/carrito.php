@@ -25,7 +25,7 @@
         <div class="col-12 col-md-4 mt-4 mb-4 px-0 listaProductosAñadidos">
         <?php if (empty($_SESSION['lista'])) : ?>
             <div class="contenedorVacio">
-                <img id="fotoCarritoVacio" class="img-fluid" src="img/logoCarritoCentro.svg" alt="">
+                <img id="fotoCarritoVacio" class="img-fluid" src="img/logoCarritoCentro.svg" alt="Logo del carrito vacío">
                 <p class="textoCarrito">¡No hay productos en tu carrito!</p>
             </div>
         <?php else : ?>
@@ -39,7 +39,7 @@
             <div class="row fila-producto">
                 <div class="col-12 d-flex justify-content-between align-items-center px-0 productoAñadido">
                     <div class="col-5 d-flex align-items-center">
-                        <img class="py-3" src="img/<?php echo $producto->getImg()?>.jpg" alt="">
+                        <img class="py-3" src="img/<?php echo $producto->getImg()?>.jpg" alt="Producto de la carta">
                         <p class="ps-2"><b><?php echo $producto->getNombre()?></b></p>
                     </div>
 
@@ -47,8 +47,8 @@
                         <form class="d-flex align-items-center" action="<?= URL ?>?controller=carrito&action=panelSumaResta" method="post">
                             <input type="hidden" name="cogerIdArray" value="<?php echo $_SESSION['lista'][$key]['id'] ?>">
                             <input type="number" name="" placeholder="<?php echo $_SESSION['lista'][$key]['cantidada'] ?>" min="1">
-                            <input type="submit" name="sumarPlaceholder" src="img/logoSumar.png" value="+" alt="">
-                            <input type="submit" name="restarPlaceholder" src="img/logoRestar.png" value="-" alt="">
+                            <input type="submit" name="sumarPlaceholder" src="img/logoSumar.png" value="+">
+                            <input type="submit" name="restarPlaceholder" src="img/logoRestar.png" value="-">
                         </form>
                         <form id="formularioBasura" action="<?= URL ?>?controller=carrito&action=botonBasura" method="post">
                             <input type="hidden" name="basura" value="<?php echo $producto->getProductoId()?>">
@@ -102,7 +102,7 @@
 
             <div class="d-flex justify-content-between mt-4 codigoPromocional">
                 <h3 class="tituloCodigo">¿TIENE UN CÓDIGO PROMOCIONAL?</h3>
-                <img src="img/flechaCodigo.svg" alt="">
+                <img src="img/flechaCodigo.svg" alt="Logo flecha del código promocional">
             </div>
             <form action="<?= URL ?>?controller=pedido&action=insertarPedido" method="post">
                 <input class="py-3 mt-4" type="submit" name="confirmar" value="CONFIRMAR Y PAGAR PEDIDO">

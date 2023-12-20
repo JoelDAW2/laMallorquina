@@ -22,7 +22,7 @@
             foreach ($ensaladas as $product){      
         ?>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center my-3 px-0 flex-column align-items-center tarjeta">
-                <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="">
+                <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="Producto de la carta">
                 <p><?php echo $product->getNombre()?><br></p>
                 <p><b><?php echo $product->getPrecioUnidad()." €"?></b></p>
                 <div class="row d-flex w-100 acciones">
@@ -47,7 +47,7 @@
             foreach ($sopas as $product){      
         ?>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center my-3 px-0 flex-column align-items-center tarjeta">
-                <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="">
+                <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="Producto de la carta">
                 <p><?php echo $product->getNombre()?><br></p>
                 <p><b><?php echo $product->getPrecioUnidad()." €"?></b></p>
                 <div class="row d-flex w-100 acciones">
@@ -72,7 +72,7 @@
             foreach ($cremas as $product){      
         ?>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center my-3 px-0 flex-column align-items-center tarjeta">
-                <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="">
+                <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="Producto de la carta">
                 <p><?php echo $product->getNombre()?><br></p>
                 <p><b><?php echo $product->getPrecioUnidad()." €"?></b></p>
                 <div class="row d-flex w-100 acciones">
