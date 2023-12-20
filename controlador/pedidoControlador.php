@@ -24,7 +24,7 @@
         }
 
         public static function insertarPedido(){
-            if(isset($_SESSION['idCliente']) && isset($_POST['confirmar'])){
+            if(isset($_SESSION['idCliente'])){
                 $fecha = date('Y-m-d H:i:s');
                 $total = self::calcularTotalInsertarPedido();
                 $clienteId = $_SESSION['idCliente'];
