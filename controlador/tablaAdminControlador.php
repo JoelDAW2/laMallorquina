@@ -7,6 +7,7 @@
                 include_once 'vista/cuerpo.php';
             }else{
                 $products = tablaAdminDAO::getAllProducts();
+                $pedidos = tablaAdminDAO::getAllPedidos();
                 include_once 'vista/tablaAdmin.php';
             }
         }

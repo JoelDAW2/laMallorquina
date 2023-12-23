@@ -16,7 +16,7 @@
 </head>
 <body>
     <div class="table-responsive container-fluid px-5">
-        <h1 class="tituloTabla">TABLA DE PRODUCTOS</h1>
+        <h1 class="tituloTabla">PANEL DE PRODUCTOS</h1>
         <table class="table table-hover">
             <tr>
                 <th>ID</th>
@@ -53,6 +53,39 @@
         <form action="<?= URL ?>?controller=tablaAdmin&action=indexAñadir" method="post">
             <input type="submit" value="AÑADIR">
         </form>
+    </div>
+    <div class="table-responsive container-fluid px-5">
+        <h1 class="tituloTabla">PANEL DE PEDIDOS</h1>
+        <table class="table table-hover">
+            <tr>
+                <th>PEDIDO ID</th>
+                <th>FECHA</th>
+                <th>CLIENTE ID</th>
+                <th>ESTADO</th>
+                <th>PRECIO TOTAL</th>
+            </tr>
+            <?php
+                foreach ($pedidos as $pedido) {      
+            ?>
+            <tr>
+                <td><?php echo $pedido->getPedidoId()?></td>
+                <td><?php echo $pedido->getFecha()?></td>
+                <td><?php echo $pedido->getClienteId()?></td>
+                <td><?php echo $pedido->getEstado()?></td>
+                <td><?php echo $pedido->getPrecioTotal()?></td>
+                <td class="btnsAcciones">
+                    <form action="<?= URL ?>?controller=tablaAdmin&action=indexModificar" method="post">
+                        <input type="hidden" name="escondidoModificar" value="<?= $product->getProductoId()?>">
+                        <input type="submit" name="modificar" value="MODIFICAR">
+                    </form>
+                    <form action="<?= URL ?>?controller=tablaAdmin&action=eliminarProducto" method="post">
+                        <input type="hidden" name="escondido" value="<?= $product->getProductoId()?>">
+                        <input type="submit" name="eliminar" value="ELIMINAR">
+                    </form>
+                </td>
+            </tr>
+            <?php } ?>
+        </table>
     </div>
 
     <!--SCRIPTS BOOTSTRAP-->

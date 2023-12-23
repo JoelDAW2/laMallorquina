@@ -1,4 +1,5 @@
 <?php
+    include_once 'pedido.php';
     class pedidoDAO{
         /*
         public static function insertarPedido($fecha, $clienteId, $total){
@@ -43,6 +44,21 @@
             $insertarPedidoProducto = ("INSERT INTO `pedido_producto`(`pedido_id`, `producto_id`, `cantidad`, `precio_unidad`) VALUES ('$pedido_id','$producto_id', '$cantidad', '$precio_unidad')");
             $con->query($insertarPedidoProducto);
             $con->close();
+        }
+
+        public static function getPedidoById($id) {
+            $con = dataBase::connect();
+            $stmt = $con->prepare("SELECT * FROM pedido WHERE pedido_id = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $con->close();
+    
+            if ($result->num_rows > 0) {
+                return $result->fetch_object('pedido');
+            }
+    
+            return null;
         }
     }
 ?>      

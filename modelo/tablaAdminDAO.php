@@ -1,5 +1,6 @@
 <?php
     include_once 'modelo/producto.php';
+    include_once 'modelo/pedido.php';
     class tablaAdminDAO{
         public static function getAllProducts() {
 
@@ -11,6 +12,17 @@
                     $products[] = $product;
                 }
                 return $products;
+            }
+        }
+
+        public static function getAllPedidos() {
+            $con = dataBase::connect();
+            if($result = $con->query("SELECT * FROM pedido;")) {
+                $pedidos = array();
+                while ($pedido = $result->fetch_object('pedido')) {
+                    $pedidos[] = $pedido;
+                }
+                return $pedidos;
             }
         }
 
