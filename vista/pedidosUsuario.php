@@ -29,7 +29,7 @@
                 <td><?= $miPedido->getPedidoId()?></td>
                 <td><?= $miPedido->getFecha()?></td>
                 <td><?= $miPedido->getEstado()?></td>
-                <td><?= $miPedido->getPrecioTotal()?></td>
+                <td><?= $miPedido->getPrecioTotal()?> €</td>
             </tr>
             <?php } ?>
         </table>

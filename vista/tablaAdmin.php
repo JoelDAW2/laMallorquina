@@ -34,9 +34,9 @@
                 <td><?php echo $product->getProductoId()?></td>
                 <td><?php echo $product->getNombre()?></td>
                 <td><?php echo $product->getDescripcion()?></td>
-                <td><?php echo $product->getPrecioUnidad()." €"?></td>
+                <td><?php echo $product->getPrecioUnidad()?> €</td>
                 <td><?php echo $product->getCategoriaId()?></td>
-                <td><?php echo $product->getImg()?></td>
+                <td><?php echo $product->getImg()?>.jpg</td>
                 <td class="btnsAcciones">
                     <form action="<?= URL ?>?controller=tablaAdmin&action=indexModificar" method="post">
                         <input type="hidden" name="escondidoModificar" value="<?= $product->getProductoId()?>">
@@ -73,7 +73,7 @@
                 <td><?php echo $pedido->getFecha()?></td>
                 <td><?php echo $pedido->getClienteId()?></td>
                 <td><?php echo $pedido->getEstado()?></td>
-                <td><?php echo $pedido->getPrecioTotal()?></td>
+                <td><?php echo $pedido->getPrecioTotal()?> €</td>
                 <td class="btnsAcciones">
                     <form action="<?= URL ?>?controller=tablaAdmin&action=indexModificar" method="post">
                         <input type="hidden" name="escondidoModificar" value="<?= $product->getProductoId()?>">
