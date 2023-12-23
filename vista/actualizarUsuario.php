@@ -13,14 +13,6 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    if (isset($_SESSION['idCliente'])) {
-        echo "--------------";
-        echo "<pre>";
-        print_r($usuario);  // O utiliza echo json_encode($usuario, JSON_PRETTY_PRINT); para formato JSON
-        echo "</pre>";
-    }
-    ?>
     <h1>MODIFICA TU INFORMACIÓN</h1>
     <div class="row d-flex justify-content-center">
         <div class="d-flex justify-content-center px-0 contenedor">
