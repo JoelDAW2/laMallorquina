@@ -12,6 +12,17 @@
             }
         }
 
+        public static function indexPedidoUsuario(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                if(isset($_SESSION['idCliente'])){
+                    $misPedidos = tablaAdminDAO::getAllMisPedidos($_SESSION['idCliente']);
+                }
+                include_once 'vista/pedidosUsuario.php';
+            }
+        }
+
         public static function indexModificar(){
           
             if(!isset($_GET['controller'])){

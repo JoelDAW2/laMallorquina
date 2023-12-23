@@ -26,6 +26,17 @@
             }
         }
 
+        public static function getAllMisPedidos($id) {
+            $con = dataBase::connect();
+            if($result = $con->query("SELECT * FROM pedido WHERE cliente_id = $id;")) {
+                $misPedidos = array();
+                while ($miPedido = $result->fetch_object('pedido')) {
+                    $misPedidos[] = $miPedido;
+                }
+                return $misPedidos;
+            }
+        }
+
         public static function insertar($nombre, $descripcion, $precio, $categoria, $img){
             $con = dataBase::connect();
             $con->query("INSERT INTO producto (`nombre_producto`, `descripcion`, `precio_unidad`, `categoria_id`, `img`) VALUES ('$nombre', '$descripcion', '$precio', '$categoria', '$img')");

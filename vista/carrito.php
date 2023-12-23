@@ -58,6 +58,7 @@
             </div>
             <?php } ?>
         <?php endif; ?>
+            <a href="<?php URL ?>?controller=tablaAdmin&action=indexPedidoUsuario"><p class="mt-3">Mis pedidos</p></a>
             <a href="<?php URL ?>?controller=producto"><p class="mt-3">Seguir comprando</p></a>
         </div>
 
