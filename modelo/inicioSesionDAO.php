@@ -1,5 +1,4 @@
 <?php
-    //include("config/dataBase.php");
     include("modelo/crearSesion.php");
     class inicioSesionDAO{
         public static function iniciarSesion($correo, $contraseña){
@@ -16,10 +15,7 @@
                         header("Location:".URL."?controller=cuerpo"); 
                     }else{
                         header("Location:".URL."?controller=cuerpo"); 
-                        //exit();
                     }
-
-                    //echo $_SESSION['idCliente'];
                     exit();
                 }
             }else{

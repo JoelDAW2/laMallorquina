@@ -98,29 +98,6 @@
 </html>
 
 <?php
-
-    //productoControlador::añadirProductoArray();
-
-    /*
-    if(isset($_POST['añadirCarrito'])){
-        $idAñadir = $_POST['añadirCarrito'];
-        
-        echo $idAñadir;
-        $encontrado = false;
-        
-        for ($i=0; $i < count($_SESSION['lista']); $i++) { 
-            if($_SESSION['lista'][$i]['id'] == $idAñadir){
-                $_SESSION['lista'][$i]['cantidada'] = $_SESSION['lista'][$i]['cantidada']  + 1;
-                $encontrado = true;
-            }
-        }
-
-        if(!$encontrado){
-            array_push($_SESSION['lista'], ['id' => $idAñadir , 'cantidada'=> 1]);
-        }
-    }
-    */
-
     //  $_SESSION['lista']=null;
     echo "<pre>";
     print_r($_SESSION['lista']);

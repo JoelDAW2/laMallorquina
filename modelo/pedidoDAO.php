@@ -1,14 +1,6 @@
 <?php
     include_once 'pedido.php';
     class pedidoDAO{
-        /*
-        public static function insertarPedido($fecha, $clienteId, $total){
-            $con = dataBase::connect();
-            $insertarPedido = ("INSERT INTO `pedido`(`fecha_pedido`, `cliente_id`, `estado`, `precio_total`) VALUES ('$fecha','$clienteId', 'En proceso', '$total')");
-            $con->query($insertarPedido);
-            $con->close();
-        }
-        */
 
         public static function insertarPedido($fecha, $clienteId, $total){
             $con = dataBase::connect();

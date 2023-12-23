@@ -1,7 +1,3 @@
-<?php
-    //include('header.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +8,7 @@
     <title>La Mallorquina | Textil para el Hogar y decoración de calidad</title>
 </head>
 <body>
-    <main class="container-fluid">
-        
+    <main class="container-fluid">     
         <!--CARRUSEL-->
         <section class="row px-3 pb-4">
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -54,7 +49,7 @@
               </div>
         </section>
 
-        <!--BANNER FOTOS BUENO-->
+        <!--BANNER FOTOS-->
         <section>
             <div class="row px-5 fotos">
                 <div class="col-md-8 col-sm-12"></div>
@@ -114,32 +109,7 @@
                 </div>
             </div>
         </section>
-
-        <!--SECCION ENVIOS-->
-        <!--
-        <section>
-            <div class="row px-5 py-5 seccionLogosRedes">
-                <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
-                    <img src="img/info1.svg" alt="">
-                    <p>PAGO<br>100% SEGURO</p>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
-                    <img src="img/info2.svg" alt="">
-                    <p>ENVÍO GRATIS<br>A PARTIR DE 49,90€</p>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
-                    <img src="img/info3.svg" alt="">
-                    <p>CAMBIOS Y DEVOLUCIONES<br>GRATIS</p>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column">
-                    <img src="img/info4.svg" alt="">
-                    <p>TE ASESORAMOS<br>EN TU COMPRA</p>
-                </div>
-            </div>
-        </section>
-        -->
     </main>
-    
     
     <!-- Incluye los archivos JavaScript de Bootstrap 5 (Popper.js es necesario) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>

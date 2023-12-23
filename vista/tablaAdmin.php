@@ -63,6 +63,7 @@
                 <th>CLIENTE ID</th>
                 <th>ESTADO</th>
                 <th>PRECIO TOTAL</th>
+                <th>ACCIONES</th>
             </tr>
             <?php
                 foreach ($pedidos as $pedido) {      

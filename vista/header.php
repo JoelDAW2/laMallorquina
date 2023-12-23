@@ -50,7 +50,6 @@
               </li> 
         <?php endif; ?>
         <li>ES / CA / EN</li>
-        <?php //btnSesion::btnSesion() ?>
         <?php if (isset($_SESSION['idCliente'])) : ?>
             <!-- User is logged in, display "Cerrar Sesión" -->
             <li id="linkSesionHeader">
@@ -96,7 +95,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-          <?php //btnSesion::btnAdmin() ?>
           <?php if (isset($_SESSION['accesoAdmin']) && $_SESSION['accesoAdmin'] == true) : ?>
             <li><a href="<?= URL ?>?controller=tablaAdmin"> <img src='img/logoEditar.svg' alt="Botón del administrador"></a></li>
           <?php endif; ?>
@@ -107,9 +105,6 @@
           <li class="nav-item">
             <a class="nav-link text-dark" href="carta.php">LA CARTA</a>
           </li>
-
-          <?php //btnSesion::btnSesion() ?>
-
           <li class="nav-item">
             <a class="nav-link active" href="carrito.php" aria-disabled="true">CESTA DE LA COMPRA</a>
           </li>
@@ -121,7 +116,5 @@
       </div>
     </div>
   </nav>
-
-   
 </body>
 </html>

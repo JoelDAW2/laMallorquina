@@ -76,11 +76,6 @@
                 tablaAdminDAO::modificar($nombre, $descripcion, $precio, $categoria, $img, $id);
                 header("Location: tablaAdmin.php");
             }
-            /*
-            if(isset($_POST['btnActualizar'])){
-                tablaAdminDAO::modificar($nombre, $descripcion, $precio, $categoria, $img, $id);
-            }
-            */
         }
     }
 ?>

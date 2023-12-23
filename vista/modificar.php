@@ -10,7 +10,6 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="estilos/estiloAccionesAdmin.css">
-    <!--<link rel="stylesheet" href="../estilos/estiloModificar.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -26,7 +25,6 @@
                 <input type="text" name="img" placeholder="Imagen">
                 <input type="submit" name="btnActualizar" value="ACTUALIZAR">
                 <input type="hidden" name="escondidoModificar" id="" value="<?php echo $_POST['escondidoModificar'] ?>">
-                <?php //tablaAdminControlador::procesarFormularioModificar() ?>
             </form>
         </div>
     </div> 

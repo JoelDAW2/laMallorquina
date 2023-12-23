@@ -4,11 +4,7 @@
     include_once 'controlador/pedidoControlador.php';
     include_once 'modelo/productoDAO.php';
     require_once("controlador/sesionesControlador.php");
-    //include("controlador/pedidoProductoControlador.php");
-    include("controlador/cookie.php");
     include('header.php');
-
-    //cookie::crearCookie();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +26,6 @@
             </div>
         <?php else : ?>
             <?php
-                //cantidadesControlador::carritoVacio();
                 foreach ($_SESSION['lista'] as $key => $value) {
                     // Obtener detalles del producto utilizando el ID ($value)
                     $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
@@ -73,13 +68,12 @@
                 foreach ($_SESSION['lista'] as $key => $value) {
                     // Obtener detalles del producto utilizando el ID ($value)
                     $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
-                    //cantidadesControlador::imprimirCantidades($producto, $_SESSION['lista'][$key]['cantidada'], $producto->getPrecioUnidad());
             ?>       
-                    <div id="cProductos" class="d-flex justify-content-between">
-                        <p><?php echo $producto->getNombre()?></p>
-                        <p><?php echo $_SESSION['lista'][$key]['cantidada'] ?></p>
-                        <p><?php echo $producto->getPrecioUnidad() ?></p>
-                    </div>   
+                <div id="cProductos" class="d-flex justify-content-between">
+                    <p><?php echo $producto->getNombre()?></p>
+                    <p><?php echo $_SESSION['lista'][$key]['cantidada'] ?></p>
+                    <p><?php echo $producto->getPrecioUnidad() ?></p>
+                </div>   
             <?php
                 } 
             ?>  
@@ -94,7 +88,6 @@
 
             <?php if (isset($_SESSION['idCliente']) && isset($idUltimoUsuario) && $_SESSION['idCliente'] == $idUltimoUsuario) : ?>
                 <div class="d-flex justify-content-between contenedorTotal">
-                    <?php //cookie::imprimirValorCookie(); ?>
                     <p>ÚLTIMO PEDIDO:</p>
                     <p><?php echo $totalUltimoPedido ?> €</p>
                 </div>
@@ -106,15 +99,9 @@
             </div>
             <form action="<?= URL ?>?controller=pedido&action=insertarPedido" method="post">
                 <input class="py-3 mt-4" type="submit" name="confirmar" value="CONFIRMAR Y PAGAR PEDIDO">
-                <?php
-                    //$confirmar = productoControlador::destruirSesion();
-                ?>
             </form>
         </div>
     </div>
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
@@ -122,20 +109,6 @@
 </html>
 
 <?php
-
-    //pedidoControlador::insertarPedido();
-
-    /*
-    pedidoProductoControlador::insertarPedidoProducto($_SESSION['lista']);
-
-    if(isset($_SESSION['idCliente'])){
-        pedidoControlador::insertarPedido($_SESSION['idCliente']);  
-        //echo ("si");
-    }else{
-        //echo ("no");
-    }
-    */
-
     include('footer.php');
 ?>
 

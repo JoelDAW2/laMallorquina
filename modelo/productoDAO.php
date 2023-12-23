@@ -5,52 +5,6 @@
     include_once 'crema.php';
 
     class productoDAO {
-        /*
-        public static function getEnsaladas() {
-
-            $con = dataBase::connect();
-
-            if($result = $con->query("SELECT * FROM producto WHERE categoria_id = 1;")) {
-                $products = array();
-                while ($product = $result->fetch_object('producto')) {
-                    $products[] = $product;
-                }
-                return $products;
-            }
-        }
-
-        public static function getSopas() {
-
-            $con = dataBase::connect();
-
-            if($result = $con->query("SELECT * FROM producto WHERE categoria_id = 2;")) {
-                $products = array();
-                while ($product = $result->fetch_object('producto')) {
-                    $products[] = $product;
-                }
-                return $products;
-            }
-        }
-
-        public static function getCremas() {
-
-            $con = dataBase::connect();
-
-            if($result = $con->query("SELECT * FROM producto WHERE categoria_id = 3;")) {
-                $products = array();
-                while ($product = $result->fetch_object('producto')) {
-                    $products[] = $product;
-                }
-                return $products;
-            }
-        }
-        */
-
-
-
-
-
-
 
         public static function insertar($nombre, $descripcion, $precio, $categoria, $img){
             $con = dataBase::connect();
@@ -66,13 +20,6 @@
             $con = dataBase::connect();
             $con->query("UPDATE producto SET `nombre_producto` = $nombre, `descripcion` = $descripcion, `precio_unidad` = $precio,`categoria_id` = $categoria, `img` = $img  WHERE producto_id = $id");
         }
-
-
-
-
-
-
-
 
         public static function getProductoById($id) {
             $con = dataBase::connect();
