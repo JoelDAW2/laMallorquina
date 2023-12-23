@@ -55,15 +55,20 @@
             <li id="linkSesionHeader">
                 <a href="controlador/cerrarSesionControlador.php">CERRAR SESIÓN</a>
             </li>
+            <li id="iconoAccion">
+              <a href="<?php URL ?>?controller=actualizarUsuario&action=index">
+                <img class="iconoAccion imgLinks" src="img/logoUsuario.svg" alt="Logo usuario">
+              </a>
+            </li>
         <?php else : ?>
             <!-- User is not logged in, display "Iniciar Sesión" -->
             <li id="linkSesionHeader">
                 <a href="<?= URL ?>?controller=inicioSesion&action=index">INICIAR SESIÓN</a>
             </li>
+            <li id="iconoAccion">
+                <img class="iconoAccion imgLinks" src="img/logoUsuario.svg" alt="Logo usuario">
+            </li>
         <?php endif; ?>
-        <li id="iconoAccion">
-          <img class="iconoAccion imgLinks" src="img/logoUsuario.svg" alt="Logo usuario">
-        </li>
         <li id="sinBorde"><a id="linkCarrito" href="<?php URL ?>?controller=carrito">CESTA DE LA COMPRA</a></li>
         <li id="iconoAccion">
           <div class="packCarrito">
