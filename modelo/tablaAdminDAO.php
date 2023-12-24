@@ -51,6 +51,11 @@
             $con = dataBase::connect();
             $con->query("UPDATE `producto` SET `nombre_producto` = '$nombre', `descripcion` = '$descripcion', `precio_unidad` = '$precio', `categoria_id` = '$categoria', `img` = '$img' WHERE `producto_id` = $id");
         }
+
+        public static function deletePedido($id){
+            $con = dataBase::connect();
+            $con->query("DELETE FROM `pedido` WHERE `pedido_id` = $id;");
+        }
         
     }
 ?>

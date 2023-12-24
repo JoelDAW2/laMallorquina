@@ -75,13 +75,13 @@
                 <td><?php echo $pedido->getEstado()?></td>
                 <td><?php echo $pedido->getPrecioTotal()?> €</td>
                 <td class="btnsAcciones">
-                    <form action="<?= URL ?>?controller=tablaAdmin&action=indexModificar" method="post">
-                        <input type="hidden" name="escondidoModificar" value="<?= $product->getProductoId()?>">
-                        <input type="submit" name="modificar" value="MODIFICAR">
+                    <form action="<?= URL ?>?controller=&action=" method="post">
+                        <input type="hidden" name="escondidoModificarPedido" value="<?= $pedido->getPedidoId()?>">
+                        <input type="submit" name="modificarPedido" value="MODIFICAR">
                     </form>
-                    <form action="<?= URL ?>?controller=tablaAdmin&action=eliminarProducto" method="post">
-                        <input type="hidden" name="escondido" value="<?= $product->getProductoId()?>">
-                        <input type="submit" name="eliminar" value="ELIMINAR">
+                    <form action="<?= URL ?>?controller=tablaAdmin&action=eliminarPedido" method="post">
+                        <input type="hidden" name="escondidoPedido" value="<?= $pedido->getPedidoId()?>">
+                        <input type="submit" name="eliminarPedido" value="ELIMINAR">
                     </form>
                 </td>
             </tr>

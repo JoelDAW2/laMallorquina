@@ -75,11 +75,9 @@
         }
     
         public static function eliminarProducto(){
-            if(isset($_POST['eliminar'])){
                 $id = $_POST['escondido'];
                 tablaAdminDAO::eliminar($id);
                 header("Location:".URL."?controller=tablaAdmin");
-            }
         }
     
         public static function modificarProducto($nombre, $descripcion, $precio, $categoria, $img, $id){
@@ -87,6 +85,12 @@
                 tablaAdminDAO::modificar($nombre, $descripcion, $precio, $categoria, $img, $id);
                 header("Location: tablaAdmin.php");
             }
+        }
+
+        public static function eliminarPedido(){
+            $id = $_POST['escondidoPedido'];
+            tablaAdminDAO::deletePedido($id);
+            header("Location:".URL."?controller=tablaAdmin");
         }
     }
 ?>
