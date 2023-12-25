@@ -16,17 +16,22 @@
                 $nombre = $_POST['nombre'];
                 $apellido = $_POST['apellido'];
                 $correo_electronico = $_POST['email'];
-                $rol = 'cliente';
+                $rol = 'Cliente';
                 $contraseña = $_POST['contraseña'];
+                $contraseñaCifrada = password_hash($contraseña, PASSWORD_DEFAULT);
                 if(isset($_POST['sr'])){
-                    $genero = 'hombre';
+                    $genero = 'Hombre';
                 }else if(isset($_POST['sra'])){
-                    $genero = 'mujer';
+                    $genero = 'Mujer';
                 }else{
                     $genero = null;
                 }
-                registroDAO::insertarCliente($nombre, $apellido, $genero, $correo_electronico, $rol, $contraseña);
-                header("Location:".URL."?controller=inicioSesion");
+                $registroUser = registroDAO::insertarCliente($nombre, $apellido, $genero, $correo_electronico, $rol, $contraseñaCifrada);
+                if($registroUser){
+                    header("Location:".URL."?controller=registro");
+                }else{
+                    header("Location:".URL."?controller=inicioSesion");
+                }
             }  
         }
     }

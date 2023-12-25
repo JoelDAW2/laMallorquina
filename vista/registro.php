@@ -24,7 +24,7 @@
                     <input type="radio" name="sr">
                     <label for="sr">Sr.</label>
                     <input type="radio" name="sra">
-                    <label for="sr">Sra.</label>
+                    <label for="sra">Sra.</label>
                     <input type="password" name="contraseña" placeholder="Contraseña" required>
                     <span class="d-flex align-top infoFinal">
                         <input type="radio" name="suscribirse" required>
