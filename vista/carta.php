@@ -98,13 +98,6 @@
 </html>
 
 <?php
-    //  $_SESSION['lista']=null;
-    echo "<pre>";
-    print_r($_SESSION['lista']);
-    echo "</pre>";
-?>
-
-<?php
     include("seccionInfoEnvio.php");
     include('footer.php');
 ?>
