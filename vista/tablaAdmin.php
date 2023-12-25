@@ -31,12 +31,12 @@
                 foreach ($products as $product) {      
             ?>
             <tr>
-                <td><?php echo $product->getProductoId()?></td>
-                <td><?php echo $product->getNombre()?></td>
-                <td><?php echo $product->getDescripcion()?></td>
-                <td><?php echo $product->getPrecioUnidad()?> €</td>
-                <td><?php echo $product->getCategoriaId()?></td>
-                <td><?php echo $product->getImg()?>.jpg</td>
+                <td><?= $product->getProductoId()?></td>
+                <td><?= $product->getNombre()?></td>
+                <td><?= $product->getDescripcion()?></td>
+                <td><?= $product->getPrecioUnidad()?> €</td>
+                <td><?= $product->getCategoriaId()?></td>
+                <td><?= $product->getImg()?>.jpg</td>
                 <td class="btnsAcciones">
                     <form action="<?= URL ?>?controller=tablaAdmin&action=indexModificar" method="post">
                         <input type="hidden" name="escondidoModificar" value="<?= $product->getProductoId()?>">
@@ -69,11 +69,11 @@
                 foreach ($pedidos as $pedido) {      
             ?>
             <tr>
-                <td><?php echo $pedido->getPedidoId()?></td>
-                <td><?php echo $pedido->getFecha()?></td>
-                <td><?php echo $pedido->getClienteId()?></td>
-                <td><?php echo $pedido->getEstado()?></td>
-                <td><?php echo $pedido->getPrecioTotal()?> €</td>
+                <td><?= $pedido->getPedidoId()?></td>
+                <td><?= $pedido->getFecha()?></td>
+                <td><?= $pedido->getClienteId()?></td>
+                <td><?= $pedido->getEstado()?></td>
+                <td><?= $pedido->getPrecioTotal()?> €</td>
                 <td class="btnsAcciones">
                     <form action="<?= URL ?>?controller=&action=" method="post">
                         <input type="hidden" name="escondidoModificarPedido" value="<?= $pedido->getPedidoId()?>">

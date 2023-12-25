@@ -34,25 +34,25 @@
             <div class="row fila-producto">
                 <div class="col-12 d-flex justify-content-between align-items-center px-0 productoAñadido">
                     <div class="col-5 d-flex align-items-center">
-                        <img class="py-3" src="img/<?php echo $producto->getImg()?>.jpg" alt="Producto de la carta">
-                        <p class="ps-2"><b><?php echo $producto->getNombre()?></b></p>
+                        <img class="py-3" src="img/<?= $producto->getImg()?>.jpg" alt="Producto de la carta">
+                        <p class="ps-2"><b><?= $producto->getNombre()?></b></p>
                     </div>
 
                     <div class="col-5 d-flex justify-content-end">
                         <form class="d-flex align-items-center" action="<?= URL ?>?controller=carrito&action=panelSumaResta" method="post">
-                            <input type="hidden" name="cogerIdArray" value="<?php echo $_SESSION['lista'][$key]['id'] ?>">
-                            <input type="number" name="" placeholder="<?php echo $_SESSION['lista'][$key]['cantidada'] ?>" min="1">
+                            <input type="hidden" name="cogerIdArray" value="<?= $_SESSION['lista'][$key]['id'] ?>">
+                            <input type="number" name="" placeholder="<?= $_SESSION['lista'][$key]['cantidada'] ?>" min="1">
                             <input type="submit" name="sumarPlaceholder" src="img/logoSumar.png" value="+">
                             <input type="submit" name="restarPlaceholder" src="img/logoRestar.png" value="-">
                         </form>
                         <form id="formularioBasura" action="<?= URL ?>?controller=carrito&action=botonBasura" method="post">
-                            <input type="hidden" name="basura" value="<?php echo $producto->getProductoId()?>">
+                            <input type="hidden" name="basura" value="<?= $producto->getProductoId()?>">
                             <input type="image" src="img/logoBasura.png" name="productoBasura" >
                         </form>
                     </div>
 
                     <div class="col-2 divPrecioProducto">
-                        <?php echo $producto->getPrecioUnidad()." €"?>
+                        <?= $producto->getPrecioUnidad()." €"?>
                     </div>
                 </div>
             </div>
@@ -71,9 +71,9 @@
                     $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
             ?>       
                 <div id="cProductos" class="d-flex justify-content-between">
-                    <p><?php echo $producto->getNombre()?></p>
-                    <p><?php echo $_SESSION['lista'][$key]['cantidada'] ?></p>
-                    <p><?php echo $producto->getPrecioUnidad() ?></p>
+                    <p><?= $producto->getNombre()?></p>
+                    <p><?= $_SESSION['lista'][$key]['cantidada'] ?></p>
+                    <p><?= $producto->getPrecioUnidad() ?></p>
                 </div>   
             <?php
                 } 
@@ -90,7 +90,7 @@
             <?php if (isset($_SESSION['idCliente']) && isset($idUltimoUsuario) && $_SESSION['idCliente'] == $idUltimoUsuario) : ?>
                 <div class="d-flex justify-content-between contenedorTotal">
                     <p>ÚLTIMO PEDIDO:</p>
-                    <p><?php echo $totalUltimoPedido ?> €</p>
+                    <p><?= $totalUltimoPedido ?> €</p>
                 </div>
             <?php endif; ?>
 

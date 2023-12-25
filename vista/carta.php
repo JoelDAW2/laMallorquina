@@ -22,9 +22,9 @@
             foreach ($ensaladas as $product){      
         ?>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center my-3 px-0 flex-column align-items-center tarjeta">
-                <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="Producto de la carta">
-                <p><?php echo $product->getNombre()?><br></p>
-                <p><b><?php echo $product->getPrecioUnidad()." €"?></b></p>
+                <img class="imgProducto" src="img/<?= $product->getImg()?>.jpg" alt="Producto de la carta">
+                <p><?= $product->getNombre()?><br></p>
+                <p><b><?= $product->getPrecioUnidad()." €"?></b></p>
                 <div class="row d-flex w-100 acciones">
                     <div class="col-6 d-flex p-0 justify-content-center accion">
                         <form class="w-100" action="" method="post">
@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-6 d-flex p-0 justify-content-center accion">
                         <form class="w-100" action="<?= URL ?>?controller=producto&action=añadirProductoArray" method="post">
-                            <input id="btnCesta" type="submit" name="añadirCarrito" value="<?php echo $product->getProductoId()?>">                            
+                            <input id="btnCesta" type="submit" name="añadirCarrito" value="<?= $product->getProductoId()?>">                            
                         </form>
                     </div>
                 </div>
@@ -47,9 +47,9 @@
             foreach ($sopas as $product){      
         ?>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center my-3 px-0 flex-column align-items-center tarjeta">
-                <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="Producto de la carta">
-                <p><?php echo $product->getNombre()?><br></p>
-                <p><b><?php echo $product->getPrecioUnidad()." €"?></b></p>
+                <img class="imgProducto" src="img/<?= $product->getImg()?>.jpg" alt="Producto de la carta">
+                <p><?= $product->getNombre()?><br></p>
+                <p><b><?= $product->getPrecioUnidad()." €"?></b></p>
                 <div class="row d-flex w-100 acciones">
                     <div class="col-6 d-flex p-0 justify-content-center accion">
                         <form class="w-100" action="" method="post">
@@ -58,7 +58,7 @@
                     </div>
                     <div class="col-6 d-flex p-0 justify-content-center accion">
                         <form class="w-100" action="<?= URL ?>?controller=producto&action=añadirProductoArray" method="post">
-                            <input id="btnCesta" type="submit" name="añadirCarrito" value="<?php echo $product->getProductoId()?>">                            
+                            <input id="btnCesta" type="submit" name="añadirCarrito" value="<?= $product->getProductoId()?>">                            
                         </form>
                     </div>
                 </div>
@@ -72,9 +72,9 @@
             foreach ($cremas as $product){      
         ?>
             <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center my-3 px-0 flex-column align-items-center tarjeta">
-                <img class="imgProducto" src="img/<?php echo $product->getImg()?>.jpg" alt="Producto de la carta">
-                <p><?php echo $product->getNombre()?><br></p>
-                <p><b><?php echo $product->getPrecioUnidad()." €"?></b></p>
+                <img class="imgProducto" src="img/<?= $product->getImg()?>.jpg" alt="Producto de la carta">
+                <p><?= $product->getNombre()?><br></p>
+                <p><b><?= $product->getPrecioUnidad()." €"?></b></p>
                 <div class="row d-flex w-100 acciones">
                     <div class="col-6 d-flex p-0 justify-content-center accion">
                         <form class="w-100" action="" method="post">
@@ -83,7 +83,7 @@
                     </div>
                     <div class="col-6 d-flex p-0 justify-content-center accion">
                         <form class="w-100" action="<?= URL ?>?controller=producto&action=añadirProductoArray" method="post">
-                            <input id="btnCesta" type="submit" name="añadirCarrito" value="<?php echo $product->getProductoId()?>">                            
+                            <input id="btnCesta" type="submit" name="añadirCarrito" value="<?= $product->getProductoId()?>">                            
                         </form>
                     </div>
                 </div>
