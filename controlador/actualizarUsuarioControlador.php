@@ -18,15 +18,16 @@
                $apellido = $_POST['apellido'];
                $correo = $_POST['email'];
                $contraseña = $_POST['contraseña'];
+               $nuevaContraEncriptada = password_hash($contraseña, PASSWORD_DEFAULT);
                if(isset($_POST['sr'])){
-                    $genero = "hombre";
+                    $genero = "Hombre";
                }else if(isset($_POST['sra'])){
-                    $genero = "mujer";
+                    $genero = "Mujer";
                }else{
                     $genero = null;
                }
                $id = $_SESSION['idCliente'];
-               actualizarUsuarioDAO::actualizarUsuario($nombre, $apellido, $correo, $genero, $contraseña, $id);
+               actualizarUsuarioDAO::actualizarUsuario($nombre, $apellido, $correo, $genero, $nuevaContraEncriptada, $id);
             }
             header("Location:".URL."?controller=inicioSesion");          
     }

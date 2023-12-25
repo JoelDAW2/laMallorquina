@@ -24,7 +24,7 @@
                     <label for="sr">Sr.</label>
                 <input type="radio" name="sra">
                     <label for="sra">Sra.</label>
-                    <input type="password" name="contraseña" value="<?= $usuario->getContraseña()?> placeholder="Nueva contraseña">
+                    <input type="password" name="contraseña" value="<?= $usuario->getContraseña()?>" placeholder="Nueva contraseña">
                 <input type="submit" name="btnActualizarDatos" value="ACTUALIZAR DATOS">
             </form>
         </div>
