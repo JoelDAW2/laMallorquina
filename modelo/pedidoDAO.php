@@ -52,5 +52,31 @@
     
             return null;
         }
+
+        public static function ultimoPedido($id){
+            $con = dataBase::connect();
+            $stmt = $con->prepare("SELECT producto_id, cantidad FROM pedido_producto WHERE pedido_id = ?");
+            
+            if ($stmt === false) {
+                die("Error en la preparación de la consulta: " . $con->error);
+            }
+        
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        
+            if (mysqli_num_rows($result) > 0) {
+                $key = 0;
+                while ($fila = mysqli_fetch_assoc($result)) {
+                    $producto_id = $fila["producto_id"];
+                    $cantidad = $fila["cantidad"];
+                    $_SESSION['lista'][] = array('id' => $producto_id, 'cantidada' => $cantidad);
+                }
+            }
+        
+            $stmt->close();
+            $con->close();
+        }
+        
     }
 ?>      

@@ -4,10 +4,16 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                $idUltimoPedido = null;
                 if(isset($_COOKIE['totalUltimoPedido'])){
                     $valoresCookie = explode(",", $_COOKIE["totalUltimoPedido"]);
+                    $idUltimoPedido = $valoresCookie[2];
                     $totalUltimoPedido = $valoresCookie[1];
                     $idUltimoUsuario = $valoresCookie[0];
+
+                    if(isset($_POST['btnCargar'])){
+                        self::cargarUltimoPedido($idUltimoPedido);
+                    }
                 }                
                 $cantidadTotal = carritoControlador::calcularTotal();
                 include_once 'vista/carrito.php';
@@ -68,6 +74,23 @@
                 self::sumarPlaceholder();
             }else if(isset($_POST['restarPlaceholder'])){
                 self::restarPlaceholder();
+            }
+        }
+
+        public static function cargarUltimoPedido(){
+            if(isset($_COOKIE['totalUltimoPedido']) && isset($_SESSION['lista'])){
+                foreach ($_SESSION['lista'] as $clave => $subArray) {
+                    if (is_array($subArray)) {
+                        unset($_SESSION['lista'][$clave]);
+                    }
+                }
+                
+                if(empty($_SESSION['lista'])){
+                    $elementosCookie = explode(",", $_COOKIE["totalUltimoPedido"]);
+                    $lastPedido = $elementosCookie[2];
+                    pedidoDAO::ultimoPedido($lastPedido);
+                    header("Location:".URL."?controller=carrito");
+                }
             }
         }
         

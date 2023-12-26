@@ -86,9 +86,11 @@
                 <p><b>TOTAL</b> (IVA Incluido):</p>
                 <p><?= $cantidadTotal ?> €</p>
             </div>
-
-            <?php if (isset($_SESSION['idCliente']) && isset($idUltimoUsuario) && $_SESSION['idCliente'] == $idUltimoUsuario) : ?>
+            <?php if (isset($_SESSION['idCliente']) && isset($idUltimoUsuario) && $_SESSION['idCliente'] == $idUltimoUsuario && isset($_COOKIE['totalUltimoPedido'])) : ?>
                 <div class="d-flex justify-content-between contenedorTotal">
+                    <form action="<?= URL ?>?controller=carrito&action=cargarUltimoPedido" method="post">
+                        <input type="submit" name="btnCargar" value="CARGAR">
+                    </form>
                     <p>ÚLTIMO PEDIDO:</p>
                     <p><?= $totalUltimoPedido ?> €</p>
                 </div>

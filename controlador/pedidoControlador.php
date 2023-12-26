@@ -39,7 +39,7 @@
                 }
 
                 if(!isset($_COOKIE['totalUltimoPedido'])){
-                    setcookie("totalUltimoPedido", $clienteId . "," . $total, time() + 60);
+                    setcookie("totalUltimoPedido", $clienteId . "," . $total . "," . $pedido_id, time() + 120);
                 }
                 
                 header("Location:".URL."?controller=cuerpo");
