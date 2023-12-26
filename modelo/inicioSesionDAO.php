@@ -1,5 +1,4 @@
 <?php
-    include("modelo/crearSesion.php");
     class inicioSesionDAO{
         public static function iniciarSesion($correo, $contraseña){
             $con = dataBase::connect();

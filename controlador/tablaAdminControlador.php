@@ -41,10 +41,12 @@
             }
         }
 
+        /*
         public static function obtenerProductos() {
             tablaAdminDAO::getAllProducts();
         }
-
+        */
+        
         public static function procesarFormularioInsertar(){
             tablaAdminControlador::insertarProducto(
                 $_POST['nombre'],

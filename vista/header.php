@@ -1,8 +1,7 @@
 <?php
-  require_once("controlador/sesionesControlador.php");
+  //require_once("controlador/sesionesControlador.php");
   include("controlador/cantidadesControlador.php");
-  sesionesControlador::crearSesion();
-  include("controlador/btnSesion.php");
+  //sesionesControlador::crearSesion();
 ?>
 
 <!DOCTYPE html>
