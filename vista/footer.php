@@ -19,7 +19,7 @@
       </ul>
     <div class="row">
       <div class="col-12 col-md-12 col-lg-12 d-flex justify-content-center">
-        <p>Copyright © 2023 | Joel Cosp</p>
+        <p class="copyRight">Copyright © 2023 | Joel Cosp</p>
       </div>
     </div>  
   </div>

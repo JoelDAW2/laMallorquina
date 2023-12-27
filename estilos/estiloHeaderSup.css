@@ -7,7 +7,7 @@ body{
     font-family: 'brandonRegular', sans-serif !important;
 }
 
-#linkSesionHeader{
+li a{
     color: black;
     text-decoration: none;
 }
@@ -23,6 +23,12 @@ body{
     right: 0;
     z-index: 9999;
     font-size: 81% !important;
+}
+
+/*---LOGO MALLORQUINA---*/
+
+.imgLogo{
+    max-width: 225px;
 }
 
 .filaMenuInfo{
@@ -59,40 +65,28 @@ li{
     max-width: 225px;
 }
 
-#headerInput{
-    padding: 5px 10px;
-    border: none;
-    background-color: transparent;
-}
-
 #linkCarrito{
     text-decoration: none;
     color: black;
 }
 
-#sinBorde{
+#sinBordeDerecho, #sinBordeIzquierdo{
     border: none;
 }
 
-#iconoAccion{
+.iconoAccion{
     padding: 0;
     display: flex;
     align-items: center;
     border: 0;
 }
 
-#iconoAccion:nth-child(3){
+.iconoAccion:nth-child(3){
     padding-right: 10px;
 }
 
-#iconoAccion:nth-child(5){
+.iconoAccion:nth-child(5){
     border: 0;
-}
-
-/*---LOGO MALLORQUINA---*/
-
-.imgLogo{
-    max-width: 225px;
 }
 
 /*---NAV INFERIOR---*/
@@ -112,7 +106,7 @@ li{
     color: #777777;
 }
 
-/*---PARRADO CANTIDAD CARRITO---*/
+/*---PARRAFO CANTIDAD CARRITO---*/
 
 .packCarrito{
     position: relative;

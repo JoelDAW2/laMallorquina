@@ -25,12 +25,12 @@ li:hover{
     cursor: pointer;
 }
 
-li img{
+.list-group-item img{
     max-width: 18px;
 }
 
-p{
-    font-size: 100% !important;
+.copyRight{
+    font-size: 100%;
     margin: 0;
     padding: 0;
 }

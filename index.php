@@ -9,6 +9,7 @@
     include("controlador/tablaAdminControlador.php");
     include("controlador/pedidoControlador.php");
     include("controlador/actualizarUsuarioControlador.php");
+    include("controlador/panelControlControlador.php");
     
     sesionesControlador::crearSesion();
 

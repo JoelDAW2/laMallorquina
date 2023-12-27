@@ -31,7 +31,7 @@
         <li>ATT. AL CLIENTE <b> 673 482 995</b></li>
         <li>CONTACTO</li>
         <li>TARJETA REGALO</li>
-        <li id="sinBorde">TIENDAS</li>
+        <li id="sinBordeDerecho">TIENDAS</li>
       </ul>
     </div>
 
@@ -52,11 +52,11 @@
         <?php if (isset($_SESSION['idCliente'])) : ?>
             <!-- User is logged in, display "Cerrar Sesión" -->
             <li id="linkSesionHeader">
-                <a href="controlador/cerrarSesionControlador.php">CERRAR SESIÓN</a>
+                <a href="<?php URL ?>?controller=panelControl">DENTRO</a>
             </li>
-            <li id="iconoAccion">
+            <li class="iconoAccion">
               <a href="<?php URL ?>?controller=actualizarUsuario&action=index">
-                <img class="iconoAccion imgLinks" src="img/logoUsuario.svg" alt="Logo usuario">
+                <img imgLinks" src="img/logoUsuario.svg" alt="Logo usuario">
               </a>
             </li>
         <?php else : ?>
@@ -64,12 +64,12 @@
             <li id="linkSesionHeader">
                 <a href="<?= URL ?>?controller=inicioSesion&action=index">INICIAR SESIÓN</a>
             </li>
-            <li id="iconoAccion">
-                <img class="iconoAccion imgLinks" src="img/logoUsuario.svg" alt="Logo usuario">
+            <li class="iconoAccion">
+                <img imgLinks" src="img/logoUsuario.svg" alt="Logo usuario">
             </li>
         <?php endif; ?>
-        <li id="sinBorde"><a id="linkCarrito" href="<?php URL ?>?controller=carrito">CESTA DE LA COMPRA</a></li>
-        <li id="iconoAccion">
+        <li id="sinBordeIzquierdo"><a id="linkCarrito" href="<?php URL ?>?controller=carrito">CESTA DE LA COMPRA</a></li>
+        <li class="iconoAccion">
           <div class="packCarrito">
             <img class="imgLinks" src="img/logoCarrito.svg" alt="Logo carrito">
             <?php cantidadesControlador::cantidadCarrito($_SESSION['lista']) ?>
