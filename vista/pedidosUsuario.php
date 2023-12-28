@@ -49,7 +49,7 @@
         <h6>Estos son los pedidos que ha realizado desde que creó su cuenta</h6>
     </section>
     <section class="seccionLinks d-flex">
-        <a href="<?php URL ?>?controller=panelControl">﹤ Volver a su cuenta</a>
+        <a href="<?php URL ?>?controller=panelControl">◄ Volver a su cuenta</a>
         <a href="<?php URL ?>?controller=cuerpo">🏠 Inicio</a>
     </section>
 

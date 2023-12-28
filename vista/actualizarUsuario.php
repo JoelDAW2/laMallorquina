@@ -46,14 +46,14 @@
                     <input type="radio" name="sra">
                         <label for="sra">Sra.</label>
                 </div>
-                <input type="password" name="contraseña" value="<?= $usuario->getContraseña()?>" placeholder="Nueva contraseña">
+                <input type="password" name="contraseña" placeholder="Nueva contraseña">
                 <input type="password" name="nuevaContraseña" value="<?= $usuario->getContraseña()?>" placeholder="Nueva contraseña">
                 <input type="submit" name="btnActualizarDatos" value="ACTUALIZAR DATOS">
             </form>
         </div>
     </section>
     <section class="seccionLinks d-flex">
-        <a href="<?php URL ?>?controller=panelControl">﹤ Volver a su cuenta</a>
+        <a href="<?php URL ?>?controller=panelControl">◄ Volver a su cuenta</a>
         <a href="<?php URL ?>?controller=cuerpo">🏠 Inicio</a>
     </section>
 
