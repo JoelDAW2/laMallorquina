@@ -39,11 +39,11 @@
                     </div>
 
                     <div class="col-5 d-flex justify-content-end">
-                        <form class="d-flex align-items-center" action="<?= URL ?>?controller=carrito&action=panelSumaResta" method="post">
+                        <form class="panelCarrito" class="d-flex align-items-center" action="<?= URL ?>?controller=carrito&action=panelSumaResta" method="post">
                             <input type="hidden" name="cogerIdArray" value="<?= $_SESSION['lista'][$key]['id'] ?>">
                             <input type="number" name="" placeholder="<?= $_SESSION['lista'][$key]['cantidada'] ?>" min="1">
-                            <input type="submit" name="sumarPlaceholder" src="img/logoSumar.png" value="+">
-                            <input type="submit" name="restarPlaceholder" src="img/logoRestar.png" value="-">
+                            <input id="sumar" type="submit" name="sumarPlaceholder" value="+">
+                            <input id="restar" type="submit" name="restarPlaceholder" value="-">
                         </form>
                         <form id="formularioBasura" action="<?= URL ?>?controller=carrito&action=botonBasura" method="post">
                             <input type="hidden" name="basura" value="<?= $producto->getProductoId()?>">

@@ -60,6 +60,14 @@ input[type=number] {
   text-align: center;
 }
 
+.panelCarrito input[name="sumarPlaceholder"], .panelCarrito input[name="restarPlaceholder"]{
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+}
+
 #formularioBasura{
     display: flex;
     align-items: center;

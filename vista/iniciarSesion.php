@@ -1,5 +1,5 @@
 <?php
-    //session_start();
+    include('header.php');
 ?>
 
 <!DOCTYPE html>
@@ -40,4 +40,7 @@
 </html>
 
 <?php
+    include("seccionInfoEnvio.php");
+    include('footer.php');
 ?>
+
