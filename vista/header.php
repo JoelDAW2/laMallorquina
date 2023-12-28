@@ -52,7 +52,7 @@
         <?php if (isset($_SESSION['idCliente'])) : ?>
             <!-- User is logged in, display "Cerrar Sesión" -->
             <li id="linkSesionHeader">
-                <a href="<?php URL ?>?controller=panelControl">DENTRO</a>
+                <a href="<?php URL ?>?controller=panelControl">BIENVENIDO</a>
             </li>
             <li class="iconoAccion">
               <a href="<?php URL ?>?controller=actualizarUsuario&action=index">
