@@ -6,8 +6,8 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
-                $products = tablaAdminDAO::getAllProducts();
-                $pedidos = tablaAdminDAO::getAllPedidos();
+                //$products = tablaAdminDAO::getAllProducts();
+                //$pedidos = tablaAdminDAO::getAllPedidos();
                 include_once 'vista/tablaAdmin.php';
             }
         }
@@ -41,11 +41,23 @@
             }
         }
 
-        /*
-        public static function obtenerProductos() {
-            tablaAdminDAO::getAllProducts();
+        public static function indexPanelPedidosAdmin(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                $pedidos = tablaAdminDAO::getAllPedidos();
+                include_once 'vista/panelPedidosAdmin.php';
+            }
         }
-        */
+
+        public static function indexPanelProductosAdmin(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                $products = tablaAdminDAO::getAllProducts();
+                include_once 'vista/panelProductosAdmin.php';
+            }
+        }
         
         public static function procesarFormularioInsertar(){
             tablaAdminControlador::insertarProducto(
@@ -72,14 +84,14 @@
         public static function insertarProducto($nombre, $descripcion, $precio, $categoria, $img){
             if(isset($_POST['btnInsertar'])  && isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['precioUnitario']) && isset($_POST['categoria']) && isset($_POST['img'])){
                 tablaAdminDAO::insertar($nombre, $descripcion, $precio, $categoria, $img);
-                header("Location:".URL."?controller=tablaAdmin");
+                header("Location:".URL."?controller=tablaAdmin&action=indexPanelProductosAdmin");
             }
         }
     
         public static function eliminarProducto(){
                 $id = $_POST['escondido'];
                 tablaAdminDAO::eliminar($id);
-                header("Location:".URL."?controller=tablaAdmin");
+                header("Location:".URL."?controller=tablaAdmin&action=indexPanelProductosAdmin");
         }
     
         public static function modificarProducto($nombre, $descripcion, $precio, $categoria, $img, $id){
@@ -92,7 +104,7 @@
         public static function eliminarPedido(){
             $id = $_POST['escondidoPedido'];
             tablaAdminDAO::deletePedido($id);
-            header("Location:".URL."?controller=tablaAdmin");
+            header("Location:".URL."?controller=tablaAdmin&action=indexPanelPedidosAdmin");
         }
     }
 ?>
