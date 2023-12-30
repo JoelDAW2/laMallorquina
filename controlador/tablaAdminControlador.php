@@ -27,7 +27,7 @@
                 include_once 'vista/cuerpo.php';
             }else{
                 
-                include_once 'vista/modificar.php';
+                include_once 'vista/modificarProducto.php';
             }
         }
 
@@ -152,6 +152,58 @@
                     header("Location:".URL."?controller=tablaAdmin&action=indexPanelUsuariosAdmin");
                 }
             }  
+        }
+
+        public static function indexModificarUsuario() {
+            if (!isset($_GET['controller'])) {
+                include_once 'vista/cuerpo.php';
+            } else {
+                if (isset($_POST['escondidoModificarUsuario'])) {
+                    $idUsuarioModificar = $_POST['escondidoModificarUsuario'];
+                    $usuarioAmodificar = tablaAdminDAO::obtenerInfoUsuarioAdminById($idUsuarioModificar);
+        
+                    // Verifica si el usuario fue encontrado
+                    if ($usuarioAmodificar) {
+                        include_once 'vista/modificarUsuario.php';
+                    } else {
+                        echo "Usuario no encontrado"; // Puedes manejar la situación en la que no se encuentra el usuario
+                    }
+                }
+            }
+        }
+        
+        public static function procesarFormularioModificarUsuarioAdmin(){
+            if(isset($_POST['nombre']) || isset($_POST['apellido']) || isset($_POST['email']) || isset($_POST['rol']) || (isset($_POST['contraseña']) && isset($_POST['nuevaCotraseña'])) && isset($_SESSION['idCliente'])){
+                $nombre = $_POST['nombre'];
+                $apellido = $_POST['apellido'];
+                $correo = $_POST['email'];
+                $rol = $_POST['rol'];
+                if($_POST['contraseña'] == $_POST['nuevaContraseña']){
+                    $contraseña = $_POST['nuevaContraseña'];
+                }else{
+                    header("Location:".URL."?controller=tablaAdmin&action=indexModificarUsuario");
+                    exit;
+                }
+                
+                if (!empty($contraseña)) {
+                    $nuevaContraEncriptada = password_hash($contraseña, PASSWORD_DEFAULT);
+                }else{
+                    $usuarioActualizar = actualizarUsuarioDAO::obtenerInfoUsuario($_SESSION['idCliente']);
+                    // Si no se proporciona una nueva contraseña, mantener la existente
+                    $nuevaContraEncriptada = $usuarioActualizar->getContraseña();
+                }
+
+               if(isset($_POST['sr'])){
+                    $genero = "Hombre";
+               }else if(isset($_POST['sra'])){
+                    $genero = "Mujer";
+               }else{
+                    $genero = null;
+               }
+               $idCliente = $_POST['idHidden'];
+               tablaAdminDAO::actualizarUsuarioAdmin($nombre, $apellido, $correo, $rol, $genero, $nuevaContraEncriptada, $idCliente);
+            }
+            header("Location:".URL."?controller=tablaAdmin&action=indexPanelUsuariosAdmin");          
         }
     }
 ?>

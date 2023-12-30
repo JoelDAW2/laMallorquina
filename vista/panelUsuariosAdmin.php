@@ -42,9 +42,9 @@
                         <td><?= $usuario->getGenero()?></td>
                         <td><?= $usuario->getContraseña()?></td>
                         <td class="btnsAcciones d-flex">
-                            <form action="<?= URL ?>?controller=&action=" method="post">
-                                <input type="hidden" name="escondidoModificarPedido" value="<?= $usuario->getClienteId()?>">
-                                <input type="submit" name="modificarPedido" value="MODIFICAR">
+                            <form action="<?= URL ?>?controller=tablaAdmin&action=indexModificarUsuario" method="post">
+                                <input type="hidden" name="escondidoModificarUsuario" value="<?= $usuario->getClienteId()?>">
+                                <input type="submit" name="modificarUsuario" value="MODIFICAR">
                             </form>
                             <form action="<?= URL ?>?controller=tablaAdmin&action=eliminarUsuario" method="post">
                                 <input type="hidden" name="escondidoUsuario" value="<?= $usuario->getClienteId()?>">

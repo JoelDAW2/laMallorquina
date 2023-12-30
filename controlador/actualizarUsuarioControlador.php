@@ -43,6 +43,6 @@
                actualizarUsuarioDAO::actualizarUsuario($nombre, $apellido, $correo, $genero, $nuevaContraEncriptada, $id);
             }
             header("Location:".URL."?controller=inicioSesion");          
-    }
+        }
     }
 ?>
