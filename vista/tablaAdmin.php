@@ -38,7 +38,7 @@
             <div class="col-12 col-md-6 col-lg-4 mb-3">
                 <div class="seccionPanel p-3 d-flex jsutify-content-center align-items-center flex-column">
                     <img class="pb-3" src="img/panel1.svg" alt="">
-                    <a href="<?php URL ?>?controller=tablaAdmin&action=indexPedidoUsuario">
+                    <a href="<?php URL ?>?controller=tablaAdmin&action=indexPanelUsuariosAdmin">
                         <p>PANEL DE USUARIOS</p>
                     </a>
                 </div>

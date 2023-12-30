@@ -6,8 +6,6 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
-                //$products = tablaAdminDAO::getAllProducts();
-                //$pedidos = tablaAdminDAO::getAllPedidos();
                 include_once 'vista/tablaAdmin.php';
             }
         }
@@ -58,6 +56,17 @@
                 include_once 'vista/panelProductosAdmin.php';
             }
         }
+
+        public static function indexPanelUsuariosAdmin(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                if(isset($_SESSION['idCliente'])){
+                    $usuarios = tablaAdminDAO::obtenerInfoUsuariosAdmin();
+                }
+                include_once 'vista/panelUsuariosAdmin.php';
+            }
+        }
         
         public static function procesarFormularioInsertar(){
             tablaAdminControlador::insertarProducto(
@@ -105,6 +114,12 @@
             $id = $_POST['escondidoPedido'];
             tablaAdminDAO::deletePedido($id);
             header("Location:".URL."?controller=tablaAdmin&action=indexPanelPedidosAdmin");
+        }
+
+        public static function eliminarUsuario(){
+            $id = $_POST['escondidoUsuario'];
+            tablaAdminDAO::deleteUsuario($id);
+            header("Location:".URL."?controller=tablaAdmin&action=indexPanelUsuariosAdmin");
         }
     }
 ?>

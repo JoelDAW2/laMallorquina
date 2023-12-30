@@ -1,6 +1,7 @@
 <?php
     include_once 'modelo/producto.php';
     include_once 'modelo/pedido.php';
+    include_once 'modelo/usuario.php';
     class tablaAdminDAO{
         public static function getAllProducts() {
 
@@ -55,6 +56,27 @@
         public static function deletePedido($id){
             $con = dataBase::connect();
             $con->query("DELETE FROM `pedido` WHERE `pedido_id` = $id;");
+        }
+
+        public static function deleteUsuario($id){
+            $con = dataBase::connect();
+            $con->query("DELETE FROM `cliente` WHERE `cliente_id` = $id;");
+        }
+        
+        public static function obtenerInfoUsuariosAdmin(){
+            $con = dataBase::connect();
+            $result = $con->query("SELECT * FROM cliente");
+            $con->close();
+        
+            $usuarios = array();  // Crear un array para almacenar objetos Usuario
+        
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_object('Usuario')) {
+                    $usuarios[] = $row;  // Agregar cada objeto Usuario al array
+                }
+            }
+        
+            return $usuarios;  // Devolver el array de objetos Usuario
         }
         
     }

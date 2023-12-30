@@ -1,13 +1,23 @@
 <?php
     class Usuario {
+        private $clienteId;
         private $nombre;
         private $apellido;
         private $correo_electronico;
-        private $genero;
+        private $rol;
+        private $sexo;
         private $contraseña;
 
         function __construct() {
             
+        }
+
+        public function getClienteId() {
+            return $this->cliente_id;
+        }
+
+        public function setClienteId($clienteId) {
+            $this->cliente_id = $clienteId;
         }
 
         public function getNombre() {
@@ -34,12 +44,20 @@
             $this->correo_electronico = $correo_electronico;
         }
 
-        public function getGenero() {
-            return $this->genero;
+        public function getRol() {
+            return $this->rol;
         }
 
-        public function setGenero($genero) {
-            $this->genero = $genero;
+        public function setRol($rol) {
+            $this->rol = $rol;
+        }
+
+        public function getGenero() {
+            return $this->sexo;
+        }
+
+        public function setGenero($sexo) {
+            $this->sexo = $sexo;
         }
 
         public function getContraseña() {
