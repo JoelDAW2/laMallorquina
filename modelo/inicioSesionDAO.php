@@ -38,7 +38,7 @@
                         foreach ($consultaDatos as $row) {
                             $_SESSION['idCliente'] = $row['cliente_id'];
 
-                            if ($row['rol'] == 'admin') {
+                            if ($row['rol'] == 'admin' || $row['rol'] == 'Admin') {
                                 $_SESSION['accesoAdmin'] = true;
                                 header("Location:".URL."?controller=cuerpo"); 
                             } else {

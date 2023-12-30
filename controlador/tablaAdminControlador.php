@@ -35,7 +35,15 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
-                include_once 'vista/añadir.php';
+                include_once 'vista/añadirProducto.php';
+            }
+        }
+
+        public static function indexAñadirUsuario(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                include_once 'vista/añadirUsuario.php';
             }
         }
 
@@ -120,6 +128,30 @@
             $id = $_POST['escondidoUsuario'];
             tablaAdminDAO::deleteUsuario($id);
             header("Location:".URL."?controller=tablaAdmin&action=indexPanelUsuariosAdmin");
+        }
+
+        public static function crearUsuario(){
+            if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['email']) && isset($_POST['rol']) && isset($_POST['contraseña']) && isset($_POST['btnCrearUsuario'])){
+                $nombre = $_POST['nombre'];
+                $apellido = $_POST['apellido'];
+                $correo_electronico = $_POST['email'];
+                $rol = $_POST['rol'];
+                $contraseña = $_POST['contraseña'];
+                $contraseñaCifradaUsuario = password_hash($contraseña, PASSWORD_DEFAULT);
+                if(isset($_POST['sr'])){
+                    $genero = 'Hombre';
+                }else if(isset($_POST['sra'])){
+                    $genero = 'Mujer';
+                }else{
+                    $genero = null;
+                }
+                $registroUser = registroDAO::insertarCliente($nombre, $apellido, $genero, $correo_electronico, $rol, $contraseñaCifradaUsuario);
+                if($registroUser){
+                    header("Location:".URL."?controller=tablaAdmin&action=indexAñadirUsuario");
+                }else{
+                    header("Location:".URL."?controller=tablaAdmin&action=indexPanelUsuariosAdmin");
+                }
+            }  
         }
     }
 ?>

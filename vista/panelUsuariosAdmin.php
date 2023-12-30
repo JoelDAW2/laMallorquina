@@ -54,6 +54,9 @@
                     </tr>
                     <?php } ?>
                 </table>
+                <form action="<?= URL ?>?controller=tablaAdmin&action=indexAñadirUsuario" method="post">
+                    <input type="submit" value="AÑADIR">
+                </form>
             </div>
             </div>
         </section>
