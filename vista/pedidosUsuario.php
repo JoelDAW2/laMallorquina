@@ -20,7 +20,7 @@
         <div class="row p-0">
             <?php if (empty($misPedidos)) : ?>
                 <div class="sinPedidos">
-                    <img src="img/logoAlerta.svg" alt="">
+                    <img src="img/logoAlerta.svg" alt="Logo alerta">
                     <p>No ha realizado ningún pedido.</p>
                 </div> 
             <?php else : ?>
