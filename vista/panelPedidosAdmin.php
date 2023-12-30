@@ -18,40 +18,47 @@
     <h2 class="titulo mt-5">Panel de pedidos</h2>
     <section class="seccionGeneral row d-flex justify-content-center">
         <div class="row p-0">
-            <div class="table-responsive container-fluid">
-                <table class="table table-hover">
-                    <tr>
-                        <th>PEDIDO ID</th>
-                        <th>FECHA</th>
-                        <th>CLIENTE ID</th>
-                        <th>ESTADO</th>
-                        <th>PRECIO TOTAL</th>
-                        <th>ACCIONES</th>
-                    </tr>
-                    <?php
-                        foreach ($pedidos as $pedido) {      
-                    ?>
-                    <tr>
-                        <td><?= $pedido->getPedidoId()?></td>
-                        <td><?= $pedido->getFecha()?></td>
-                        <td><?= $pedido->getClienteId()?></td>
-                        <td><?= $pedido->getEstado()?></td>
-                        <td><?= $pedido->getPrecioTotal()?> €</td>
-                        <td class="btnsAcciones d-flex">
-                            <form action="<?= URL ?>?controller=&action=" method="post">
-                                <input type="hidden" name="escondidoModificarPedido" value="<?= $pedido->getPedidoId()?>">
-                                <input type="submit" name="modificarPedido" value="MODIFICAR">
-                            </form>
-                            <form action="<?= URL ?>?controller=tablaAdmin&action=eliminarPedido" method="post">
-                                <input type="hidden" name="escondidoPedido" value="<?= $pedido->getPedidoId()?>">
-                                <input type="submit" name="eliminarPedido" value="ELIMINAR">
-                            </form>
-                        </td>
-                    </tr>
-                    <?php } ?>
-                </table>
-            </div>
-            </div>
+            <?php if (empty($pedidos)) : ?>
+                <div class="sinPedidos">
+                    <img src="img/logoAlerta.svg" alt="Logo alerta">
+                    <p>No hay ningún pedido.</p>
+                </div> 
+            <?php else : ?>
+                <div class="table-responsive container-fluid">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>PEDIDO ID</th>
+                            <th>FECHA</th>
+                            <th>CLIENTE ID</th>
+                            <th>ESTADO</th>
+                            <th>PRECIO TOTAL</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                        <?php
+                            foreach ($pedidos as $pedido) {      
+                        ?>
+                            <tr>
+                                <td><?= $pedido->getPedidoId()?></td>
+                                <td><?= $pedido->getFecha()?></td>
+                                <td><?= $pedido->getClienteId()?></td>
+                                <td><?= $pedido->getEstado()?></td>
+                                <td><?= $pedido->getPrecioTotal()?> €</td>
+                                <td class="btnsAcciones d-flex">
+                                    <form action="<?= URL ?>?controller=&action=" method="post">
+                                        <input type="hidden" name="escondidoModificarPedido" value="<?= $pedido->getPedidoId()?>">
+                                        <input type="submit" name="modificarPedido" value="MODIFICAR">
+                                    </form>
+                                    <form action="<?= URL ?>?controller=tablaAdmin&action=eliminarPedido" method="post">
+                                        <input type="hidden" name="escondidoPedido" value="<?= $pedido->getPedidoId()?>">
+                                        <input type="submit" name="eliminarPedido" value="ELIMINAR">
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </table>
+                </div>
+            <?php endif; ?>
+        </div>
         </section>
         <section class="seccionLinks d-flex">
             <a href="<?php URL ?>?controller=tablaAdmin">◄ Volver</a>
