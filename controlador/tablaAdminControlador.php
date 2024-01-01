@@ -33,7 +33,9 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
-                
+                if(isset($_POST['escondidoModificar'])){
+                    $productoUpdate = productoDAO::getProductoById($_POST['escondidoModificar']);   
+                }
                 include_once 'vista/modificarProducto.php';
             }
         }
@@ -106,7 +108,7 @@
                     $_POST['escondidoModificar']
                 );
                 // Despues se redirecciona a la vista de la tabla del administrador
-                header("Location:".URL."?controller=tablaAdmin");          
+                header("Location:".URL."?controller=tablaAdmin&action=indexPanelProductosAdmin");          
         }
     
         public static function insertarProducto($nombre, $descripcion, $precio, $categoria, $img){
