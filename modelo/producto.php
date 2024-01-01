@@ -1,5 +1,6 @@
 <?php
     class producto{
+        // Definimos las propiedades privadas de la clase
         private $producto_id;
         private $nombre_producto;
         private $descripcion;
@@ -7,10 +8,12 @@
         private $categoria_id;
         private $img;
 
+        // Creamos un metodo constructor, el cual en este caso estara vacio
         function __construct(){
             
         }
 
+        // Creamos los getters y setters para poder obtener los datos del objeto de tipo producto
         public function getProductoId(){
             return $this->producto_id;
         }

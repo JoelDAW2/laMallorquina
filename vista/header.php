@@ -1,7 +1,5 @@
 <?php
-  //require_once("controlador/sesionesControlador.php");
   include("controlador/cantidadesControlador.php");
-  //sesionesControlador::crearSesion();
 ?>
 
 <!DOCTYPE html>
@@ -56,7 +54,7 @@
             </li>
             <li class="iconoAccion">
               <a href="<?php URL ?>?controller=actualizarUsuario&action=index">
-                <img imgLinks" src="img/logoUsuario.svg" alt="Logo usuario">
+                <img src="img/logoUsuario.svg" alt="Logo usuario">
               </a>
             </li>
         <?php else : ?>
@@ -65,7 +63,7 @@
                 <a href="<?= URL ?>?controller=inicioSesion&action=index">INICIAR SESIÓN</a>
             </li>
             <li class="iconoAccion">
-                <img imgLinks" src="img/logoUsuario.svg" alt="Logo usuario">
+                <img src="img/logoUsuario.svg" alt="Logo usuario">
             </li>
         <?php endif; ?>
         <li id="sinBordeIzquierdo"><a id="linkCarrito" href="<?php URL ?>?controller=carrito">CESTA DE LA COMPRA</a></li>
