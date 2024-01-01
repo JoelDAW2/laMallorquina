@@ -17,7 +17,7 @@
 </head>
 <body>
     <h1 class="tituloPagina">CARRITO</h1>
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center contenedorPrincipal">
         <div class="col-12 col-md-4 mt-4 mb-4 px-0 listaProductosAñadidos">
         <?php if (empty($_SESSION['lista'])) : ?>
             <div class="contenedorVacio">

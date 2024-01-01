@@ -4,6 +4,10 @@
     font-size: 18px;
 }
 
+.contenedorPrincipal{
+    padding-bottom: 108px;
+}
+
 /*---SECCION IXQUIERDA---*/
 
 .fila-producto{
@@ -66,6 +70,7 @@ input[type=number] {
     border: none;
     border-radius: 50%;
     width: 24px;
+    font-weight: 700;
 }
 
 #formularioBasura{
@@ -78,8 +83,8 @@ input[type=number] {
     font-weight: 700;
 }
 
-a{
-    color: black !important;
+.listaProductosAñadidos a{
+    color: black;
 }
 
 a p{

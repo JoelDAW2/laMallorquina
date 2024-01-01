@@ -8,7 +8,7 @@ body{
 }
 
 li a{
-    color: black;
+    color: #777777;
     text-decoration: none;
 }
 
@@ -35,14 +35,11 @@ li a{
     padding: 15px 16px 7px 16px;
 }
 
-.primera{
-    color: #777777;
-}
-
 .lista{
     list-style: none;
     font-size: 11px;
     padding: 0;
+    color: #777777;
 }
 
 
@@ -67,7 +64,7 @@ li{
 
 #linkCarrito{
     text-decoration: none;
-    color: black;
+    color: #777777;
 }
 
 #sinBordeDerecho, #sinBordeIzquierdo{
@@ -104,6 +101,10 @@ li{
 .nav .nav-item a{
     font-size: 87%;
     color: #777777;
+}
+
+#desaparecer ul li a:hover{
+    color: #000000;
 }
 
 /*---PARRAFO CANTIDAD CARRITO---*/

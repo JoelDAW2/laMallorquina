@@ -67,26 +67,74 @@
         <!--PRODUCTOS NUESTRA SELECCION-->
         <h2><b>NUESTRA SELECCIÓN PARA TI</b></h2>
         <section>
-            <div class="row px-5">
+            <div class="row px-5 mb-5">
                 <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column seleccion">
                     <img src="img/seleccion1.jpg" alt="Producto de la selección 1">
-                    <p>Sopa de miso vegano</p>
-                    <p>13,95€</p>
+                    <p>Ensalada césar</p>
+                    <p>12,95€</p>
+                    <div class="row d-flex w-100 acciones">
+                        <div class="col-6 d-flex p-0 justify-content-center accion">
+                            <form class="w-100" action="" method="post">
+                                <input id="btnLupa" type="submit" name="infoProducto" value="">                            
+                            </form>
+                        </div>
+                        <div class="col-6 d-flex p-0 justify-content-center accion">
+                            <form class="w-100" action="<?= URL ?>?controller=producto&action=añadirProductoArray" method="post">
+                                <input id="btnCesta" type="submit" name="añadirCarrito" value="115">                            
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column seleccion">
                     <img src="img/seleccion2.jpg" alt="Producto de la selección 2">
-                    <p>Sopa de miso vegano</p>
-                    <p>13,95€</p>
+                    <p>Ensalada de atún</p>
+                    <p>12,95€</p>
+                    <div class="row d-flex w-100 acciones">
+                        <div class="col-6 d-flex p-0 justify-content-center accion">
+                            <form class="w-100" action="" method="post">
+                                <input id="btnLupa" type="submit" name="infoProducto" value="">                            
+                            </form>
+                        </div>
+                        <div class="col-6 d-flex p-0 justify-content-center accion">
+                            <form class="w-100" action="<?= URL ?>?controller=producto&action=añadirProductoArray" method="post">
+                                <input id="btnCesta" type="submit" name="añadirCarrito" value="116">                            
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column seleccion">
                     <img src="img/seleccion3.jpg" alt="Producto de la selección 3">
-                    <p>Sopa de miso vegano</p>
-                    <p>13,95€</p>
+                    <p>Sopa de albahaca</p>
+                    <p>9,95€</p>
+                    <div class="row d-flex w-100 acciones">
+                        <div class="col-6 d-flex p-0 justify-content-center accion">
+                            <form class="w-100" action="" method="post">
+                                <input id="btnLupa" type="submit" name="infoProducto" value="">                            
+                            </form>
+                        </div>
+                        <div class="col-6 d-flex p-0 justify-content-center accion">
+                            <form class="w-100" action="<?= URL ?>?controller=producto&action=añadirProductoArray" method="post">
+                                <input id="btnCesta" type="submit" name="añadirCarrito" value="119">                            
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-3 d-flex justify-content-center align-items-center flex-column seleccion">
                     <img src="img/seleccion4.jpg" alt="Producto de la selección 4">
                     <p>Sopa de miso vegano</p>
                     <p>13,95€</p>
+                    <div class="row d-flex w-100 acciones">
+                        <div class="col-6 d-flex p-0 justify-content-center accion">
+                            <form class="w-100" action="" method="post">
+                                <input id="btnLupa" type="submit" name="infoProducto" value="">                            
+                            </form>
+                        </div>
+                        <div class="col-6 d-flex p-0 justify-content-center accion">
+                            <form class="w-100" action="<?= URL ?>?controller=producto&action=añadirProductoArray" method="post">
+                                <input id="btnCesta" type="submit" name="añadirCarrito" value="122">                            
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
