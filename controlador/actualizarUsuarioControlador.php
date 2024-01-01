@@ -12,11 +12,15 @@
             }
         }
 
+        // Funcion para modificar los datos de un usuario
         public static function procesarFormularioModificarUsuario(){
+            // Si se pasa informacion a traves de alguno de los campos del formulario, se hace lo siguiente:  
             if(isset($_POST['nombre']) || isset($_POST['apellido']) || isset($_POST['email']) || (isset($_POST['contraseña']) && isset($_POST['nuevaCotraseña'])) && isset($_SESSION['idCliente'])){
+                // Inicializamos las siguientes variables con los valores de los inputs
                 $nombre = $_POST['nombre'];
                 $apellido = $_POST['apellido'];
                 $correo = $_POST['email'];
+                // Procesamos las contraseñas para cifrarlas y registrarlas correctamente 
                 if($_POST['contraseña'] == $_POST['nuevaContraseña']){
                     $contraseña = $_POST['nuevaContraseña'];
                 }else{
@@ -31,17 +35,20 @@
                     // Si no se proporciona una nueva contraseña, mantener la existente
                     $nuevaContraEncriptada = $usuarioActualizar->getContraseña();
                 }
-
-               if(isset($_POST['sr'])){
+                // Almacenamos el genero del usuario
+                if(isset($_POST['sr'])){
                     $genero = "Hombre";
-               }else if(isset($_POST['sra'])){
+                }else if(isset($_POST['sra'])){
                     $genero = "Mujer";
-               }else{
+                }else{
                     $genero = null;
-               }
-               $id = $_SESSION['idCliente'];
-               actualizarUsuarioDAO::actualizarUsuario($nombre, $apellido, $correo, $genero, $nuevaContraEncriptada, $id);
+                }
+                // Guardamos el id del cliente
+                $id = $_SESSION['idCliente'];
+                // Le pasamos los valores necesarios a la funcion DAO que se encargara de actualizar el usuario en la BBDD 
+                actualizarUsuarioDAO::actualizarUsuario($nombre, $apellido, $correo, $genero, $nuevaContraEncriptada, $id);
             }
+            // Cargamos la vista del inicio de sesion
             header("Location:".URL."?controller=inicioSesion");          
         }
     }
