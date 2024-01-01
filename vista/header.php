@@ -70,7 +70,7 @@
         <li class="iconoAccion">
           <div class="packCarrito">
             <img class="imgLinks" src="img/logoCarrito.svg" alt="Logo carrito">
-            <?php cantidadesControlador::cantidadCarrito($_SESSION['lista']) ?>
+            <p><?= $cantidad ?></p>
           </div>
         </li>
       </ul>

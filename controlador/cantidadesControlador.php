@@ -9,8 +9,11 @@
                 // Por cada iteracion, se incrementa el valor de la cantidad
                 $cantidad++;
             }
-            // Se devuelve un parrafo con el valor de la cantidad 
-            echo ("<p>$cantidad</p>");
+            // Se devuelve la cantidad 
+            return $cantidad;
         }
     }
+
+    // Asignamos el resultado de la funcion cantidadCarrito a una variable para poder usarla directamente en la vista
+    $cantidad = cantidadesControlador::cantidadCarrito($_SESSION['lista']);
 ?>
