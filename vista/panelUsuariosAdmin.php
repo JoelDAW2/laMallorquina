@@ -41,7 +41,7 @@
                         <td><?= $usuario->getRol()?></td>
                         <td><?= $usuario->getGenero()?></td>
                         <td><?= $usuario->getContraseña()?></td>
-                        <td class="btnsAcciones d-flex">
+                        <td class="btnsAcciones d-flex flex-wrap">
                             <form action="<?= URL ?>?controller=tablaAdmin&action=indexModificarUsuario" method="post">
                                 <input type="hidden" name="escondidoModificarUsuario" value="<?= $usuario->getClienteId()?>">
                                 <input type="submit" name="modificarUsuario" value="MODIFICAR">

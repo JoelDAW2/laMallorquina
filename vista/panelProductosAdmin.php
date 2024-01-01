@@ -39,7 +39,7 @@
                 <td><?= $product->getPrecioUnidad()?> €</td>
                 <td><?= $product->getCategoriaId()?></td>
                 <td><?= $product->getImg()?>.jpg</td>
-                <td class="btnsAcciones">
+                <td class="btnsAcciones d-flex flex-wrap">
                     <form action="<?= URL ?>?controller=tablaAdmin&action=indexModificar" method="post">
                         <input type="hidden" name="escondidoModificar" value="<?= $product->getProductoId()?>">
                         <input type="submit" name="modificar" value="MODIFICAR">
