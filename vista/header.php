@@ -105,7 +105,7 @@
             <a class="nav-link active" aria-current="page" href="<?php URL ?>?controller=cuerpo">RESTAURANTE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark" href="<?php URL ?>?controller=cuerpo">LA CARTA</a>
+            <a class="nav-link text-dark" href="<?php URL ?>?controller=producto">LA CARTA</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="<?php URL ?>?controller=carrito" aria-disabled="true">CESTA DE LA COMPRA</a>

@@ -5,7 +5,7 @@
 }
 
 .contenedorPrincipal{
-    padding-bottom: 108px;
+    padding:0 10px 108px 10px;
 }
 
 /*---SECCION IXQUIERDA---*/
@@ -64,13 +64,15 @@ input[type=number] {
   text-align: center;
 }
 
-.panelCarrito input[name="sumarPlaceholder"], .panelCarrito input[name="restarPlaceholder"]{
+.panelCarrito input[name="sumarPlaceholder"], .panelCarrito input[name="restarPlaceholder"], .contenedorTotal input[name="btnCargar"]{
     background-color: #000000;
     color: white;
     border: none;
     border-radius: 50%;
     width: 24px;
+    height: 24px;
     font-weight: 700;
+    gap: 25px;
 }
 
 #formularioBasura{

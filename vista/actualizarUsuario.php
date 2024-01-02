@@ -15,23 +15,6 @@
     <title>Document</title>
 </head>
 <body>
-    <!--
-    <div class="row d-flex justify-content-center">
-        <div class="d-flex justify-content-center px-0 contenedor">
-            <form action="<?= URL ?>?controller=actualizarUsuario&action=procesarFormularioModificarUsuario" method="post">
-                <input type="text" name="nombre" value="<?= $usuario->getNombre()?>" placeholder="<?= $usuario->getNombre()?>">
-                <input type="text" name="apellido" value="<?= $usuario->getApellido()?>" placeholder="<?= $usuario->getApellido()?>">
-                <input type="email" name="email" value="<?= $usuario->getEmail()?>" placeholder="<?= $usuario->getEmail()?>">
-                <input type="radio" name="sr">
-                    <label for="sr">Sr.</label>
-                <input type="radio" name="sra">
-                    <label for="sra">Sra.</label>
-                    <input type="password" name="contraseña" value="<?= $usuario->getContraseña()?>" placeholder="Nueva contraseña">
-                <input type="submit" name="btnActualizarDatos" value="ACTUALIZAR DATOS">
-            </form>
-        </div>
-    </div> 
-    -->
     <h1 class="titulo mt-5">SU CUENTA</h1>
     <h2 class="subtitulo">Sus datos personales</h2>
     <section class="row">

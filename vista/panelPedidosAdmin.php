@@ -43,11 +43,7 @@
                                 <td><?= $pedido->getClienteId()?></td>
                                 <td><?= $pedido->getEstado()?></td>
                                 <td><?= $pedido->getPrecioTotal()?> €</td>
-                                <td class="btnsAcciones d-flex flex-wrap">
-                                    <form action="<?= URL ?>?controller=&action=" method="post">
-                                        <input type="hidden" name="escondidoModificarPedido" value="<?= $pedido->getPedidoId()?>">
-                                        <input type="submit" name="modificarPedido" value="MODIFICAR">
-                                    </form>
+                                <td class="btnsAcciones">
                                     <form action="<?= URL ?>?controller=tablaAdmin&action=eliminarPedido" method="post">
                                         <input type="hidden" name="escondidoPedido" value="<?= $pedido->getPedidoId()?>">
                                         <input type="submit" name="eliminarPedido" value="ELIMINAR">

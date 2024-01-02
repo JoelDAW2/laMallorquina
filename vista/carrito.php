@@ -86,11 +86,11 @@
                 <p><?= $cantidadTotal ?> €</p>
             </div>
             <?php if (isset($_SESSION['idCliente']) && isset($idUltimoUsuario) && $_SESSION['idCliente'] == $idUltimoUsuario && isset($_COOKIE['totalUltimoPedido'])) : ?>
-                <div class="d-flex justify-content-between contenedorTotal">
-                    <form action="<?= URL ?>?controller=carrito&action=cargarUltimoPedido" method="post">
-                        <input type="submit" name="btnCargar" value="CARGAR">
+                <div class="d-flex justify-content-between align-items-center contenedorTotal">
+                    <form class="d-flex align-items-center" action="<?= URL ?>?controller=carrito&action=cargarUltimoPedido" method="post">
+                        <input type="submit" name="btnCargar" value="+">
+                        <p class="ps-1">ÚLTIMO PEDIDO:</p>
                     </form>
-                    <p>ÚLTIMO PEDIDO:</p>
                     <p><?= $totalUltimoPedido ?> €</p>
                 </div>
             <?php endif; ?>

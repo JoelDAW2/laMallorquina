@@ -53,7 +53,7 @@
             <?php } ?>
         </table>
         <form action="<?= URL ?>?controller=tablaAdmin&action=indexAñadir" method="post">
-            <input type="submit" value="AÑADIR">
+            <input type="submit" name="botonAñadir" value="AÑADIR">
         </form>
     </div>
             </div>
