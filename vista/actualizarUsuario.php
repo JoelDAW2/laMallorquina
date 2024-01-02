@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="estiloRegistro.css">
     <link rel="stylesheet" href="estilos/estiloActualizarUsuario.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>La Mallorquina | Panel de modificación del perfil</title>
 </head>
 <body>
     <h1 class="titulo mt-5">SU CUENTA</h1>

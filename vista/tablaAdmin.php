@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="estilos/estiloTablaAdmin.css">
     <link rel="stylesheet" href="estilos/estiloPanelControl.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>La Mallorquina | Tabla del administrador</title>
 </head>
 <body>
     <section class="mt-5">
@@ -21,7 +21,7 @@
         <div class="row p-0">
             <div class="col-12 col-md-6 col-lg-4 mb-3">
                 <div class="seccionPanel p-3 d-flex jsutify-content-center align-items-center flex-column">
-                    <img class="pb-3" src="img/logoProducto.svg" alt="">
+                    <img class="pb-3" src="img/logoProducto.svg" alt="Logo sección productos admin">
                     <a href="<?= URL ?>?controller=tablaAdmin&action=indexPanelProductosAdmin">
                         <p>PANEL DE PRODUCTOS</p>
                     </a>
@@ -29,7 +29,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4 mb-3">
                 <div class="seccionPanel p-3 d-flex jsutify-content-center align-items-center flex-column">
-                    <img class="pb-3" src="img/logoPedido.svg" alt="">
+                    <img class="pb-3" src="img/logoPedido.svg" alt="Logo sección pedidos admin">
                     <a href="<?= URL ?>?controller=tablaAdmin&action=indexPanelPedidosAdmin">
                         <p>PANEL DE PEDIDOS</p>
                     </a>
@@ -37,7 +37,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4 mb-3">
                 <div class="seccionPanel p-3 d-flex jsutify-content-center align-items-center flex-column">
-                    <img class="pb-3" src="img/panel1.svg" alt="">
+                    <img class="pb-3" src="img/panel1.svg" alt="Logo sección usuarios admin">
                     <a href="<?php URL ?>?controller=tablaAdmin&action=indexPanelUsuariosAdmin">
                         <p>PANEL DE USUARIOS</p>
                     </a>

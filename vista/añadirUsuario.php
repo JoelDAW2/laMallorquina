@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="estiloRegistro.css">
     <link rel="stylesheet" href="estilos/estiloActualizarUsuario.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>La Mallorquina | Panel de creación de usuarios</title>
 </head>
 <body>
     <h2 class="subtitulo  mt-5">Crear nuevo usuario</h2>

@@ -11,7 +11,7 @@
     <!--<link rel="stylesheet" href="estilos/estiloTablaAdmin.css">-->
     <link rel="stylesheet" href="estilos/estiloPedidosUsuarios.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>La Mallorquina | Historial de pedidos</title>
 </head>
 <body>
     <h1 class="titulo mt-5">SU CUENTA</h1>

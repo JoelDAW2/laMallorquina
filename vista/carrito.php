@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="estilos/estiloCarrito.css" rel="stylesheet">
-    <title>Document</title>
+    <title>La Mallorquina | Cesta de la compra</title>
 </head>
 <body>
     <h1 class="tituloPagina">CARRITO</h1>
@@ -29,7 +29,6 @@
                 foreach ($_SESSION['lista'] as $key => $value) {
                     // Obtener detalles del producto utilizando el ID ($value)
                     $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
-                
             ?>
             <div class="row fila-producto">
                 <div class="col-12 d-flex justify-content-between align-items-center px-0 productoAñadido">

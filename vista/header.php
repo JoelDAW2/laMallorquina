@@ -10,7 +10,6 @@
     <link rel="icon" type="image/x-icon" href="img/mLogo.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="estilos/estiloHeaderSup.css">
-    <title>La Mallorquina | Restaurante</title>
 </head>
 <body>
   <!--LINEA GRIS PROPAGANDA SUPERIOR-->

@@ -52,7 +52,7 @@
         <!--FOTO VERTICAL-->
         <section>
             <div id="bannerVertical" class="row px-3 pb-4">
-                <img class="pb-4" src="img/bannerVertical.jpg" alt="">
+                <img class="pb-4" src="img/bannerVertical.jpg" alt="Banner de rebajas">
             </div>
         </section>
 

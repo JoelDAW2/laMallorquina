@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="estilos/estiloFooter.css">
-    <title>La Mallorquina</title>
+    <title>La Mallorquina | Pie de página</title>
 </head>
 <body>
   <div class="container-fluid d-flex justify-content-center flex-column footer">
