@@ -1,8 +1,8 @@
 <?php
-    include_once 'config/dataBase.php';
-    include_once 'controlador/tablaAdminControlador.php';
-    include_once 'modelo/tablaAdminDAO.php';
-    include("header.php");
+    //include_once 'config/dataBase.php';
+    //include_once 'controlador/tablaAdminControlador.php';
+    //include_once 'modelo/tablaAdminDAO.php';
+    //include("header.php");
 ?>
 
 <!DOCTYPE html>
@@ -53,6 +53,6 @@
 </html>
 
 <?php
-    include("footer.php");
+    //include("footer.php");
 ?>
 

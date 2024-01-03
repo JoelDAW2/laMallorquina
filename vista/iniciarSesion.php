@@ -1,5 +1,5 @@
 <?php
-    include('header.php');
+    //include('header.php');
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +40,7 @@
 </html>
 
 <?php
-    include("seccionInfoEnvio.php");
-    include('footer.php');
+    //include("seccionInfoEnvio.php");
+    //include('footer.php');
 ?>
 

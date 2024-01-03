@@ -1,6 +1,6 @@
 <?php
-    include_once 'controlador/panelControlControlador.php';
-    include('header.php');
+    //include_once 'controlador/panelControlControlador.php';
+    //include('header.php');
 ?>
 
 <!DOCTYPE html>
@@ -105,8 +105,8 @@
 </html>
 
 <?php
-    include("seccionInfoEnvio.php");
-    include('footer.php');
+    //include("seccionInfoEnvio.php");
+    //include('footer.php');
 ?>
 
 

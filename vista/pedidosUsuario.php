@@ -1,6 +1,6 @@
 <?php
-    include_once 'config/dataBase.php';
-    include("header.php");
+    //include_once 'config/dataBase.php';
+    //include("header.php");
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +60,6 @@
 </html>
 
 <?php
-    include("footer.php");
+    //include("footer.php");
 ?>
 

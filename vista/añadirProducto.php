@@ -1,8 +1,8 @@
 <?php
-    include_once 'config/dataBase.php';
-    include_once 'controlador/tablaAdminControlador.php';
-    include_once 'modelo/tablaAdminDAO.php';
-    include_once 'vista/header.php';
+    //include_once 'config/dataBase.php';
+    //include_once 'controlador/tablaAdminControlador.php';
+    //include_once 'modelo/tablaAdminDAO.php';
+    //include_once 'vista/header.php';
 ?>
 
 <!DOCTYPE html>
@@ -41,5 +41,5 @@
 </html>
 
 <?php
-    include_once 'vista/footer.php';
+    //include_once 'vista/footer.php';
 ?>

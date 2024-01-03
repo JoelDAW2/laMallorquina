@@ -1,8 +1,8 @@
 <?php
-    include_once 'config/dataBase.php';
-    include_once 'controlador/tablaAdminControlador.php';
-    include_once 'modelo/tablaAdminDAO.php';
-    include_once 'vista/header.php';
+    //include_once 'config/dataBase.php';
+    //include_once 'controlador/tablaAdminControlador.php';
+    //include_once 'modelo/tablaAdminDAO.php';
+    //include_once 'vista/header.php';
 ?>
     
 <!DOCTYPE html>
@@ -40,8 +40,4 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 </body>
 </html>
-
-<?php
-
-?>
 

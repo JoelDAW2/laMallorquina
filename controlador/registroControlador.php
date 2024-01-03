@@ -7,7 +7,10 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                include('vista/header.php');
                 include_once 'vista/registro.php';
+                include("vista/seccionInfoEnvio.php");
+                include('vista/footer.php');
             }
         }
 

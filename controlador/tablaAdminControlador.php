@@ -10,7 +10,12 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                include_once 'config/dataBase.php';
+                include_once 'controlador/tablaAdminControlador.php';
+                include_once 'modelo/tablaAdminDAO.php';
+                include("vista/header.php");
                 include_once 'vista/tablaAdmin.php';
+                include("vista/footer.php");
             }
         }
 
@@ -24,7 +29,10 @@
                     $misPedidos = tablaAdminDAO::getAllMisPedidos($_SESSION['idCliente']);
                 }
                 // Posteriormente se carga la vista
+                include_once 'config/dataBase.php';
+                include("vista/header.php");
                 include_once 'vista/pedidosUsuario.php';
+                include("vista/footer.php");
             }
         }
 
@@ -33,6 +41,10 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                include_once 'config/dataBase.php';
+                include_once 'controlador/tablaAdminControlador.php';
+                include_once 'modelo/tablaAdminDAO.php';
+                include_once 'vista/header.php';
                 if(isset($_POST['escondidoModificar'])){
                     $productoUpdate = productoDAO::getProductoById($_POST['escondidoModificar']);   
                 }
@@ -44,7 +56,12 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                include_once 'config/dataBase.php';
+                include_once 'controlador/tablaAdminControlador.php';
+                include_once 'modelo/tablaAdminDAO.php';
+                include_once 'vista/header.php';
                 include_once 'vista/añadirProducto.php';
+                include_once 'vista/footer.php';
             }
         }
 
@@ -52,7 +69,11 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                include_once 'config/dataBase.php';
+                include_once 'vista/header.php';
                 include_once 'vista/añadirUsuario.php';
+                include("vista/seccionInfoEnvio.php");
+                include_once 'vista/footer.php';
             }
         }
 
@@ -60,8 +81,13 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                include_once 'config/dataBase.php';
+                include_once 'modelo/tablaAdminDAO.php';
+                include_once 'controlador/tablaAdminControlador.php';
+                include("vista/header.php");
                 $pedidos = tablaAdminDAO::getAllPedidos();
                 include_once 'vista/panelPedidosAdmin.php';
+                include("vista/footer.php");
             }
         }
 
@@ -69,8 +95,13 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                include_once 'config/dataBase.php';
+                include_once 'modelo/tablaAdminDAO.php';
+                include_once 'controlador/tablaAdminControlador.php';
+                include("vista/header.php");
                 $products = tablaAdminDAO::getAllProducts();
                 include_once 'vista/panelProductosAdmin.php';
+                include("vista/footer.php");
             }
         }
 
@@ -81,7 +112,12 @@
                 if(isset($_SESSION['idCliente'])){
                     $usuarios = tablaAdminDAO::obtenerInfoUsuariosAdmin();
                 }
+                include_once 'config/dataBase.php';
+                include_once 'modelo/tablaAdminDAO.php';
+                include_once 'controlador/tablaAdminControlador.php';
+                include("vista/header.php");
                 include_once 'vista/panelUsuariosAdmin.php';
+                include("vista/footer.php");
             }
         }
         
@@ -199,7 +235,11 @@
         
                     // Verificamos si el usuario fue encontrado
                     if ($usuarioAmodificar) {
+                        include_once 'config/dataBase.php';
+                        include_once 'vista/header.php';
                         include_once 'vista/modificarUsuario.php';
+                        include("vista/seccionInfoEnvio.php");
+                        include_once 'vista/footer.php';
                     // Si no existe se imprime el siguiente mensaje
                     } else {
                         echo "Usuario no encontrado"; 

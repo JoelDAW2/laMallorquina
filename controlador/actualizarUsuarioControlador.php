@@ -5,17 +5,21 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                include_once 'config/dataBase.php';
+                include_once 'vista/header.php';
                 if(isset($_SESSION['idCliente'])){
                     $usuario = actualizarUsuarioDAO::obtenerInfoUsuario($_SESSION['idCliente']);
                 }
                 include_once 'vista/actualizarUsuario.php';
+                include("vista/seccionInfoEnvio.php");
+                include_once 'vista/footer.php';
             }
         }
 
         // Funcion para modificar los datos de un usuario
         public static function procesarFormularioModificarUsuario(){
             // Si se pasa informacion a traves de alguno de los campos del formulario, se hace lo siguiente:  
-            if(isset($_POST['nombre']) || isset($_POST['apellido']) || isset($_POST['email']) || (isset($_POST['contraseña']) && isset($_POST['nuevaCotraseña'])) && isset($_SESSION['idCliente'])){
+            if(isset($_POST['nombre']) || isset($_POST['apellido']) || isset($_POST['email']) || (isset($_POST['contraseña']) && isset($_POST['nuevaContraseña'])) && isset($_SESSION['idCliente'])){
                 // Inicializamos las siguientes variables con los valores de los inputs
                 $nombre = $_POST['nombre'];
                 $apellido = $_POST['apellido'];

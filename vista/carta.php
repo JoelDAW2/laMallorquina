@@ -1,9 +1,9 @@
 <?php
-    include_once 'config/dataBase.php';
-    include_once 'controlador/productoControlador.php';
-    include_once 'modelo/productoDAO.php';
-    require_once("controlador/sesionesControlador.php");
-    include('header.php');
+    //include_once 'config/dataBase.php';
+    //include_once 'controlador/productoControlador.php';
+    //include_once 'modelo/productoDAO.php';
+    //require_once("controlador/sesionesControlador.php");
+    //include('header.php');
 ?>
 
 <!DOCTYPE html>
@@ -98,6 +98,6 @@
 </html>
 
 <?php
-    include("seccionInfoEnvio.php");
-    include('footer.php');
+    //include("seccionInfoEnvio.php");
+    //include('footer.php');
 ?>

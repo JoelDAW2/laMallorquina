@@ -4,6 +4,12 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                include_once 'config/dataBase.php';
+                include_once 'controlador/productoControlador.php';
+                include_once 'controlador/pedidoControlador.php';
+                include_once 'modelo/productoDAO.php';
+                require_once("controlador/sesionesControlador.php");
+                include('vista/header.php');
                 // Inicializamos la variable del id del ultimo pedido, que de momento sera null
                 $idUltimoPedido = null;
                 // Si extse la cookie que contiene el precio total del ultimo pedido, haremos lo siguiente
@@ -23,6 +29,7 @@
                 $cantidadTotal = carritoControlador::calcularTotal();
                 // Cargamos la vista
                 include_once 'vista/carrito.php';
+                include('vista/footer.php');
             }
         }
 

@@ -1,10 +1,10 @@
 <?php
-    include_once 'config/dataBase.php';
-    include_once 'controlador/productoControlador.php';
-    include_once 'controlador/pedidoControlador.php';
-    include_once 'modelo/productoDAO.php';
-    require_once("controlador/sesionesControlador.php");
-    include('header.php');
+    //include_once 'config/dataBase.php';
+    //include_once 'controlador/productoControlador.php';
+    //include_once 'controlador/pedidoControlador.php';
+    //include_once 'modelo/productoDAO.php';
+    //require_once("controlador/sesionesControlador.php");
+    //include('header.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +110,7 @@
 </html>
 
 <?php
-    include('footer.php');
+    //include('footer.php');
 ?>
 
 

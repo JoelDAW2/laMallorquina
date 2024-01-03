@@ -6,12 +6,19 @@
             if(!isset($_GET['controller'])){
                 include_once 'vista/cuerpo.php';
             }else{
+                include_once 'config/dataBase.php';
+                include_once 'controlador/productoControlador.php';
+                include_once 'modelo/productoDAO.php';
+                require_once("controlador/sesionesControlador.php");
+                include('vista/header.php');
                 // Creamos los arrays con los tres tipos de objetos (ensaladas, sopas y cremas)
                 $ensaladas = productoDAO::getAllByType('Ensalada');
                 $sopas = productoDAO::getAllByType('Sopas');
                 $cremas = productoDAO::getAllByType('Cremas');
                 // Cargamos la vista de la carta
                 include_once 'vista/carta.php';
+                include("vista/seccionInfoEnvio.php");
+                include('vista/footer.php');
             }
         } 
         
