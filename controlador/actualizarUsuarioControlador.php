@@ -28,8 +28,8 @@
                 if($_POST['contraseña'] == $_POST['nuevaContraseña']){
                     $contraseña = $_POST['nuevaContraseña'];
                 }else{
-                    header("Location:".URL."?controller=actualizarUsuario");
-                    exit;
+                    //header("Location:".URL."?controller=actualizarUsuario");
+                    //exit;
                 }
                 
                 if (!empty($contraseña)) {
@@ -53,7 +53,7 @@
                 actualizarUsuarioDAO::actualizarUsuario($nombre, $apellido, $correo, $genero, $nuevaContraEncriptada, $id);
             }
             // Cargamos la vista del inicio de sesion
-            header("Location:".URL."?controller=inicioSesion");          
+            header("Location:".URL."?controller=actualizarUsuario");          
         }
     }
 ?>
