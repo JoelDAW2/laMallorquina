@@ -13,7 +13,6 @@
                 // Comprobamos si la contraseña obtenida coincide con la almacenada
                 if (password_verify($contraseña, $contraseñaEncriptadaAlmacenada)) {
                     // Si es válida, continuamos con la lógica del inicio de sesión
-                    //
                     $consultaDatos = $con->query("SELECT * FROM cliente WHERE contraseña = '$contraseñaEncriptadaAlmacenada' AND correo_electronico = '$correo'");
                     // Verificamos si la consulta devuelve algun registro
                     if ($consultaDatos->num_rows > 0) {

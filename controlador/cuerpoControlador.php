@@ -7,5 +7,4 @@
             include('vista/footer.php');
         }
     }
-
 ?>

@@ -37,7 +37,7 @@
                 $action = action_default;
             }
 
-            // Inovacmos dinamicamente la accion del controlador
+            // Invocamos dinamicamente la accion del controlador
             $controller->$action();
 
         } else {

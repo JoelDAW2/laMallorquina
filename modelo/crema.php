@@ -1,9 +1,10 @@
 <?php
+    // Clase crema que hereda de la clase producto
     class crema extends producto{
         public function __construct($datosDB) {
-            parent::__construct(); // Llama al constructor de la clase base (producto)
-            
-            // Inicializa propiedades específicas de ensalada
+            // Llama al constructor de la clase base (producto)
+            parent::__construct(); 
+            // Inicializa propiedades específicas de crema
             $this->producto_id = $datosDB->producto_id;
             $this->nombre_producto = $datosDB->nombre_producto;
             $this->descripcion = $datosDB->descripcion;

@@ -1,6 +1,6 @@
 <?php
     class producto{
-        // Definimos las propiedades privadas de la clase
+        // Definimos las propiedades protected de la clase
         protected $producto_id;
         protected $nombre_producto;
         protected $descripcion;
@@ -8,7 +8,7 @@
         protected $categoria_id;
         protected $img;
 
-        // Creamos un metodo constructor, el cual en este caso estara vacio
+        // Creamos un metodo constructor
         function __construct(){
             
         }
