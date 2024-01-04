@@ -1,4 +1,5 @@
 <?php
+    include_once 'modelo/productoDAO.php';
     class carritoControlador{
         public static function index(){
             if(!isset($_GET['controller'])){
@@ -27,6 +28,15 @@
                 }                
                 // Almacenamos el valor total del carrito
                 $cantidadTotal = carritoControlador::calcularTotal();
+
+                $detallesProductos = array();
+
+                foreach ($_SESSION['lista'] as $key => $value) {
+                    $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
+                    $detallesProductos[$key] = $producto;
+                }
+
+                $productos = $detallesProductos;
                 // Cargamos la vista
                 include_once 'vista/carrito.php';
                 include('vista/footer.php');

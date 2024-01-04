@@ -25,11 +25,7 @@
                 <p class="textoCarrito">¡No hay productos en tu carrito!</p>
             </div>
         <?php else : ?>
-            <?php
-                foreach ($_SESSION['lista'] as $key => $value) {
-                    // Obtener detalles del producto utilizando el ID ($value)
-                    $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
-            ?>
+            <?php foreach ($productos as $key => $producto) : ?>
             <div class="row fila-producto">
                 <div class="col-12 d-flex justify-content-between align-items-center px-0 productoAñadido">
                     <div class="col-5 d-flex align-items-center">
@@ -55,7 +51,7 @@
                     </div>
                 </div>
             </div>
-            <?php } ?>
+            <?php endforeach; ?>
         <?php endif; ?>
             <a href="<?php URL ?>?controller=producto"><p class="mt-3">Seguir comprando</p></a>
         </div>
@@ -63,19 +59,13 @@
 
         <div class="col-12 col-md-3 mt-4 mb-4 ps-md-5 pe-0 infoCompra">
             <h2 class="py-3 tituloRevisar"><b>REVISAR PEDIDO</b></h2>
-            <?php
-                foreach ($_SESSION['lista'] as $key => $value) {
-                    // Obtener detalles del producto utilizando el ID ($value)
-                    $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
-            ?>       
+            <?php foreach ($productos as $key => $producto) : ?>    
                 <div id="cProductos" class="d-flex justify-content-between">
                     <p><?= $producto->getNombre()?></p>
                     <p><?= $_SESSION['lista'][$key]['cantidada'] ?></p>
                     <p><?= $producto->getPrecioUnidad() ?></p>
                 </div>   
-            <?php
-                } 
-            ?>  
+                <?php endforeach; ?>
             <div class="d-flex justify-content-between contenedorTotal">
                 <p>Transporte</p>
                 <p>Gratis</p>
