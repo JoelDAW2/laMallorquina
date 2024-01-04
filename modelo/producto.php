@@ -1,12 +1,12 @@
 <?php
     class producto{
         // Definimos las propiedades privadas de la clase
-        private $producto_id;
-        private $nombre_producto;
-        private $descripcion;
-        private $precio_unidad;
-        private $categoria_id;
-        private $img;
+        protected $producto_id;
+        protected $nombre_producto;
+        protected $descripcion;
+        protected $precio_unidad;
+        protected $categoria_id;
+        protected $img;
 
         // Creamos un metodo constructor, el cual en este caso estara vacio
         function __construct(){
