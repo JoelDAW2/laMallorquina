@@ -12,5 +12,9 @@
             $this->categoria_id = $datosDB->categoria_id;
             $this->img = $datosDB->img;
         }
+
+        public static function getTipoProducto() {
+            return "Tipo de producto => Sopa";
+        }
     }
 ?>

@@ -14,7 +14,7 @@
     include("controlador/actualizarUsuarioControlador.php");
     include("controlador/panelControlControlador.php");
     
-    sesionesControlador::crearSesion();
+    //sesionesControlador::crearSesion();
 
     // Punto de entrada principal a la aplicacion
 

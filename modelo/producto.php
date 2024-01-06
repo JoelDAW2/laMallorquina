@@ -61,5 +61,9 @@
         public function setImg($img){
             $this->img = $img;
         }
+
+        public static function getTipoProducto() {
+            
+        }
     }
 ?>
