@@ -11,11 +11,13 @@
     <h2 class="titulo mt-5">Panel de pedidos</h2>
     <section class="seccionGeneral row d-flex justify-content-center">
         <div class="row p-0">
+            <!--Si la variable pedidos esta vacia, se imprime el siguiente div-->
             <?php if (empty($pedidos)) : ?>
                 <div class="sinPedidos">
                     <img src="img/logoAlerta.svg" alt="Logo alerta">
                     <p>No hay ningún pedido.</p>
                 </div> 
+            <!--Si no, se imprime este-->
             <?php else : ?>
                 <div class="table-responsive container-fluid">
                     <table class="table table-hover">

@@ -13,11 +13,13 @@
     <h2 class="subtitulo">Historial de pedidos</h2>
     <section class="seccionGeneral row d-flex justify-content-center">
         <div class="row p-0">
+            <!--Si la variable misPedidos esta vacia, se imprime el siguiente div-->
             <?php if (empty($misPedidos)) : ?>
                 <div class="sinPedidos">
                     <img src="img/logoAlerta.svg" alt="Logo alerta">
                     <p>No ha realizado ningún pedido.</p>
                 </div> 
+            <!--Si no, se imprime el siguiente div-->
             <?php else : ?>
                 <div class="table-responsive container-fluid">
                     <table class="table table-hover">

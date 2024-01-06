@@ -38,6 +38,7 @@
 
     <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
       <ul class="d-flex justify-content-end list-group list-group-horizontal-sm lista">
+        <!--Si existe la variable de session accesoAdmin y es igual a true, se muestra el boton del administrador-->
         <?php if (isset($_SESSION['accesoAdmin']) && $_SESSION['accesoAdmin'] == true) : ?>
               <li>
                 <a href="<?php URL ?>?controller=tablaAdmin">
@@ -46,8 +47,8 @@
               </li> 
         <?php endif; ?>
         <li>ES / CA / EN</li>
+        <!--Si existe la vvariable de session idCliente, se muestran los siguientes li-->
         <?php if (isset($_SESSION['idCliente'])) : ?>
-            <!-- User is logged in, display "Cerrar Sesión" -->
             <li id="linkSesionHeader">
                 <a href="<?php URL ?>?controller=panelControl">BIENVENIDO</a>
             </li>
@@ -56,8 +57,8 @@
                 <img src="img/logoUsuario.svg" alt="Logo usuario">
               </a>
             </li>
+        <!--Por contra, se muestran estos-->
         <?php else : ?>
-            <!-- User is not logged in, display "Iniciar Sesión" -->
             <li id="linkSesionHeader">
                 <a href="<?= URL ?>?controller=inicioSesion&action=index">INICIAR SESIÓN</a>
             </li>

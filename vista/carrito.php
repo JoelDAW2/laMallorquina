@@ -11,11 +11,13 @@
     <h1 class="tituloPagina">CARRITO</h1>
     <div class="row d-flex justify-content-center contenedorPrincipal">
         <div class="col-12 col-md-4 mt-4 mb-4 px-0 listaProductosAñadidos">
+        <!--Si la variable de session esta vacia, se muestra el siguiente div-->
         <?php if (empty($_SESSION['lista'])) : ?>
             <div class="contenedorVacio">
                 <img id="fotoCarritoVacio" class="img-fluid" src="img/logoCarritoCentro.svg" alt="Logo del carrito vacío">
                 <p class="textoCarrito">¡No hay productos en tu carrito!</p>
             </div>
+        <!--Por contra, se muestran los productos del carrito-->
         <?php else : ?>
             <?php foreach ($productos as $key => $producto) : ?>
             <div class="row fila-producto">
@@ -66,6 +68,7 @@
                 <p><b>TOTAL</b> (IVA Incluido):</p>
                 <p><?= $cantidadTotal ?> €</p>
             </div>
+            <!--Si existen las siguientes condiciones, se muestra el siguiente div -->
             <?php if (isset($_SESSION['idCliente']) && isset($idUltimoUsuario) && $_SESSION['idCliente'] == $idUltimoUsuario && isset($_COOKIE['totalUltimoPedido'])) : ?>
                 <div class="d-flex justify-content-between align-items-center contenedorTotal">
                     <form class="d-flex align-items-center" action="<?= URL ?>?controller=carrito&action=cargarUltimoPedido" method="post">
