@@ -23,7 +23,7 @@
 
   <!--MENU INFO SUPERIOR-->
   <div id="desaparecer" class="row mt-4 filaMenuInfo">
-    <div class="col-12 col-md-4 col-lg-4 d-flex align-items-center">
+    <div class="col-12 col-md-4 col-lg-4 d-flex align-items-start">
       <ul class="list-group list-group-horizontal-sm primera lista">
         <li>ATT. AL CLIENTE <b> 673 482 995</b></li>
         <li>CONTACTO</li>
@@ -36,7 +36,7 @@
     <a href="<?php URL ?>?controller=cuerpo"><img id="imgLogoPagina" class="img-fluid" src="img/logoMallorquina.svg" alt="Logo de la Mallorquina"></a>
   </div>
 
-    <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-end">
+    <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-end justify-content-start flex-column">
       <ul class="d-flex justify-content-end list-group list-group-horizontal-sm lista">
         <!--Si existe la variable de session accesoAdmin y es igual a true, se muestra el boton del administrador-->
         <?php if (isset($_SESSION['accesoAdmin']) && $_SESSION['accesoAdmin'] == true) : ?>
@@ -74,6 +74,10 @@
           </div>
         </li>
       </ul>
+      <form action="" method="post">
+        <input type="search" name="buscador">
+        <button>s</button>
+      </form>
     </div>
   </div>
 
