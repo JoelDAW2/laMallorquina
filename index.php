@@ -13,8 +13,6 @@
     include("controlador/pedidoControlador.php");
     include("controlador/actualizarUsuarioControlador.php");
     include("controlador/panelControlControlador.php");
-    
-    //sesionesControlador::crearSesion();
 
     // Punto de entrada principal a la aplicacion
 
@@ -45,5 +43,4 @@
             header("Location:".URL."?controller=cuerpo");
         }
     }
-
 ?>

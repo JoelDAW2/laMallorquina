@@ -1,9 +1,4 @@
-<?php
-    //include_once 'config/dataBase.php';
-    //include_once 'vista/header.php';
-?>
-    
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -46,8 +41,3 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 </body>
 </html>
-
-<?php
-    //include("seccionInfoEnvio.php");
-    //include_once 'vista/footer.php';
-?>

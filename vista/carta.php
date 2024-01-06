@@ -1,11 +1,3 @@
-<?php
-    //include_once 'config/dataBase.php';
-    //include_once 'controlador/productoControlador.php';
-    //include_once 'modelo/productoDAO.php';
-    //require_once("controlador/sesionesControlador.php");
-    //include('header.php');
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -96,8 +88,3 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 </body>
 </html>
-
-<?php
-    //include("seccionInfoEnvio.php");
-    //include('footer.php');
-?>

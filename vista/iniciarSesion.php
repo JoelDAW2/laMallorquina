@@ -1,7 +1,3 @@
-<?php
-    //include('header.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,9 +34,3 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 </body>
 </html>
-
-<?php
-    //include("seccionInfoEnvio.php");
-    //include('footer.php');
-?>
-
