@@ -1,7 +1,4 @@
-<?php
-  include("controlador/cantidadesControlador.php");
-?>
-
+<?php include("controlador/cantidadesControlador.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +76,7 @@
       <form class="buscador pt-3" action="" method="post">
         <input type="search" name="buscador" placeholder="BUSCAR">
         <button>
-          <img src="img/logoLupa.svg" alt="">
+          <img src="img/logoLupa.svg" alt="Logo lupa del buscador">
         </button>
       </form>
     </div>

@@ -28,14 +28,12 @@
                 }                
                 // Almacenamos el valor total del carrito
                 $cantidadTotal = carritoControlador::calcularTotal();
-
                 $detallesProductos = array();
-
+                // Obtenemos los detalles de cada producto en el carrito
                 foreach ($_SESSION['lista'] as $key => $value) {
                     $producto = productoDAO::getProductoById($_SESSION['lista'][$key]['id']);
                     $detallesProductos[$key] = $producto;
                 }
-
                 $productos = $detallesProductos;
                 // Cargamos la vista
                 include_once 'vista/carrito.php';

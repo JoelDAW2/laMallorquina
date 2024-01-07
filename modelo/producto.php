@@ -62,6 +62,7 @@
             $this->img = $img;
         }
 
+        // Funcion para obtener el tipo de producto
         public static function getTipoProducto() {
             
         }
