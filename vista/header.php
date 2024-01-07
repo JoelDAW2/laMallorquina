@@ -74,9 +74,11 @@
           </div>
         </li>
       </ul>
-      <form action="" method="post">
-        <input type="search" name="buscador">
-        <button>s</button>
+      <form class="buscador" action="" method="post">
+        <input type="search" name="buscador" placeholder="BUSCAR">
+        <button>
+          <img src="img/logoLupa.svg" alt="">
+        </button>
       </form>
     </div>
   </div>

@@ -67,6 +67,21 @@ li{
     color: #777777;
 }
 
+.buscador{
+    border-bottom: solid 1px #D9D9D9;
+}
+
+.buscador input::placeholder{
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.buscador button{
+    border: none;
+    background-color: white;
+    border-bottom: solid 1px #D9D9D9;
+}
+
 #sinBordeDerecho, #sinBordeIzquierdo{
     border: none;
 }
