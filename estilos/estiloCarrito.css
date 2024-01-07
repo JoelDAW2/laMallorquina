@@ -42,7 +42,7 @@ input:nth-child(2){
     max-width: 48px;
 }
 
-::placeholder{
+#numCant::placeholder{
     text-align: center;
     color: black;
 }

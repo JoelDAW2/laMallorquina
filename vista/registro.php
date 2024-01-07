@@ -12,7 +12,7 @@
         <h2 class="titulo">Crear una cuenta</h2>
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-3">
-                <a href="<?= URL ?>?controller=inicioSesion&action=index"><p class="texto">¿Ya tiene una cuenta? ¡Inicie sesión!</p></a>
+                <a id="linkLogin" href="<?= URL ?>?controller=inicioSesion&action=index"><p class="texto">¿Ya tiene una cuenta? ¡Inicie sesión!</p></a>
                 <form action="<?= URL ?>?controller=registro&action=registrar" method="post" id="formularioIniciar">
                     <input type="text" name="nombre" placeholder="Nombre" required>
                     <input type="text" name="apellido" placeholder="Apellido" required>

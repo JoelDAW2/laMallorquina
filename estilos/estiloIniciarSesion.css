@@ -41,9 +41,9 @@ input[type='password']{
     text-align: center;
 }
 
-a{
-    text-decoration: none !important;
-    color: black !important;
+.centrado a{
+    text-decoration: none;
+    color: black;
 }
 
 input[name='iniciarSesion']{

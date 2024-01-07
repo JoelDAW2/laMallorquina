@@ -21,9 +21,9 @@
     </div> 
   </div>
 
-  <!--MENU INFO SUPERIOR-->
+  <!--MENU INFO SUPERIOR IZQUIERDA-->
   <div id="desaparecer" class="row mt-4 filaMenuInfo">
-    <div class="col-12 col-md-4 col-lg-4 d-flex align-items-start">
+    <div class="col-12 col-md-4 col-lg-4 d-flex align-items-start infoIzquierda">
       <ul class="list-group list-group-horizontal-sm primera lista">
         <li>ATT. AL CLIENTE <b> 673 482 995</b></li>
         <li>CONTACTO</li>
@@ -32,11 +32,13 @@
       </ul>
     </div>
 
+  <!--LOGO CENTRAL-->
   <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-center justify-content-center imgLogo">
     <a href="<?php URL ?>?controller=cuerpo"><img id="imgLogoPagina" class="img-fluid" src="img/logoMallorquina.svg" alt="Logo de la Mallorquina"></a>
   </div>
 
-    <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-end justify-content-start flex-column">
+    <!--MENU INFO SUPERIOR DERECHA-->
+    <div id="desaparecer" class="col-12 col-md-4 col-lg-4 d-flex align-items-end justify-content-start flex-column infoDerecha">
       <ul class="d-flex justify-content-end list-group list-group-horizontal-sm lista">
         <!--Si existe la variable de session accesoAdmin y es igual a true, se muestra el boton del administrador-->
         <?php if (isset($_SESSION['accesoAdmin']) && $_SESSION['accesoAdmin'] == true) : ?>
@@ -74,7 +76,7 @@
           </div>
         </li>
       </ul>
-      <form class="buscador" action="" method="post">
+      <form class="buscador pt-3" action="" method="post">
         <input type="search" name="buscador" placeholder="BUSCAR">
         <button>
           <img src="img/logoLupa.svg" alt="">
