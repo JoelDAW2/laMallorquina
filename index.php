@@ -13,6 +13,7 @@
     include("controlador/pedidoControlador.php");
     include("controlador/actualizarUsuarioControlador.php");
     include("controlador/panelControlControlador.php");
+    include("controlador/reseñasControlador.php");
 
     // Punto de entrada principal a la aplicacion
 
