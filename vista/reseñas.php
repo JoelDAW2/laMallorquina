@@ -11,8 +11,8 @@
     <section class="mt-5">
         <div class="tituloForm">
             <h2 id="titulo">Valoraciones</h2>
-            <div class="formularioEstrellas">
-                <p>Ordenar por: ▼</p>
+            <div id="formularioEstrellas">
+                <p id="orden">Ordenar por: ▼</p>
             </div>
         </div>
         <div class="row p-0 d-flex">
@@ -75,5 +75,7 @@
     <!--SCRIPTS BOOTSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+
+    <script src="src/interacciones.js"></script>
 </body>
 </html>
