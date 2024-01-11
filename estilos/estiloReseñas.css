@@ -1,3 +1,47 @@
-.infoUser img{
-    max-width: 30px;
+section{
+    margin: 0 37px 20px 37px;
+}
+
+.tituloForm{
+    display: flex;
+    justify-content: space-between;
+}
+
+#titulo{
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.formularioEstrellas p{
+    margin: 0;
+}
+
+.seccionPanel{
+    padding: 16px 0;
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+}
+
+.seccionPanel img{
+    max-height: 30px;
+}
+
+.nombreEstrellas{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nombreEstrellas p{
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+}
+
+.infoOpinion{
+    max-height: 90px;
+    overflow: scroll;
+}
+
+.infoOpinion p{
+    margin: 0;
+    color: #777777;
 }
