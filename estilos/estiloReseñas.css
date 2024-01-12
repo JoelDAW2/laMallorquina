@@ -3,7 +3,9 @@ section{
 }
 
 .tituloForm{
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -12,13 +14,37 @@ section{
     font-weight: 700;
     margin-bottom: 15px;
 }
-.formularioEstrellas p{
+
+.botonAbierto{
+    position: absolute;
+    right: 0;
+    z-index: 9999;
+}
+
+#formularioEstrellas{
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+#formularioEstrellas p{
     margin: 0;
+    padding: 5px;
+    width: 100%;
+    text-align: left;
+}
+
+#formularioEstrellas img{
+    width: 100%;
+    padding: 5px;
 }
 
 .seccionPanel{
     padding: 16px 0;
     box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+    max-height: 160px;
+    overflow: hidden;
 }
 
 .seccionPanel img{
@@ -37,11 +63,28 @@ section{
 }
 
 .infoOpinion{
-    max-height: 90px;
+    max-height: 170px;
     overflow: scroll;
 }
 
 .infoOpinion p{
     margin: 0;
     color: #777777;
+    text-align: justify;
+}
+
+/*--- SCROLL BAR ---*/
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
 }

@@ -11,9 +11,7 @@
     <section class="mt-5">
         <div class="tituloForm">
             <h2 id="titulo">Valoraciones</h2>
-            <div id="formularioEstrellas">
-                <p id="orden">Ordenar por: ▼</p>
-            </div>
+            <button id="formularioEstrellas">Ordenar por: ▼</button>
         </div>
         <div class="row p-0 d-flex">
             <article class="col-12 col-md-6 col-lg-4 mb-3">
@@ -22,7 +20,7 @@
                         <img src="img/panel1.svg" alt="">
                         <div class="ps-2">
                             <div class="nombreEstrellas d-flex">
-                                <p>JOSE MANUEL</p>
+                                <p><?= $reseña->getNombreCliente()?></p>
                                 <img src="img/estrellas.svg" alt="">
                             </div>
                             <div class="infoOpinion d-flex flex-column align-items-start">
@@ -40,7 +38,7 @@
                         <img src="img/panel1.svg" alt="">
                         <div class="ps-2">
                             <div class="nombreEstrellas d-flex">
-                                <p></p>
+                                <p>ANTONIO GUTIERREZ</p>
                                 <img src="img/estrellas.svg" alt="">
                             </div>
                             <div class="infoOpinion d-flex flex-column align-items-start">
@@ -58,7 +56,7 @@
                         <img src="img/panel1.svg" alt="">
                         <div class="ps-2">
                             <div class="nombreEstrellas d-flex">
-                                <p>JOSE MANUEL</p>
+                                <p>NATALIA SANCHEZ</p>
                                 <img src="img/estrellas.svg" alt="">
                             </div>
                             <div class="infoOpinion d-flex flex-column align-items-start">
@@ -69,7 +67,6 @@
                     </div>
                 </div>
             </article>
-            
     </section>
 
     <!--SCRIPTS BOOTSTRAP-->

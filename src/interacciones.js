@@ -1,3 +1,5 @@
+/*---MENU RESEÑAS---*/
+
 let formularioEstrella = document.getElementById("formularioEstrellas");
 let parrafoOrden = document.getElementById("orden");
 let imgEliminada = document.getElementsByTagName("img");
@@ -7,7 +9,8 @@ let primerClic = true;
 formularioEstrella.addEventListener( "click", () => {
 
     if(primerClic){
-        parrafoOrden.innerText = "Ordenar por: ▲"
+        formularioEstrella.classList.add("botonAbierto");
+        formularioEstrella.innerText = "Ordenar por: ▲"
         formularioEstrella.style.display = "flex";
         formularioEstrella.style.flexDirection = "column"; 
         let img1 = document.createElement("img");
@@ -20,8 +23,10 @@ formularioEstrella.addEventListener( "click", () => {
         img4.src = "img/cuatroEstrellas.svg";
         let img5 = document.createElement("img");
         img5.src = "img/cincoEstrellas.svg";
+        mostrarTodo = document.createElement("p");
+        mostrarTodo.innerHTML = "Mostar todo";
 
-        let listaEstrellas = [img5, img4, img3, img2, img1];
+        let listaEstrellas = [img5, img4, img3, img2, img1, mostrarTodo];
 
         for (let i = 0; i < listaEstrellas.length; i++) {
             formularioEstrella.appendChild(listaEstrellas[i]);
@@ -29,7 +34,7 @@ formularioEstrella.addEventListener( "click", () => {
 
         primerClic = false;
     }else{
-        formularioEstrella.innerHTML = "hola"; // Corregido aquí
+        formularioEstrella.innerHTML = "Ordenar por: ▼"; // Corregido aquí
         primerClic = true;
     }
 
