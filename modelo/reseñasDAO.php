@@ -1,5 +1,18 @@
 <?php
     class reseñasDAO{
+
+        public static function getReviews(){
+            $con = $con = dataBase::connect();
+            $stmt = $con->prepare("SELECT * FROM review");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $con->close();
+
+            if($result->num_rows > 0){
+                while($fila = )
+            }
+        }
+
         public static function getReviewById($id) {
             // Creamos la conexion con la BBDD
             $con = dataBase::connect();

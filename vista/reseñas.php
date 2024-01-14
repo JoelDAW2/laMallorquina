@@ -14,59 +14,27 @@
             <button id="formularioEstrellas">Ordenar por: ▼</button>
         </div>
         <div class="row p-0 d-flex">
-            <article class="col-12 col-md-6 col-lg-4 mb-3">
-                <div class="">
-                    <div class="seccionPanel p-3 d-flex">
-                        <img src="img/panel1.svg" alt="">
-                        <div class="ps-2">
-                            <div class="nombreEstrellas d-flex">
-                                <p><?= $reseña->getNombreCliente()?></p>
-                                <img src="img/estrellas.svg" alt="">
-                            </div>
-                            <div class="infoOpinion d-flex flex-column align-items-start">
-                                <p>03-12-2023</p>
-                                <p>He tenido la oportunidad de disfrutar de una experiencia culinaria increíble en "La Veggie Delight", un encantador restaurante vegano que ha superado todas mis expectativas.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="col-12 col-md-6 col-lg-4 mb-3">
-                <div class="">
-                    <div class="seccionPanel p-3 d-flex">
-                        <img src="img/panel1.svg" alt="">
-                        <div class="ps-2">
-                            <div class="nombreEstrellas d-flex">
-                                <p>ANTONIO GUTIERREZ</p>
-                                <img src="img/estrellas.svg" alt="">
-                            </div>
-                            <div class="infoOpinion d-flex flex-column align-items-start">
-                                <p>03-12-2023</p>
-                                <p>Green Bites es una joya culinaria vegana. Su menú diverso y creativo ofrece opciones deliciosas para todos los gustos. Probé el bowl de quinoa con verduras y aderezo de tahini, una explosión de sabores frescos y saludables. El ambiente acogedor y el servicio amable hicieron que mi experiencia fuera memorable. Destaco el batido de frutas frescas, una opción refrescante para complementar cualquier comida. Green Bites demuestra que la comida vegana puede ser sabrosa y satisfactoria. Sin duda, volveré para explorar más de sus opciones y disfrutar de la cocina vegana de alta calidad que ofrecen. ¡Altamente recomendado para los amantes de la comida saludable y deliciosa!</p>
+            <?php
+                foreach ($reseña as $reseñaImprimir){      
+            ?>
+                <article class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="">
+                        <div class="seccionPanel p-3 d-flex">
+                            <img src="img/panel1.svg" alt="">
+                            <div class="ps-2">
+                                <div class="nombreEstrellas d-flex">
+                                    <p><?= $reseñaImprimir->getNombreCliente()?></p>
+                                    <img src="img/estrellas.svg" alt="">
+                                </div>
+                                <div class="infoOpinion d-flex flex-column align-items-start">
+                                    <p>03-12-2023</p>
+                                    <p><?= $reseñaImprimir->getDescripcion() ?></p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </article>
-
-            <article class="col-12 col-md-6 col-lg-4 mb-3">
-                <div class="">
-                    <div class="seccionPanel p-3 d-flex">
-                        <img src="img/panel1.svg" alt="">
-                        <div class="ps-2">
-                            <div class="nombreEstrellas d-flex">
-                                <p>NATALIA SANCHEZ</p>
-                                <img src="img/estrellas.svg" alt="">
-                            </div>
-                            <div class="infoOpinion d-flex flex-column align-items-start">
-                                <p>03-12-2023</p>
-                                <p>Vegano Bliss Café ofrece una experiencia culinaria excepcional para los amantes de la comida vegana. Su ambiente acogedor y moderno crea el escenario perfecto para disfrutar de platos innovadores y deliciosos. Probé la pizza vegana con masa de coliflor, y fue una revelación de sabores. La atención al detalle en la presentación y la frescura de los ingredientes destacaron en cada bocado. El personal amable y bien informado añadió un toque especial a mi visita. Vegano Bliss Café es definitivamente un destino imprescindible para aquellos que buscan opciones veganas de alta calidad en un entorno encantador. ¡Una experiencia gastronómica que supera todas las expectativas!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
+                </article>
+            <?php } ?>
     </section>
 
     <!--SCRIPTS BOOTSTRAP-->
