@@ -121,12 +121,20 @@ a p{
     border-bottom: solid 1px #D9D9D9;
 }
 
-.infoCompra form input{
+#inputInsertarPedido, .botonEnviarModal{
     width: 100%;
     background-color: #494949;
     border-radius: 0;
     color: white;
     border: solid 0;
+}
+
+.botonEnviarModal{
+    padding: 16px 6px;
+}
+
+#inputInsertarPedido{
+    visibility: hidden;
 }
 
 .codigoPromocional{
@@ -139,4 +147,10 @@ a p{
 
 input[name="confirmar"]:hover{
     background-color: #2592a9;
+}
+
+/*---ESTILOS MODAL---*/
+
+.bodyModal img{
+    max-width: 200px;
 }
