@@ -7,10 +7,13 @@
             $stmt->execute();
             $result = $stmt->get_result();
             $con->close();
-
-            if($result->num_rows > 0){
-                while($fila = )
+            $listaReviews = [];
+            if ($result->num_rows > 0) {
+                while($review = $result->fetch_object("reseña")){
+                    $listaReviews[] = $review;
+                }
             }
+            return $listaReviews;
         }
 
         public static function getReviewById($id) {

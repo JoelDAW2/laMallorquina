@@ -1,4 +1,4 @@
-/*---MENU RESEÑAS---*/
+/*--- MENU RESEÑAS ---*/
 
 let formularioEstrella = document.getElementById("formularioEstrellas");
 let parrafoOrden = document.getElementById("orden");
@@ -24,7 +24,7 @@ formularioEstrella.addEventListener( "click", () => {
         let img5 = document.createElement("img");
         img5.src = "img/cincoEstrellas.svg";
         mostrarTodo = document.createElement("p");
-        mostrarTodo.innerHTML = "Mostar todo";
+        mostrarTodo.innerHTML = "Mostrar todo";
 
         let listaEstrellas = [img5, img4, img3, img2, img1, mostrarTodo];
 
@@ -37,7 +37,54 @@ formularioEstrella.addEventListener( "click", () => {
         formularioEstrella.innerHTML = "Ordenar por: ▼"; // Corregido aquí
         primerClic = true;
     }
-
-    
 });
 
+/*--- IMPRIMIR PUNTUACION ESTRELLAS ---*/
+
+let numsPuntuacion = document.getElementsByClassName("puntuacion");
+
+let imgEstrella = document.createElement("img");
+imgEstrella.src = "img/unaEstrellas.svg";
+
+for (let i = 0; i < numsPuntuacion.length; i++) {
+    switch (parseInt(numsPuntuacion[i].innerText)) {
+        case 1:
+            numsPuntuacion[i].innerHTML = "";
+            numsPuntuacion[i].appendChild(document.createElement("img")).src = "img/unaEstrellas.svg";
+            break;
+
+        case 2:
+            numsPuntuacion[i].innerHTML = "";
+            numsPuntuacion[i].appendChild(document.createElement("img")).src = "img/dosEstrellas.svg";
+            break;
+
+        case 3:
+            numsPuntuacion[i].innerHTML = "";
+            numsPuntuacion[i].appendChild(document.createElement("img")).src = "img/tresEstrellas.svg";
+            break;
+
+        case 4:
+            numsPuntuacion[i].innerHTML = "";
+            numsPuntuacion[i].appendChild(document.createElement("img")).src = "img/cuatroEstrellas.svg";
+            break;
+
+        case 5:
+            numsPuntuacion[i].innerHTML = "";
+            numsPuntuacion[i].appendChild(document.createElement("img")).src = "img/cincoEstrellas.svg";
+            break;
+
+        default:
+            numsPuntuacion[i].innerText = "mal";
+    }
+}
+
+/*--- MODAL ---*/
+
+let btnModal = document.getElementById("botonModal");
+let btnInsertarPedido = document.getElementById("formularioInsertarPedido");
+let btnCerrar = document.getElementById("cerrar");
+
+btnCerrar.addEventListener("click", (event) => {
+    event.preventDefault();
+    btnInsertarPedido.submit();
+});

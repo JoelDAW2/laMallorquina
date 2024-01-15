@@ -14,20 +14,20 @@
             <button id="formularioEstrellas">Ordenar por: ▼</button>
         </div>
         <div class="row p-0 d-flex">
-            <?php
-                foreach ($reseña as $reseñaImprimir){      
-            ?>
+            <?php foreach ($reseña as $reseñaImprimir){ ?>
                 <article class="col-12 col-md-6 col-lg-4 mb-3">
                     <div class="">
                         <div class="seccionPanel p-3 d-flex">
                             <img src="img/panel1.svg" alt="">
-                            <div class="ps-2">
+                            <div class="infoContainer ps-2">
                                 <div class="nombreEstrellas d-flex">
                                     <p><?= $reseñaImprimir->getNombreCliente()?></p>
-                                    <img src="img/estrellas.svg" alt="">
+                                    <div class="puntuacion">
+                                        <p><?= $reseñaImprimir->getPuntuacion()?></p>
+                                    </div>
                                 </div>
                                 <div class="infoOpinion d-flex flex-column align-items-start">
-                                    <p>03-12-2023</p>
+                                    <p><?= $reseñaImprimir->getFecha()?></p>
                                     <p><?= $reseñaImprimir->getDescripcion() ?></p>
                                 </div>
                             </div>

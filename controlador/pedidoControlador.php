@@ -58,7 +58,7 @@
                     setcookie("totalUltimoPedido", $clienteId . "," . $total . "," . $pedido_id, time() + 120);
                 }
                 // Por ultimo, redireccionamos la pagina
-                header("Location:".URL."?controller=cuerpo");
+                header("Location:".URL."?controller=carrito");
             }
         }
     }

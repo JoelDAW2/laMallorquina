@@ -22,7 +22,7 @@ section{
 }
 
 #formularioEstrellas{
-    background-color: white;
+    background-color: transparent;
     border: none;
     display: flex;
     align-items: center;
@@ -49,6 +49,10 @@ section{
 
 .seccionPanel img{
     max-height: 30px;
+}
+
+.infoContainer{
+    width: 100%;
 }
 
 .nombreEstrellas{

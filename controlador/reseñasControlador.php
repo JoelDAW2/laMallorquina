@@ -7,7 +7,7 @@
                 include("modelo/reseña.php");
                 include("modelo/reseñasDAO.php");
                 include('vista/header.php');
-                $reseña = reseñasDAO::getReviewById(1);
+                $reseña = reseñasDAO::getReviews();
                 include_once 'vista/reseñas.php';
                 include("vista/seccionInfoEnvio.php");
                 include('vista/footer.php');
