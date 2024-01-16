@@ -1,19 +1,33 @@
 <?php
     class reseñasDAO{
 
-        public static function getReviews(){
-            $con = $con = dataBase::connect();
-            $stmt = $con->prepare("SELECT * FROM review");
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $con->close();
-            $listaReviews = [];
-            if ($result->num_rows > 0) {
-                while($review = $result->fetch_object("reseña")){
+        public static function getAllReviews() {
+            try {
+                $con = dataBase::connect();
+                if (!$con) {
+                    throw new Exception("Error de conexión a la base de datos.");
+                }
+    
+                $result = $con->query("SELECT * FROM review");
+                if (!$result) {
+                    throw new Exception("Error al ejecutar la consulta: " . $con->error);
+                }
+    
+                $listaReviews = [];
+                while ($review = $result->fetch_object("reseña")) {
                     $listaReviews[] = $review;
                 }
+    
+                $result->close();
+                $con->close();
+    
+                return $listaReviews;
+            } catch (Exception $e) {
+                // Manejar el error, puedes imprimir un mensaje de error o devolver un array vacío
+                // Puedes personalizar esto según tus necesidades
+                error_log($e->getMessage());
+                return [];
             }
-            return $listaReviews;
         }
 
         public static function getReviewById($id) {

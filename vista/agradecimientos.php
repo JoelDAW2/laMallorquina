@@ -10,13 +10,17 @@
 </head>
 <body>
     
-    <section>
-        <article class="d-flex justify-content-center align-items-center flex-column">
-            <img src="img/qrPrueba.jpg" alt="">
-            <h1>Grácias por la compra!</h1>
-            <h2>Para obtener la información de su pedido, escanee el siguiente código.</h2>
+    <section class="d-flex justify-content-center align-items-center py-5">
+        <article class="d-flex justify-content-center align-items-center flex-column py-4 articuloQr">
+            <div class="qr">
+                <img src="img/qrPrueba.jpg" alt="">
+            </div>
+            <h1>Grácias por su compra!</h1>
+            <h2>Para más información sobre el pedido, escanee el siguiente código.</h2>
             <div class="botones">
-                <a href="<?php URL ?>?controller=carrito">Volver</a>
+                <a href="<?php URL ?>?controller=carrito">
+                    <button>Volver</button>
+                </a>
                 <button>Deja tú opinión</button>
             </div>
         </article>
