@@ -36,6 +36,20 @@
                 </article>
             <?php } ?>
     </section>
+    
+    <?php
+
+       $resultDO =  apiControlador::apiGetReviews();
+       //var_dump($resultDO);
+
+        // URL de la API
+        //$apiUrl = 'https://pokeapi.co/api/v2/pokemon/ditto';
+        // Realizar la solicitud a la API
+        //$response = file_get_contents($apiUrl);
+        // Manejar la respuesta (en este ejemplo, simplemente imprimirla)
+        //echo $response;
+    ?>
+
 
     <!--SCRIPTS BOOTSTRAP-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
