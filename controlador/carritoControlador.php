@@ -41,6 +41,16 @@
             }
         }
 
+        public static function indexGracias(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                include('vista/header.php');
+                include_once 'vista/agradecimientos.php';
+                include('vista/footer.php');
+            }
+        } 
+
         // Funcion para calcular el total del pedido
         public static function calcularTotal(){
             // Inicializamos las siguientes variables
