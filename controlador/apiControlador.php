@@ -1,46 +1,19 @@
 <?php
-//Esto es un NUEVO CONTROLADOR
-//hacer todas las configuraciones necesarias para que funcione como controlador
+    //Instala la extensión Thunder Client en VSC. Te permite probar si tu API funciona correctamente.
+    include_once 'modelo/reseñasDAO.php';
+    class apiControlador{
 
-/** IMPORTANTE**/
-//Cargar Modelos necesarios BBDD
+        public static function apiGetAllReviews() {
+            // Obtener las reseñas usando la función existente
+            $reviews = reseñasDAO::getAllReviews();
 
-/** IMPORTANTE**/
-//Instala la extensión Thunder Client en VSC. Te permite probar si tu API funciona correctamente.
+            // Convertir los datos a formato JSON
+            $jsonReviews = json_encode($reviews);
 
-class apiControlador{
-
-    /*
-    public static function api() {
-       
-        if ($_POST["accion"] == 'get_review') {
-
-            $reviews = $reseñasDAO::getReviews();
-            echo json_encode($reviews, JSON_UNESCAPED_UNICODE);
-            return;
-
-        } else if ($_POST["accion"] == 'add_review') {
-
-            $id_pedido = json_decode($_POST["pedido"]);
-            $id_usuario = json_decode($_POST["id_usuario"]);
-
-            echo "Reseña agregada exitosamente";
-            return;
+            // Imprimir la respuesta JSON
+            header('Content-Type: application/json');
+            echo $jsonReviews;
         }
+    
     }
-    */
-
-    public static function apiGetReviews(){
-        $reviews = reseñasDAO::getReviews();
-       print_r($reviews);
-
-       $reviews = [1,2,3,4,5,6];
-        $r = json_encode($reviews);
-        echo $r;
-        if(json_last_error() !== JSON_ERROR_NONE){
-         //   echo json_last_error_msg();
-        }
-        return;
-    }
-}
 ?>

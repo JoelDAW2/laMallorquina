@@ -2,33 +2,41 @@
     class reseñasDAO{
 
         public static function getAllReviews() {
-            try {
-                $con = dataBase::connect();
-                if (!$con) {
-                    throw new Exception("Error de conexión a la base de datos.");
-                }
-    
-                $result = $con->query("SELECT * FROM review");
-                if (!$result) {
-                    throw new Exception("Error al ejecutar la consulta: " . $con->error);
-                }
-    
-                $listaReviews = [];
-                while ($review = $result->fetch_object("reseña")) {
-                    $listaReviews[] = $review;
-                }
-    
-                $result->close();
-                $con->close();
-    
+            $listaReviews = [];
+        
+            $con = dataBase::connect();
+            if (!$con) {
+                // Manejar el error de conexión si es necesario
                 return $listaReviews;
-            } catch (Exception $e) {
-                // Manejar el error, puedes imprimir un mensaje de error o devolver un array vacío
-                // Puedes personalizar esto según tus necesidades
-                error_log($e->getMessage());
-                return [];
             }
+        
+            $result = $con->query("SELECT * FROM review");
+            if (!$result) {
+                // Manejar el error de ejecución de la consulta si es necesario
+                $con->close();
+                return $listaReviews;
+            }
+        
+            while ($reviewData = $result->fetch_assoc()) {
+                $listaReviews[] = [
+                    'review_id' => $reviewData['review_id'],
+                    'cliente_id' => $reviewData['cliente_id'],
+                    'pedido_id' => $reviewData['pedido_id'],
+                    'nombre_cliente' => $reviewData['nombre_cliente'],
+                    'apellido_cliente' => $reviewData['apellido_cliente'],
+                    'puntuacion' => $reviewData['puntuacion'],
+                    'descripcion' => $reviewData['descripcion'],
+                    'fecha' => $reviewData['fecha'],
+                ];
+            }
+        
+            $result->close();
+            $con->close();
+        
+            return $listaReviews;
         }
+        
+        
 
         public static function getReviewById($id) {
             // Creamos la conexion con la BBDD

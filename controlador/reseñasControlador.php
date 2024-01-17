@@ -5,9 +5,9 @@
                 include_once 'vista/cuerpo.php';
             }else{
                 include("modelo/reseña.php");
-                include("modelo/reseñasDAO.php");
+                
                 include('vista/header.php');
-                $reseña = reseñasDAO::getAllReviews();
+                //$reseña = reseñasDAO::getAllReviews();
                 include_once 'vista/reseñas.php';
                 include("vista/seccionInfoEnvio.php");
                 include('vista/footer.php');
