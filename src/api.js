@@ -1,3 +1,8 @@
+let imgUser = document.createElement("img");
+imgUser.src = "img/panel1.svg";
+
+//******<img src="${imgUser.src}" alt="Foto de perfil del usuario"></img>
+
 // Llamar a la API para obtener reseñas usando fetch
 fetch("http://localhost/laMallorquina/?controller=api&action=apiGetAllReviews")
 .then(response => response.json())
@@ -7,11 +12,9 @@ fetch("http://localhost/laMallorquina/?controller=api&action=apiGetAllReviews")
 
     // Mostrar la información de las reseñas en la página
     reseñasData.forEach( (reseña) => {
-        let reseñaElemento = document.createElement('div');
+        let reseñaElemento = document.createElement('article');
+        reseñaElemento.classList.add('col-12', 'col-md-6', 'col-lg-4', 'col-mb-3');
         reseñaElemento.innerHTML = `
-            <p>${reseña.review_id}</p>
-            <p>${reseña.cliente_id}</p>
-            <p>${reseña.pedido_id}</p>
             <p>${reseña.nombre_cliente}</p>
             <p>${reseña.apellido_cliente}</p>
             <p>${reseña.puntuacion}</p>
