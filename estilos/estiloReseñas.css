@@ -41,7 +41,7 @@ section{
 }
 
 .seccionPanel{
-    padding: 16px 0;
+    padding: 16px 16px;
     box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
     max-height: 160px;
     overflow: hidden;

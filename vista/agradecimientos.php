@@ -11,7 +11,7 @@
 <body>
     
     <section class="d-flex justify-content-center align-items-center py-5">
-        <article class="d-flex justify-content-center align-items-center flex-column py-4 articuloQr">
+        <article id="articuloQr" class="d-flex justify-content-center align-items-center flex-column py-4 articuloQr">
             <div class="qr">
                 <img src="img/qrPrueba.jpg" alt="">
             </div>
@@ -23,10 +23,14 @@
                 </a>
                 <button>Deja tú opinión</button>
             </div>
+            <form action="" method="post">
+                <input type="text" name="" id="">
+            </form>
         </article>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="src/interaccionesQr.js"></script>
 </body>
 </html>
