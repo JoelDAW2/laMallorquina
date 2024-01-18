@@ -14,6 +14,12 @@
             header('Content-Type: application/json');
             echo $jsonReviews;
         }
-    
+
+        public static function apiGetAllReviewsByPunctuation($num){
+            $reviewsPuntuacion = reseñasDAO::getReviewsByPunctuation($num);
+            $jsonReviews = json_encode($reviewsPuntuacion);
+            header('Content-Type: application/json');
+            echo $jsonReviews;
+        }
     }
 ?>

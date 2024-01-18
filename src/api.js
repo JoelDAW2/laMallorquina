@@ -7,19 +7,20 @@ estrellaAmarilla.src = "img/eAmarilla.svg";
 let estrellaGris = document.createElement("img");
 estrellaGris.src = "img/eGris.svg";
 
+let listadoReseñas;
+
 //******<img src="${imgUser.src}" alt="Foto de perfil del usuario"></img>
 
 // Llamar a la API para obtener reseñas usando fetch
 fetch("http://localhost/laMallorquina/?controller=api&action=apiGetAllReviews")
 .then(response => response.json())
 .then(reseñasData => {
-    //console.log(reseñasData); // Agrega esta línea
     let reseñasContainer = document.getElementById('reseñasContainer');
-
+    listadoReseñas = reseñasData;
     // Mostrar la información de las reseñas en la página
     reseñasData.forEach( (reseña) => {
         let reseñaElemento = document.createElement('article');
-        reseñaElemento.classList.add('col-12', 'col-md-6', 'col-lg-4', 'col-mb-3');
+        reseñaElemento.classList.add('col-12', 'col-md-6', 'col-lg-4', 'col-mb-3','panelFiltrar',parseInt(reseña.puntuacion));
         reseñaElemento.innerHTML = `
             <div class="seccionPanel d-flex">
                 <img src="${imgUser.src}" alt="Foto de perfil del usuario"></img>
@@ -42,6 +43,7 @@ fetch("http://localhost/laMallorquina/?controller=api&action=apiGetAllReviews")
     });
 });
 
+/*
 let puntuacionContainer = document.getElementById("divPuntuacion");
 
 for (let i = 0; i < 5; i++) {
@@ -55,3 +57,4 @@ for (let i = 0; i < 5; i++) {
 
     puntuacionContainer.appendChild(estrella);
 }
+*/

@@ -3,20 +3,17 @@
 
         public static function getAllReviews() {
             $listaReviews = [];
-        
             $con = dataBase::connect();
             if (!$con) {
                 // Manejar el error de conexión si es necesario
                 return $listaReviews;
             }
-        
             $result = $con->query("SELECT * FROM review");
             if (!$result) {
                 // Manejar el error de ejecución de la consulta si es necesario
                 $con->close();
                 return $listaReviews;
             }
-        
             while ($reviewData = $result->fetch_assoc()) {
                 $listaReviews[] = [
                     'review_id' => $reviewData['review_id'],
@@ -29,13 +26,36 @@
                     'fecha' => $reviewData['fecha'],
                 ];
             }
-        
             $result->close();
             $con->close();
-        
             return $listaReviews;
         }
         
+        public static function getReviewsByPunctuation($num){
+            $con = dataBase::connect();
+            $stmt = $con->prepare("SELECT * FROM review WHERE puntuacion = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $con->close();
+
+            $reviews = array();
+
+            while ($row = $result->fetch_assoc()) {
+                $reviews[] = [
+                    'review_id' => $row['review_id'],
+                    'cliente_id' => $row['cliente_id'],
+                    'pedido_id' => $row['pedido_id'],
+                    'nombre_cliente' => $row['nombre_cliente'],
+                    'apellido_cliente' => $row['apellido_cliente'],
+                    'puntuacion' => $row['puntuacion'],
+                    'descripcion' => $row['descripcion'],
+                    'fecha' => $row['fecha'],
+                ];
+            }
+
+            return $reviews;
+        }
         
 
         public static function getReviewById($id) {
