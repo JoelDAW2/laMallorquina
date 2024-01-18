@@ -18,6 +18,10 @@ let img5 = document.createElement("img");
 img5.src = "img/cincoEstrellas.svg";
 mostrarTodo = document.createElement("p");
 mostrarTodo.innerHTML = "Mostrar todo";
+ordenAsc = document.createElement("p");
+ordenAsc.innerHTML = "Orden ascendente";
+ordenDesc = document.createElement("p");
+ordenDesc.innerHTML = "Orden descendente";
 
 /*--- VARIABLES FILTRO PUNTUACION ---*/
 let cat = document.getElementsByClassName("panelFiltrar");
@@ -26,12 +30,12 @@ formularioEstrella.addEventListener( "click", (event) => {
     if (event.target === formularioEstrella) {
         if(primerClic){
             formularioEstrella.classList.add("botonAbierto");
-            formularioEstrella.innerText = "Ordenar por: ▲"
+            formularioEstrella.innerText = "Filtrar por: ▲"
             formularioEstrella.style.display = "flex";
             formularioEstrella.style.flexDirection = "column"; 
             
 
-            let listaEstrellas = [img5, img4, img3, img2, img1, mostrarTodo];
+            let listaEstrellas = [img5, img4, img3, img2, img1, ordenAsc, ordenDesc, mostrarTodo];
 
             for (let i = 0; i < listaEstrellas.length; i++) {
                 formularioEstrella.appendChild(listaEstrellas[i]);
@@ -39,7 +43,7 @@ formularioEstrella.addEventListener( "click", (event) => {
 
             primerClic = false;
         }else{
-            formularioEstrella.innerHTML = "Ordenar por: ▼"; // Corregido aquí
+            formularioEstrella.innerHTML = "Filtrar por: ▼"; // Corregido aquí
             primerClic = true;
         }
     } else {
@@ -214,10 +218,79 @@ formularioEstrella.addEventListener( "click", (event) => {
                         </div>
                     </div>
                 `;
+                // Agregar el elemento al contenedor
+                reseñasContainer.appendChild(reseñaElemento);
+            });
+        } else if(event.target === ordenAsc) {
+            let cat5 = listadoReseñas.filter((e) => e.puntuacion >= "1.0" && e.puntuacion <= "5.0");
+            let listaAsc = cat5.sort((a, b) => parseFloat(a.puntuacion) - parseFloat(b.puntuacion));
+
+            reseñasContainer.innerHTML = "";
+
+            listaAsc.forEach((data) => {
+                // Crear un elemento de artículo
+                let reseñaElemento = document.createElement('article');
+                reseñaElemento.classList.add('col-12', 'col-md-6', 'col-lg-4', 'col-mb-3', 'panelFiltrar', parseInt(data.puntuacion));
+        
+                // Crear la estructura interna del elemento
+                reseñaElemento.innerHTML = `
+                    <div class="seccionPanel d-flex">
+                        <img src="${imgUser.src}" alt="Foto de perfil del usuario"></img>
+                        <div class="infoContainer ps-3">
+                            <div class="nombreEstrellas d-flex">
+                                <div class="d-flex">
+                                    <p>${data.nombre_cliente}</p>
+                                    <p>${data.apellido_cliente}</p>
+                                </div>
+                                <div id="divPuntuacion" class="puntuacion">${data.puntuacion}</div>
+                            </div>
+                            <div class="infoOpinion d-flex flex-column align-items-start">
+                                <p>${data.fecha}</p>
+                                <p id="txtDescripcion">${data.descripcion}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
         
                 // Agregar el elemento al contenedor
                 reseñasContainer.appendChild(reseñaElemento);
             });
+
+        } else if(event.target === ordenDesc) {
+            let cat5 = listadoReseñas.filter((e) => e.puntuacion >= "1.0" && e.puntuacion <= "5.0");
+            let listaAsc = cat5.sort((a, b) => parseFloat(b.puntuacion) - parseFloat(a.puntuacion));
+
+            reseñasContainer.innerHTML = "";
+
+            listaAsc.forEach((data) => {
+                // Crear un elemento de artículo
+                let reseñaElemento = document.createElement('article');
+                reseñaElemento.classList.add('col-12', 'col-md-6', 'col-lg-4', 'col-mb-3', 'panelFiltrar', parseInt(data.puntuacion));
+        
+                // Crear la estructura interna del elemento
+                reseñaElemento.innerHTML = `
+                    <div class="seccionPanel d-flex">
+                        <img src="${imgUser.src}" alt="Foto de perfil del usuario"></img>
+                        <div class="infoContainer ps-3">
+                            <div class="nombreEstrellas d-flex">
+                                <div class="d-flex">
+                                    <p>${data.nombre_cliente}</p>
+                                    <p>${data.apellido_cliente}</p>
+                                </div>
+                                <div id="divPuntuacion" class="puntuacion">${data.puntuacion}</div>
+                            </div>
+                            <div class="infoOpinion d-flex flex-column align-items-start">
+                                <p>${data.fecha}</p>
+                                <p id="txtDescripcion">${data.descripcion}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+        
+                // Agregar el elemento al contenedor
+                reseñasContainer.appendChild(reseñaElemento);
+            });
+
         } else if(event.target === mostrarTodo){
             let cat5 = listadoReseñas.filter((e) => e.puntuacion >= "1.0" && e.puntuacion <= "5.0");
             console.log(cat5);
@@ -253,17 +326,21 @@ formularioEstrella.addEventListener( "click", (event) => {
                 // Agregar el elemento al contenedor
                 reseñasContainer.appendChild(reseñaElemento);
             });
-        }
-        
+        } 
     }
 });
 
-/*--- FILTRO PUNTUACION ---*/
 
-let prueba = formularioEstrellas.children;
-for (let i = 0; i < prueba.length; i++) {
-    console.log(prueba[i]);
-}
+
+
+
+
+
+
+
+
+
+
 
 
 

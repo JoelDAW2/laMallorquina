@@ -17,7 +17,7 @@ include_once 'controlador/apiControlador.php';
     <section>
         <div class="tituloForm">
             <h2 id="titulo">Valoraciones</h2>
-            <button id="formularioEstrellas">Ordenar por: ▼</button>
+            <button id="formularioEstrellas">Filtrar por: ▼</button>
         </div>
         <div id="reseñasContainer" class="row"></div>
     </section>
