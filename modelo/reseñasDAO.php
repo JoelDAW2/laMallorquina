@@ -53,7 +53,6 @@
                     'fecha' => $row['fecha'],
                 ];
             }
-
             return $reviews;
         }
         
