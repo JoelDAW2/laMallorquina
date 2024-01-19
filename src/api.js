@@ -9,8 +9,6 @@ estrellaGris.src = "img/eGris.svg";
 
 let listadoReseñas;
 
-//******<img src="${imgUser.src}" alt="Foto de perfil del usuario"></img>
-
 // Llamar a la API para obtener reseñas usando fetch
 fetch("http://localhost/laMallorquina/?controller=api&action=apiGetAllReviews")
 .then(response => response.json())
@@ -43,18 +41,3 @@ fetch("http://localhost/laMallorquina/?controller=api&action=apiGetAllReviews")
     });
 });
 
-/*
-let puntuacionContainer = document.getElementById("divPuntuacion");
-
-for (let i = 0; i < 5; i++) {
-    let estrella = document.createElement("img");
-
-    if (i < reseña.puntuacion) {
-        estrella.src = estrellaAmarilla.src;
-    } else {
-        estrella.src = estrellaGris.src;
-    }
-
-    puntuacionContainer.appendChild(estrella);
-}
-*/

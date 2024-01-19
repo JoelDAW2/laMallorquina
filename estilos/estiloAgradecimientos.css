@@ -1,6 +1,8 @@
 article{
     max-width: 400px;
     box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
+    padding-left: 24px;
+    padding-right: 24px;
 }
 
 .qr{
@@ -22,6 +24,10 @@ article{
 
 .articuloQr h2{
     font-size: 20px;
+}
+
+#btnDejarOpinion{
+    border-radius: 0;
 }
 
 .botones a{
@@ -64,4 +70,16 @@ article{
 
 input[type="text"]{
     width: 100%;
+}
+
+/*--- ESTILOS MODAL ---*/
+
+.infoUsuario img{
+    max-width: 30px;
+}
+
+.infoUsuario h3{
+    margin: 0;
+    font-size: 20px;
+    padding-left: 5px;
 }
