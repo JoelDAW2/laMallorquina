@@ -57,8 +57,10 @@
                     // Si no existe, la creamos pasandole los valores que queremos almacenar en ella y asignandole el tiempo que queremos que dure
                     setcookie("totalUltimoPedido", $clienteId . "," . $total . "," . $pedido_id, time() + 120);
                 }
-                // Por ultimo, redireccionamos la pagina
-                header("Location:".URL."?controller=carrito&action=indexGracias");
+                // Agregamos el ID del pedido a la URL antes de redireccionar
+                $urlRedireccion = URL . "?controller=carrito&action=indexGracias&pedido_id=" . $pedido_id;
+                // Por último, redireccionamos la página
+                header("Location: " . $urlRedireccion);
             }
         }
     }

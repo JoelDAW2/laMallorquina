@@ -51,6 +51,14 @@
             }
         } 
 
+        public static function indexInfoPedidoApi(){
+            if(!isset($_GET['controller'])){
+                include_once 'vista/cuerpo.php';
+            }else{
+                include_once 'vista/infoPedidoQr.php';
+            }
+        } 
+
         // Funcion para calcular el total del pedido
         public static function calcularTotal(){
             // Inicializamos las siguientes variables

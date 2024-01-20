@@ -22,9 +22,24 @@
             echo $jsonReviews;
         }
 
+        public static function apiGetPedidoById($id){
+            $pedidoApi = reseñasDAO::apiGetInfoPedidoById($id);
+            $jsonReviews = json_encode($pedidoApi);
+            echo $pedidoApi;
+        }
+
+        // NO FUNCIONA
         public static function apiInsertReview($cliente_id, $pedido_id, $nombre_cliente, $apellido_cliente, $puntuacion, $descripcion, $fecha){
             reseñasDAO::insertReview($cliente_id, $pedido_id, $nombre_cliente, $apellido_cliente, $puntuacion, $descripcion, $fecha);
         }
         
+        // IMPRIMIR EL CODIGO QR
+        public static function cogerIdApi(){
+            if(isset($_GET['pedido_id'])){
+                include 'lib/phpqrcode/qrlib.php';
+                $text = 'http://localhost/laMallorquina/?controller=carrito&action=indexInfoPedidoApi';
+                QRcode::png($text, 'img/image.png');
+            }
+        }
     }
 ?>

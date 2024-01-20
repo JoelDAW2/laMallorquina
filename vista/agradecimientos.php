@@ -9,11 +9,15 @@
     <title>La Mallorquina | Déjanos tú opinión</title>
 </head>
 <body>
+
+    <?php
+      apiControlador::cogerIdApi();
+    ?>
     
     <section class="d-flex justify-content-center align-items-center py-5">
         <article id="articuloQr" class="d-flex justify-content-center align-items-center flex-column py-4 articuloQr">
             <div class="qr">
-                <img src="img/qrPrueba.jpg" alt="">
+                <img src="img/image.png" alt="">
             </div>
             <h1>Grácias por su compra!</h1>
             <h2>Para más información sobre el pedido, escanee el siguiente código.</h2>
