@@ -31,8 +31,6 @@
             }
         }
         
-        
-
         // NO FUNCIONA
         public static function apiInsertReview($cliente_id, $pedido_id, $nombre_cliente, $apellido_cliente, $puntuacion, $descripcion, $fecha){
             reseñasDAO::insertReview($cliente_id, $pedido_id, $nombre_cliente, $apellido_cliente, $puntuacion, $descripcion, $fecha);

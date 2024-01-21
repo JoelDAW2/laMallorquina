@@ -85,10 +85,11 @@
 
         public static function apiGetInfoPedidoById($id) {
             $con = dataBase::connect();
-            $stmt = $con->prepare("SELECT pedido.fecha_pedido, pedido_producto.producto_id, pedido_producto.cantidad, pedido_producto.precio_unidad
-                FROM pedido
-                JOIN pedido_producto ON pedido.pedido_id = pedido_producto.pedido_id
-                WHERE pedido.pedido_id = ?");
+            $stmt = $con->prepare("SELECT pedido.fecha_pedido, pedido_producto.producto_id, pedido_producto.cantidad, pedido_producto.precio_unidad, producto.nombre_producto, pedido.precio_total
+            FROM pedido
+            JOIN pedido_producto ON pedido.pedido_id = pedido_producto.pedido_id
+            JOIN producto ON producto.producto_id = pedido_producto.producto_id
+            WHERE pedido.pedido_id = ?");
             $stmt->bind_param("i", $id);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -101,6 +102,8 @@
                     'producto_id' => $row['producto_id'],
                     'cantidad' => $row['cantidad'],
                     'precio_unidad' => $row['precio_unidad'],
+                    'nombre_producto' => $row['nombre_producto'],
+                    'precio_total' => $row['precio_total'],
                 ];
             }
             return $infoPedido;
