@@ -22,11 +22,16 @@
             echo $jsonReviews;
         }
 
-        public static function apiGetPedidoById($id){
-            $pedidoApi = reseñasDAO::apiGetInfoPedidoById($id);
-            $jsonReviews = json_encode($pedidoApi);
-            echo $pedidoApi;
+        public static function apiGetPedidoById(){
+            if(isset($_GET['pedido_id'])){
+                $id = $_GET['pedido_id'];
+                $pedidoApi = reseñasDAO::apiGetInfoPedidoById($id);
+                header('Content-Type: application/json');
+                echo json_encode($pedidoApi);
+            }
         }
+        
+        
 
         // NO FUNCIONA
         public static function apiInsertReview($cliente_id, $pedido_id, $nombre_cliente, $apellido_cliente, $puntuacion, $descripcion, $fecha){
@@ -37,8 +42,9 @@
         public static function cogerIdApi(){
             if(isset($_GET['pedido_id'])){
                 include 'lib/phpqrcode/qrlib.php';
-                $text = 'http://localhost/laMallorquina/?controller=carrito&action=indexInfoPedidoApi';
-                QRcode::png($text, 'img/image.png');
+                $pedido_id = $_GET['pedido_id'];
+                $urlRedireccion = URL . "?controller=carrito&action=indexInfoPedidoApi&pedido_id=" . $pedido_id;
+                QRcode::png($urlRedireccion, 'img/image.png');
             }
         }
     }

@@ -11,6 +11,7 @@
 <body>
 
     <?php
+      // Imprimir img de la API
       apiControlador::cogerIdApi();
     ?>
     

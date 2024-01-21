@@ -2,13 +2,53 @@
 const urlParams = new URLSearchParams(window.location.search);
 const pedidoId = urlParams.get('pedido_id');
 
+let pedidoContent = document.getElementById("general");
+
 // Hacer la solicitud Fetch con el pedido_id
-fetch(`http://localhost/laMallorquina/?controller=api&action=cogerIdApi&pedido_id=${pedidoId}`)
+fetch(`http://localhost/laMallorquina/?controller=api&action=apiGetPedidoById&pedido_id=${pedidoId}`)
     .then(response => response.json())
-    .then(reseñasData => {
-        let general = document.getElementById("general");
-        general.innerHTML = "hola";
-    });
+    .then(pedidoData => {
+        pedidoData.forEach(item => {
+            const productoElement = document.createElement("div");
+            productoElement.innerHTML = `
+                <p>Fecha del pedido: ${item.fecha_pedido}</p>
+                <p>ID del producto: ${item.producto_id}</p>
+                <p>Cantidad: ${item.cantidad}</p>
+                <p>Precio por unidad: ${item.precio_unidad}</p>
+                <p>- - - - - - - - - - - - - - - - - -</p> 
+            `;
+            pedidoContent.appendChild(productoElement);
+        });
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    
 
 /*--- ESTRELLAS DEL MODAL ---*/
 let estrellasPuntuacion = document.getElementById("estrellasSeleccionar");
