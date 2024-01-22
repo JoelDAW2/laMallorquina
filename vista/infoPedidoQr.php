@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="estilos/estiloInfoPedidoQr.css">
     <title>La Mallorquina | Información del pedido</title>
 </head>
-<body>
+<body class="d-flex justify-content-center align-items-center flex-column">
     <div class="logoEmpresa d-flex justify-content-center pt-4">
         <img src="img/logoMallorquina.svg" alt="">
     </div>
+    <section class="row pe-0 d-flex flex-column justify-content-center">
     <h2 id="tituloPedido" class="subtitulo">Detalles del pedido </h2>
-    <section class="row pe-0">
         <div class="row tiquet p-0">
             <div id="general" class="pe-1"></div>
             <div id="pTotal"></div>
             <h3>Pago con tarjeta</h3>
-            <h3>Grácias por su visita</h3>
+            <h3>Grácias por su visita!</h3>
         </div>
     </section>
 
