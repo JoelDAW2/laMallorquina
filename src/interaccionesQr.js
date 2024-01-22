@@ -40,34 +40,6 @@ fetch(`http://localhost/laMallorquina/?controller=api&action=apiGetPedidoById&pe
     })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-    
-
 /*--- ESTRELLAS DEL MODAL ---*/
 let estrellasPuntuacion = document.getElementById("estrellasSeleccionar");
 
