@@ -5,11 +5,11 @@ btn.addEventListener( "click", () => {
         method: 'POST',
         body: JSON.stringify({
             cliente_id: 30,
-            pedido_id: 131,
-            nombre_cliente: 's',
-            apellido_cliente: 's',
-            puntuacion: 3,
-            descripcion: 's',
+            pedido_id: 147,
+            nombre_cliente: 'WWWW',
+            apellido_cliente: 'FFFFF',
+            puntuacion: 5,
+            descripcion: 'SSSSSS',
             fecha: '2024-01-19'
         }),
         headers: {
@@ -18,7 +18,6 @@ btn.addEventListener( "click", () => {
     }).then(response => response.json()) 
     .then(json => console.log(json))
     .catch(err => console.log(err));
-    console.log("insertado");
 });
 
 

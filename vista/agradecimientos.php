@@ -51,7 +51,7 @@
       <div class="modal-body">
         <div id="estrellasSeleccionar" class="d-flex justify-content-center flex-wrap"></div>
         <form action="">
-            <input type="text" placeholder="Cuéntanos tú experiencia">
+            <input type="text" id="txtReviewInsertar" placeholder="Cuéntanos tú experiencia">
         </form>
       </div>
       <div class="modal-footer">

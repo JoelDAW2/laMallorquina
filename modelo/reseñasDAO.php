@@ -55,13 +55,15 @@
             }
             return $reviews;
         }
-        
+            
         public static function insertReview($clienteId, $pedidoId, $nombreCliente, $apellidoCliente, $puntuacion, $descripcion, $fecha){
             $con = dataBase::connect();
-            $stmt = $con->prepare("INSERT INTO `review`(`cliente_id`, `pedido_id`, `nombre_cliente`, `apellido_cliente`, `puntuacion`, `descripcion`, `fecha`) VALUES ('$clienteId','$pedidoId','$nombreCliente','$apellidoCliente','$puntuacion','$descripcion','$fecha')");
+            $stmt = $con->prepare("INSERT INTO `review`(`cliente_id`, `pedido_id`, `nombre_cliente`, `apellido_cliente`, `puntuacion`, `descripcion`, `fecha`) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("iisssss", $clienteId, $pedidoId, $nombreCliente, $apellidoCliente, $puntuacion, $descripcion, $fecha);
             $stmt->execute();
             $con->close();
         }
+        
 
         public static function getReviewById($id) {
             // Creamos la conexion con la BBDD

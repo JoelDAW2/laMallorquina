@@ -31,10 +31,20 @@
             }
         }
         
-        // NO FUNCIONA
-        public static function apiInsertReview($cliente_id, $pedido_id, $nombre_cliente, $apellido_cliente, $puntuacion, $descripcion, $fecha){
+        public static function apiInsertReview() {
+            $data = json_decode(file_get_contents('php://input'), true);
+        
+            $cliente_id = $data['cliente_id'];
+            $pedido_id = $data['pedido_id'];
+            $nombre_cliente = $data['nombre_cliente'];
+            $apellido_cliente = $data['apellido_cliente'];
+            $puntuacion = $data['puntuacion'];
+            $descripcion = $data['descripcion'];
+            $fecha = $data['fecha'];
+        
             reseñasDAO::insertReview($cliente_id, $pedido_id, $nombre_cliente, $apellido_cliente, $puntuacion, $descripcion, $fecha);
         }
+        
         
         // IMPRIMIR EL CODIGO QR
         public static function cogerIdApi(){
