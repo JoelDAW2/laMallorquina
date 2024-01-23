@@ -25,7 +25,7 @@ fetch("http://localhost/laMallorquina/?controller=api&action=apiGetAllReviews")
                 <div class="infoContainer ps-3">
                     <div class="nombreEstrellas d-flex">
                         <div class="d-flex">
-                            <p>${reseña.nombre_cliente}</p>
+                            <p class="pe-1">${reseña.nombre_cliente}</p>
                             <p>${reseña.apellido_cliente}</p>
                         </div>
                         <div id="divPuntuacion" class="puntuacion">${reseña.puntuacion}</div>
@@ -41,3 +41,20 @@ fetch("http://localhost/laMallorquina/?controller=api&action=apiGetAllReviews")
     });
 });
 
+
+
+/*--- OBTENER INFORMACION DEL USUARIO ---*/
+
+axios.get("http://localhost/laMallorquina/?controller=api&action=obtenerInfoUser")
+    .then(response => {
+        console.log("Información del usuario:", response.data);
+
+        // Ejemplo: Actualizar elementos en la página con la información
+        let tNombre = document.getElementById('nombre');
+        let tApellido = document.getElementById('apellido');
+        tNombre.textContent = response.data[0].nombre;
+        tApellido.textContent = response.data[0].apellido;
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });

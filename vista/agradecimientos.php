@@ -1,3 +1,7 @@
+<?php
+include_once 'controlador/apiControlador.php';  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,9 +33,6 @@
                 <!-- Button trigger modal -->
                 <button type="button" id="btnDejarOpinion" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Deja tú opinión</button>
             </div>
-            <form action="" method="post">
-                <input type="text" name="" id="">
-            </form>
         </article>
     </section>
     
@@ -49,7 +50,8 @@
               </form>
             <?php endif; ?>
             <img src="img/panel1.svg" alt="Imagen por defecto del usuario">
-            <h3>Joel Cosp</h3>
+            <h3 id="nombre"></h3>
+            <h3 id="apellido"></h3>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
@@ -67,8 +69,10 @@
   </div>
 </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="src/api.js"></script>
     <script src="src/interaccionesQr.js"></script>
     <script src="src/apiInsertarReview.js"></script>
 </body>

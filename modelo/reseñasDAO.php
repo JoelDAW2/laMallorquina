@@ -110,6 +110,28 @@
             }
             return $infoPedido;
         }
+
+        public static function userActive($id){
+            $con = dataBase::connect();
+            $stmt = $con->prepare("SELECT * FROM cliente WHERE cliente_id = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            
+            $infoUsuario = array();
+
+            while ($row = $result->fetch_assoc()) {
+                $infoUsuario[] = [
+                    'cliente_id' => $row['cliente_id'],
+                    'nombre' => $row['nombre'],
+                    'apellido' => $row['apellido'],
+                    'correo_electronico' => $row['correo_electronico'],
+                    'rol' => $row['rol'],
+                    'sexo' => $row['sexo'],
+                ];
+            }
+            return $infoUsuario;
+        }
         
     }
 ?>

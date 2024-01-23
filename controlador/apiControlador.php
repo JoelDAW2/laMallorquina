@@ -55,5 +55,14 @@
                 QRcode::png($urlRedireccion, 'img/image.png');
             }
         }
+
+        public static function obtenerInfoUser(){
+            if(isset($_SESSION['idCliente'])){
+                $id = $_SESSION['idCliente'];
+                $usuarioActivo = reseñasDAO::userActive($id);
+                header('Content-Type: application/json');
+                echo json_encode($usuarioActivo);
+            }
+        }
     }
 ?>

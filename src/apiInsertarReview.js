@@ -57,14 +57,17 @@ btn.addEventListener( "click", () => {
 
         let fechaActual = `${year}-${month}-${day}`;
 
+        let name = document.getElementById("nombre").textContent;
+        let lastname = document.getElementById("apellido").textContent;
+
         if(puntos != undefined){
             fetch("http://localhost/laMallorquina/?controller=api&action=apiInsertReview", {
             method: 'POST',
             body: JSON.stringify({
                 cliente_id: idCliente, // Cogerlo con lo del storage alomejor
                 pedido_id: idPedido,
-                nombre_cliente: 'WWWW',
-                apellido_cliente: 'FFFFF',
+                nombre_cliente: name,
+                apellido_cliente: lastname,
                 puntuacion: puntos, 
                 descripcion: vInputText,
                 fecha: fechaActual
@@ -76,7 +79,7 @@ btn.addEventListener( "click", () => {
         .then(json => console.log(json))
         .catch(err => console.log(err));
         }else{
-            alert("Selecciona puntuacion");
+            alert("Selecciona una puntuacion");
         }
 });
 
