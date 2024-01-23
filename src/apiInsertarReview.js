@@ -6,6 +6,8 @@ estrellaLlena.src = "img/eAmarilla.svg";
 let estrellaVacia = document.createElement("img");
 estrellaVacia.src = "img/eGris.svg";
 
+let puntos; // Declarar la variable en un ámbito más amplio
+
 function aplicarEstrellasVacias() {
     for (let i = 0; i < 5; i++) {
         estrellasPuntuacion.appendChild(estrellaVacia.cloneNode(true));
@@ -13,6 +15,28 @@ function aplicarEstrellasVacias() {
 }
 
 aplicarEstrellasVacias();
+
+
+
+
+
+
+function determinarPuntuacion() {
+    // Obtener los elementos hijos del contenedor de estrellas
+    let estrellas = estrellasPuntuacion.children;
+
+    // Recorrer cada estrella y agregar un evento click a cada una
+    for (let i = 0; i < estrellas.length; i++) {
+        estrellas[i].addEventListener("click", () => {
+            puntos = i + 1;
+            // Imprimir en la consola el número de la estrella seleccionada
+            console.log(puntos);
+        });
+    }
+}
+
+determinarPuntuacion();
+
 
 
 // Obtener el pedido_id de la URL
@@ -33,23 +57,27 @@ btn.addEventListener( "click", () => {
 
         let fechaActual = `${year}-${month}-${day}`;
 
-        fetch("http://localhost/laMallorquina/?controller=api&action=apiInsertReview", {
-        method: 'POST',
-        body: JSON.stringify({
-            cliente_id: idCliente, // Cogerlo con lo del storage alomejor
-            pedido_id: idPedido,
-            nombre_cliente: 'WWWW',
-            apellido_cliente: 'FFFFF',
-            puntuacion: 5, 
-            descripcion: vInputText,
-            fecha: fechaActual
-        }),
-        headers: {
-            'Content-Type': 'application/json; charset=UTF-8',
+        if(puntos != undefined){
+            fetch("http://localhost/laMallorquina/?controller=api&action=apiInsertReview", {
+            method: 'POST',
+            body: JSON.stringify({
+                cliente_id: idCliente, // Cogerlo con lo del storage alomejor
+                pedido_id: idPedido,
+                nombre_cliente: 'WWWW',
+                apellido_cliente: 'FFFFF',
+                puntuacion: puntos, 
+                descripcion: vInputText,
+                fecha: fechaActual
+            }),
+            headers: {
+                'Content-Type': 'application/json; charset=UTF-8',
+            }
+        }).then(response => response.json()) 
+        .then(json => console.log(json))
+        .catch(err => console.log(err));
+        }else{
+            alert("Selecciona puntuacion");
         }
-    }).then(response => response.json()) 
-    .then(json => console.log(json))
-    .catch(err => console.log(err));
 });
 
 
