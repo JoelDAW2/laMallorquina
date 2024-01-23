@@ -43,6 +43,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <div class="infoUsuario d-flex align-items-center">
+            <?php if (isset($_SESSION['idCliente'])) : ?>
+              <form action="">
+                <input type="hidden" name="numIdCliente" value="<?= $_SESSION['idCliente'] ?>">
+              </form>
+            <?php endif; ?>
             <img src="img/panel1.svg" alt="Imagen por defecto del usuario">
             <h3>Joel Cosp</h3>
         </div>

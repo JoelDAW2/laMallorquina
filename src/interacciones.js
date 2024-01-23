@@ -387,4 +387,3 @@ for (let i = 0; i < numsPuntuacion.length; i++) {
 }
 
 
-
