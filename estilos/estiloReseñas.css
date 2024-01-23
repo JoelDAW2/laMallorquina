@@ -52,10 +52,13 @@ section{
     padding: 5px;
 }
 
+/*--- ESTILOS RESEÑAS ---*/
+
 .seccionPanel{
-    padding: 16px 16px;
+    padding: 16px 16px 0 16px;
     box-shadow: 2px 2px 8px 0 rgba(0,0,0,.2);
-    max-height: 160px;
+    margin-bottom: 20px;
+    height: 170px;
     overflow: hidden;
 }
 
@@ -78,16 +81,15 @@ section{
     margin: 0;
 }
 
-.infoOpinion{
-    max-height: 170px;
+.infoContainer p{
+    margin-bottom: 8px;
+}
+
+#txtDescripcion{
+    max-height: 90px;
     overflow: scroll;
 }
 
-.infoOpinion p{
-    margin: 0;
-    color: #777777;
-    text-align: justify;
-}
 
 /*--- SCROLL BAR ---*/
 
@@ -103,4 +105,5 @@ section{
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+    background-color: #D9D9D9;
 }

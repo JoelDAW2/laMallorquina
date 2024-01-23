@@ -339,14 +339,6 @@ formularioEstrella.addEventListener( "click", (event) => {
 
 
 
-
-
-
-
-
-
-
-
 /*--- IMPRIMIR PUNTUACION ESTRELLAS ---*/
 
 let numsPuntuacion = document.getElementsByClassName("puntuacion");

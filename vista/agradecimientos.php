@@ -38,36 +38,36 @@ include_once 'controlador/apiControlador.php';
     
     
 
-<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <div class="infoUsuario d-flex align-items-center">
-            <?php if (isset($_SESSION['idCliente'])) : ?>
-              <form action="">
-                <input type="hidden" name="numIdCliente" value="<?= $_SESSION['idCliente'] ?>">
-              </form>
-            <?php endif; ?>
-            <img src="img/panel1.svg" alt="Imagen por defecto del usuario">
-            <h3 id="nombre"></h3>
-            <h3 id="apellido"></h3>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="infoUsuario d-flex align-items-center">
+                <?php if (isset($_SESSION['idCliente'])) : ?>
+                  <form action="">
+                    <input type="hidden" name="numIdCliente" value="<?= $_SESSION['idCliente'] ?>">
+                  </form>
+                <?php endif; ?>
+                <img src="img/panel1.svg" alt="Imagen por defecto del usuario">
+                <h3 id="nombre"></h3>
+                <h3 id="apellido"></h3>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="estrellasSeleccionar" class="d-flex justify-content-center flex-wrap"></div>
+            <form action="">
+                <input type="text" id="txtReviewInsertar" placeholder="Cuéntanos tú experiencia">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" id="btnEnviarDatos" class="btn btn-primary">Enviar</button>
+          </div>
         </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div id="estrellasSeleccionar" class="d-flex justify-content-center flex-wrap"></div>
-        <form action="">
-            <input type="text" id="txtReviewInsertar" placeholder="Cuéntanos tú experiencia">
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" id="btnEnviarDatos" class="btn btn-primary">Enviar</button>
       </div>
     </div>
-  </div>
-</div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>

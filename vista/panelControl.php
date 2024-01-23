@@ -73,9 +73,9 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4 mb-3">
                 <div class="seccionPanel p-3 d-flex jsutify-content-center align-items-center flex-column">
-                    <img class="pb-3" src="img/panel8.svg" alt="Logo sección de gdpr-personal data">
-                    <a href="">
-                        <p>GDPR-PERSONAL DATA</p>
+                    <img class="pb-3" src="img/panel8.svg" alt="Logo sección de reseñas">
+                    <a href="<?php URL ?>?controller=reseñas&action=index">
+                        <p>RESEÑAS</p>
                     </a>
                 </div>
             </div>
