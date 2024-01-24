@@ -1,6 +1,7 @@
 <?php
     //Instala la extensión Thunder Client en VSC. Te permite probar si tu API funciona correctamente.
     include_once 'modelo/reseñasDAO.php';
+    include_once 'modelo/productoDAO.php';
     class apiControlador{
 
         public static function apiGetAllReviews() {
@@ -63,6 +64,36 @@
                 header('Content-Type: application/json');
                 echo json_encode($usuarioActivo);
             }
+        }
+
+        public static function apiObtenerEnsaladas() {
+            // Obtener las reseñas usando la función existente
+            $productos = productoDAO::obtenerEnsaladas();
+            // Convertir los datos a formato JSON
+            $jsonProductos = json_encode($productos);
+            // Imprimir la respuesta JSON
+            header('Content-Type: application/json');
+            echo $jsonProductos;
+        }
+
+        public static function apiObtenerSopas() {
+            // Obtener las reseñas usando la función existente
+            $productos = productoDAO::obtenerSopas();
+            // Convertir los datos a formato JSON
+            $jsonProductos = json_encode($productos);
+            // Imprimir la respuesta JSON
+            header('Content-Type: application/json');
+            echo $jsonProductos;
+        }
+
+        public static function apiObtenerCremas() {
+            // Obtener las reseñas usando la función existente
+            $productos = productoDAO::obtenerCremas();
+            // Convertir los datos a formato JSON
+            $jsonProductos = json_encode($productos);
+            // Imprimir la respuesta JSON
+            header('Content-Type: application/json');
+            echo $jsonProductos;
         }
     }
 ?>
