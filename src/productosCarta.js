@@ -1,11 +1,33 @@
 let btnFiltrarProductos = document.getElementById("btnFilters");
-let checkEnsalada = document.getElementsByName("checkEnsaladas");
-let checkSopa = document.getElementsByName("checkSopas");
-let checkCrema = document.getElementsByName("checkCremas");
+let checkEnsalada = document.getElementById("checkEnsaladas");
+let checkSopa = document.getElementById("checkSopas");
+let checkCrema = document.getElementById("checkCremas");
+let checkBoxes = document.getElementsByClassName("cBox");
+let seccionesProductos = document.getElementsByClassName("productosJs");
+let divsPhp = document.getElementsByClassName("seccionesPhp");
 
-btnFiltrarProductos.addEventListener( "click", () => {
+for (let i = 0; i < seccionesProductos.length; i++) {
+    seccionesProductos[i].style.display = "none";
     
+}
+
+btnFiltrarProductos.addEventListener("click", () => {
+
+    for (let i = 0; i < divsPhp.length; i++) {
+        divsPhp[i].style.display = "none";
+        
+    }
+    
+    for (let i = 0; i < seccionesProductos.length; i++) {
+        if (checkBoxes[i].checked) {
+            seccionesProductos[i].style.display = "flex";
+            seccionesProductos[i].style.flexDirection = "row";
+        }
+    }
 });
+
+
+
 
 
 // Llamar a la API para obtener ENSALADAS con fetch

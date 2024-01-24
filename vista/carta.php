@@ -8,11 +8,12 @@
     <title>La Mallorquina | Carta de productos</title>
 </head>
 <body>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filtrar</button>
     <h1 class="pt-4">ENSALADAS</h1>
-    <div id="productoEnsalada" class="row px-5"></div>
-    <div id="productoSopa" class="row px-5"></div>
-    <div id="productoCrema" class="row px-5"></div>
-    <div class="row px-5">
+    <div id="productoEnsalada" class="row px-5 productosJs"></div>
+    <div id="productoSopa" class="row px-5 productosJs"></div>
+    <div id="productoCrema" class="row px-5 productosJs"></div>
+    <div class="row px-5 seccionesPhp">
         <?php
             foreach ($ensaladas as $product){      
         ?>
@@ -37,7 +38,7 @@
     </div>
 
     <h1 class="pt-4">SOPAS</h1>
-    <div class="row px-5">
+    <div class="row px-5 seccionesPhp">
         <?php
             foreach ($sopas as $product){      
         ?>
@@ -62,7 +63,7 @@
     </div>
 
     <h1 class="pt-4">CREMAS</h1>
-    <div class="row px-5">
+    <div class="row px-5 seccionesPhp">
         <?php
             foreach ($cremas as $product){      
         ?>
@@ -89,7 +90,6 @@
 
 
     <!-- MENU LATERAL FILTROS -->
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filtrar</button>
 
     <div class="offcanvas offcanvas-start mt-4" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
     <div class="offcanvas-header">
@@ -99,15 +99,15 @@
     <div class="offcanvas-body d-flex flex-column">
         <form>
             <label for="ensaladas">Ensaladas: </label>
-            <input type="checkbox" name="checkEnsaladas">
+            <input type="checkbox" id="checkEnsaladas" class="cBox">
         </form>
         <form>
             <label for="sopas">Sopas: </label>
-            <input type="checkbox" name="checkSopas">
+            <input type="checkbox" id="checkSopas" class="cBox">
         </form>
         <form>
             <label for="cremas">Cremas: </label>
-            <input type="checkbox" name="checkCremas">
+            <input type="checkbox" id="checkCremas" class="cBox">
         </form>
         <div class="btnFiltrar">
             <button id="btnFilters">Filtrar</button>

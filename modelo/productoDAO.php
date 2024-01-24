@@ -168,7 +168,7 @@
             if (!$con) {
                 return $listaProductos;
             }
-            $stmt = $con->prepare("SELECT * FROM producto WHERE categoria_id = 2");
+            $stmt = $con->prepare("SELECT * FROM producto WHERE categoria_id = 3");
             $stmt->execute();
             // Guardamos el resultado 
             $result = $stmt->get_result();
