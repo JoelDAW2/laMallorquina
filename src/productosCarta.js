@@ -7,6 +7,7 @@ let seccionesProductos = document.getElementsByClassName("productosJs");
 let divsPhp = document.getElementsByClassName("seccionesPhp");
 let titulos = document.getElementsByTagName("h1");
 let tituloBorrar = document.getElementById("tituloInvisible");
+tituloBorrar.style.display = "none";
 
 /*
 for (let i = 0; i < seccionesProductos.length; i++) {
@@ -17,7 +18,6 @@ btnFiltrarProductos.addEventListener("click", () => {
 
     for (let i = 0; i < divsPhp.length; i++) {
         divsPhp[i].style.display = "none";
-        
     }
     
     for (let i = 0; i < seccionesProductos.length; i++) {
@@ -44,7 +44,6 @@ fetch("http://localhost/laMallorquina/?controller=api&action=apiObtenerProductos
 let pEscogido;
 
 btnFiltrarProductos.addEventListener("click", () => {
-    tituloBorrar.classList.remove("tituloAparecer");
     tituloBorrar.style.display = "block";
     // Quitar los divs impresos con php
     for (let i = 0; i < divsPhp.length; i++) {

@@ -96,6 +96,10 @@ h1{
     display: none;
 }
 
-.tituloAparecer{
+.tituloBorrar{
     display: none;
+}
+
+.tituloAparecer{
+    display: block;
 }
