@@ -104,6 +104,39 @@
 
 
 
+
+
+        public static function obtenerProductos() {
+            $listaProductos = [];
+            $con = dataBase::connect();
+            if (!$con) {
+                return $listaProductos;
+            }
+            $stmt = $con->prepare("SELECT * FROM producto");
+            $stmt->execute();
+            // Guardamos el resultado 
+            $result = $stmt->get_result();
+            if (!$result) {
+                $con->close();
+                return $listaProductos;
+            }
+            while ($reviewData = $result->fetch_assoc()) {
+                $listaProductos[] = [
+                    'producto_id' => $reviewData['producto_id'],
+                    'nombre_producto' => $reviewData['nombre_producto'],
+                    'descripcion' => $reviewData['descripcion'],
+                    'precio_unidad' => $reviewData['precio_unidad'],
+                    'categoria_id' => $reviewData['categoria_id'],
+                    'img' => $reviewData['img'],
+                ];
+            }
+            $result->close();
+            $con->close();
+            return $listaProductos;
+        }
+
+
+
         public static function obtenerEnsaladas() {
             $listaEnsaladas = [];
             $con = dataBase::connect();

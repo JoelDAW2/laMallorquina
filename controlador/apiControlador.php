@@ -66,6 +66,16 @@
             }
         }
 
+        public static function apiObtenerProductos() {
+            // Obtener las reseñas usando la función existente
+            $listaProductos = productoDAO::obtenerProductos();
+            // Convertir los datos a formato JSON
+            $jsonProductos = json_encode($listaProductos);
+            // Imprimir la respuesta JSON
+            header('Content-Type: application/json');
+            echo $jsonProductos;
+        }
+
         public static function apiObtenerEnsaladas() {
             // Obtener las reseñas usando la función existente
             $productos = productoDAO::obtenerEnsaladas();
