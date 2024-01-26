@@ -96,10 +96,10 @@ h1{
     display: none;
 }
 
-.tituloBorrar{
-    display: none;
+.tituloAparecer {
+    display: block;
 }
 
-.tituloAparecer{
-    display: block;
+.tituloBorrar {
+    display: none;
 }
