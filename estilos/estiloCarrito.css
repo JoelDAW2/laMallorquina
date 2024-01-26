@@ -146,3 +146,9 @@ input[name="confirmar"]:hover{
 .bodyModal img{
     max-width: 200px;
 }
+
+/*--- ESTILOS DE LA PARTE DE JS ---*/
+
+#contadorPropina{
+    display: none;
+}

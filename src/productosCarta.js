@@ -21,7 +21,7 @@ fetch("http://localhost/laMallorquina/?controller=api&action=apiObtenerProductos
 
 btnFiltrarProductos.addEventListener("click", () => {
     grupoProductos.innerHTML = "";
-    tituloBorrar.style.display = "block";
+    tituloBorrar.classList.remove("tituloBorrar");
 
     // Quitar los divs impresos con php
     for (let i = 0; i < divsPhp.length; i++) {

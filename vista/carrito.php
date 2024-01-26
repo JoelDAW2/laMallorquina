@@ -68,6 +68,13 @@
                 <p><b>TOTAL</b> (IVA Incluido):</p>
                 <p><?= $cantidadTotal ?> €</p>
             </div>
+            <div class="d-flex justify-content-between contenedorTotal">
+                <p><b>QUIERES DEJAR PROPINA?</b></p>
+                <input type="checkbox" id="siPropina">
+            </div>
+            <div class="d-flex justify-content-between contenedorTotal">
+                <input type="number" min="1" value="3" max="100" placeholder="3" id="contadorPropina">
+            </div>
             <!--Si existen las siguientes condiciones, se muestra el siguiente div -->
             <?php if (isset($_SESSION['idCliente']) && isset($idUltimoUsuario) && $_SESSION['idCliente'] == $idUltimoUsuario && isset($_COOKIE['totalUltimoPedido'])) : ?>
                 <div class="d-flex justify-content-between align-items-center contenedorTotal">
@@ -92,5 +99,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="src/interaccionesCarrito.js"></script>
 </body>
 </html>

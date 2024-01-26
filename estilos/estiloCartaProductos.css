@@ -92,6 +92,8 @@ h1{
     cursor: pointer;
 }
 
+/*--- ESTILOS PARTE DE JS ---*/
+
 .pInvisibles{
     display: none;
 }
@@ -102,4 +104,13 @@ h1{
 
 .tituloBorrar {
     display: none;
+}
+
+#btnFilters{
+    background-color: #000000;
+    color: white;
+    font-weight: 400;
+    height: 38px;
+    padding: 8px 20px;
+    border: none;
 }

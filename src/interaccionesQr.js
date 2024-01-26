@@ -33,7 +33,7 @@ fetch(`http://localhost/laMallorquina/?controller=api&action=apiGetPedidoById&pe
             pedidoContent.appendChild(productoElement);
             precioTotal.innerHTML = `
             <hr>
-            <p class="text-end"><b>TOTAL: ${pedidoData[1].precio_total} €</b></p>
+            <p class="text-end"><b>TOTAL: ${pedidoData[0].precio_total} €</b></p>
             `;
         });
         

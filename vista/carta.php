@@ -8,7 +8,7 @@
     <title>La Mallorquina | Carta de productos</title>
 </head>
 <body>
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filtrar</button>
+    <button class="btn btn-primary botonFiltrarProductos" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filtrar</button>
     <h1 id="tituloInvisible" class="tituloBorrar">PRODUCTOS FILTRADOS</h1>
     <h1 class="pt-4">ENSALADAS</h1>
     <div id="productosObten" class="row px-5 productosJs"></div>
