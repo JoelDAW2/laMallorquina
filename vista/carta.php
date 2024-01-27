@@ -8,7 +8,9 @@
     <title>La Mallorquina | Carta de productos</title>
 </head>
 <body>
-    <button class="btn btn-primary botonFiltrarProductos" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filtrar</button>
+    
+    <button id="botonFiltrarProductos" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">F</button>
+    
     <h1 id="tituloInvisible" class="tituloBorrar">PRODUCTOS FILTRADOS</h1>
     <h1 class="pt-4">ENSALADAS</h1>
     <div id="productosObten" class="row px-5 productosJs"></div>
@@ -93,28 +95,30 @@
 
     <!-- MENU LATERAL FILTROS -->
 
-    <div class="offcanvas offcanvas-start mt-4" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Filtros:</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body d-flex flex-column">
-        <form>
-            <label for="ensaladas">Ensaladas: </label>
-            <input type="checkbox" id="checkEnsaladas" class="cBox">
-        </form>
-        <form>
-            <label for="sopas">Sopas: </label>
-            <input type="checkbox" id="checkSopas" class="cBox">
-        </form>
-        <form>
-            <label for="cremas">Cremas: </label>
-            <input type="checkbox" id="checkCremas" class="cBox">
-        </form>
-        <div class="btnFiltrar">
+    <div class="offcanvas offcanvas-start mt-4 d-flex flex-column justify-content-between" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header justify-content-between">
+            <button type="button" id="btnBorrarFiltros" data-bs-dismiss="offcanvas" aria-label="Close">Borrar filtros</button>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <hr>
+        <div class="offcanvas-body d-flex flex-column">
+            <h3>Categorías:</h3>
+            <form>
+                <label for="ensaladas">Ensaladas: </label>
+                <input type="checkbox" id="checkEnsaladas" class="cBox">
+            </form>
+            <form>
+                <label for="sopas">Sopas: </label>
+                <input type="checkbox" id="checkSopas" class="cBox">
+            </form>
+            <form>
+                <label for="cremas">Cremas: </label>
+                <input type="checkbox" id="checkCremas" class="cBox">
+            </form>
+        </div>
+        <div class="botonFiltrar">
             <button id="btnFilters">Filtrar</button>
         </div>
-    </div>
     </div>
 
     
