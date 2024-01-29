@@ -2,6 +2,8 @@
     //Instala la extensión Thunder Client en VSC. Te permite probar si tu API funciona correctamente.
     include_once 'modelo/reseñasDAO.php';
     include_once 'modelo/productoDAO.php';
+    include_once 'modelo/pedidoDAO.php';
+
     class apiControlador{
 
         public static function apiGetAllReviews() {
@@ -104,6 +106,13 @@
             // Imprimir la respuesta JSON
             header('Content-Type: application/json');
             echo $jsonProductos;
+        }
+
+        public static function apiInsertarPuntos(){
+            $data = json_decode(file_get_contents('php://input'), true);
+            $id = $data['cliente_id'];
+            $puntos = $data['puntos'];
+            pedidoDAO::insertarPuntos($puntos, $id);
         }
     }
 ?>

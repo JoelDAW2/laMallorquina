@@ -66,7 +66,7 @@
             </div>
             <div class="d-flex justify-content-between contenedorTotal">
                 <p><b>TOTAL</b> (IVA Incluido):</p>
-                <p><?= $cantidadTotal ?> €</p>
+                <p id="vPrecioTotal"><?= $cantidadTotal ?></p>
             </div>
             <div class="d-flex justify-content-between contenedorTotal">
                 <p><b>QUIERES DEJAR PROPINA?</b></p>
@@ -90,7 +90,9 @@
                 <h3 class="tituloCodigo">¿TIENE UN CÓDIGO PROMOCIONAL?</h3>
                 <img src="img/flechaCodigo.svg" alt="Logo flecha del código promocional">
             </div>
-
+            <?php if (isset($_SESSION['idCliente'])) : ?>
+                <input id="idClienteActivo" type="hidden" value="<?= $_SESSION['idCliente'] ?>">
+            <?php endif; ?>
             <form id="formularioInsertarPedido" action="<?= URL ?>?controller=pedido&action=insertarPedido" method="post">
                 <input id="inputInsertarPedido" class="py-3 mt-4" type="submit" name="confirmar" value="CONFIRMAR Y PAGAR PEDIDO">
             </form>

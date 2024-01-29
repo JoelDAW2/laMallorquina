@@ -102,6 +102,44 @@
             $stmt->close();
             $con->close();
         }
+
+
+
+
+
+
+
+
+        // Funcion para insertar la propina
+        public static function insertPropina($propina, $id){
+            $con = dataBase::connect();
+            $stmt = $con->prepare("UPDATE `pedido` SET `propina` = ? WHERE `pedido_id` = ?");
+            
+            // Vincula las variables a los marcadores de posición en la consulta preparada
+            $stmt->bind_param("si", $propina, $id);
+            
+            // Ejecuta la sentencia preparada
+            $stmt->execute();
+            
+            // Cierra la sentencia y la conexión
+            $stmt->close();
+            $con->close();
+        }
+
+        public static function insertarPuntos($puntos, $id) {
+            $con = dataBase::connect();
+            $stmt = $con->prepare("UPDATE `cliente` 
+                                   SET `puntos` = (SELECT puntos 
+                                                   FROM cliente 
+                                                   WHERE cliente_id = ?) + ? 
+                                   WHERE `cliente_id` = ?");
+            $stmt->bind_param("iii", $id, $puntos, $id);
+            $stmt->execute(); 
+            $stmt->close();
+            $con->close();
+        }
+        
+        
         
     }
 ?>      
