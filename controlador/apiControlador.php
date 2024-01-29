@@ -114,5 +114,14 @@
             $puntos = $data['puntos'];
             pedidoDAO::insertarPuntos($puntos, $id);
         }
+
+        public static function apiObtenerPuntosUsuario() {
+            $puntosUsuario = productoDAO::obtenerPuntos($id);
+            // Convertir los datos a formato JSON
+            $jsonPuntos = json_encode($puntosUsuario);
+            // Imprimir la respuesta JSON
+            header('Content-Type: application/json');
+            echo $jsonPuntos;
+        }
     }
 ?>

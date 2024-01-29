@@ -138,6 +138,35 @@
             $stmt->close();
             $con->close();
         }
+
+        public static function getPointsByUserId($id) {
+            $infoUser = [];
+            $con = dataBase::connect();
+            if (!$con) {
+                return $infoUser;
+            }
+            $stmt = $con->prepare("SELECT `puntos` FROM `cliente` WHERE `cliente_id` = $id;");
+            $stmt->execute();
+            // Guardamos el resultado 
+            $result = $stmt->get_result();
+            if (!$result) {
+                $con->close();
+                return $infoUser;
+            }
+            while ($info = $result->fetch_assoc()) {
+                $infoUser[] = [
+                    'producto_id' => $info['producto_id'],
+                    'nombre_producto' => $info['nombre_producto'],
+                    'descripcion' => $info['descripcion'],
+                    'precio_unidad' => $info['precio_unidad'],
+                    'categoria_id' => $info['categoria_id'],
+                    'img' => $info['img'],
+                ];
+            }
+            $result->close();
+            $con->close();
+            return $infoUser;
+        }
         
         
         

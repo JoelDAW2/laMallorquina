@@ -15,6 +15,7 @@ cajaBox.addEventListener( "click", () => {
 
 /*--- PROGRAMA DE FIDELIDAD ---*/
 
+// Insertar puntos 
 btnConfirmCompra.addEventListener( "click", () => {
     fetch(`http://localhost/laMallorquina/?controller=api&action=apiInsertarPuntos&puntos=${vTotal}&id=${idCliente}`, {
             method: 'POST',
@@ -28,4 +29,17 @@ btnConfirmCompra.addEventListener( "click", () => {
         }).then(response => response.json()) 
         .then(json => console.log(json))
         .catch(err => console.log(err));
+});
+
+// Mostrar puntos del usuario
+
+fetch("http://localhost/laMallorquina/?controller=api&action=apiObtenerPuntosUsuario")
+.then(response => response.json())
+.then(puntosData => {
+    infoObtenida = puntosData;
+    // Mostrar la información de las reseñas en la página
+    puntosData.forEach( (objs) => {
+        let reseñaElemento = document.createElement('h2');
+        reseñaElemento = objs.punto;
+    });
 });
