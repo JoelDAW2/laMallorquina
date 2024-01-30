@@ -116,12 +116,24 @@
         }
 
         public static function apiObtenerPuntosUsuario() {
-            $puntosUsuario = productoDAO::obtenerPuntos($id);
-            // Convertir los datos a formato JSON
-            $jsonPuntos = json_encode($puntosUsuario);
-            // Imprimir la respuesta JSON
-            header('Content-Type: application/json');
-            echo $jsonPuntos;
+            if(isset($_SESSION['idCliente'])){
+                $id = $_SESSION['idCliente'];
+                $puntosUsuario = productoDAO::getPointsByUserId($id);
+                // Convertir los datos a formato JSON
+                $jsonPuntos = json_encode($puntosUsuario);
+                // Imprimir la respuesta JSON
+                header('Content-Type: application/json');
+                echo $jsonPuntos;
+            }
+        }
+
+        public static function restarPuntos(){
+            $data = json_decode(file_get_contents('php://input'), true);
+        
+            $id = $data['cliente_id'];
+            $puntos = $data['puntos'];
+        
+            productoDAO::actualizarPuntos($puntos, $id);
         }
     }
 ?>

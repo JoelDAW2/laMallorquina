@@ -101,11 +101,6 @@
             return $listaProductos;
         }
 
-
-
-
-
-
         public static function obtenerProductos() {
             $listaProductos = [];
             $con = dataBase::connect();
@@ -134,8 +129,6 @@
             $con->close();
             return $listaProductos;
         }
-
-
 
         public static function obtenerEnsaladas() {
             $listaEnsaladas = [];
@@ -223,5 +216,32 @@
             $con->close();
             return $listaProductos;
         }
+
+        public static function getPointsByUserId($id) {
+            $con = dataBase::connect();
+            $stmt = $con->prepare("SELECT puntos FROM cliente WHERE cliente_id = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $infoUser = [];
+            while ($puntosData = $result->fetch_assoc()) {
+                $infoUser[] = [
+                    'puntos' => $puntosData['puntos']
+                ];
+            }
+            $result->close();
+            $con->close();
+            return $infoUser;
+        }
+
+        public static function actualizarPuntos($puntosRestar, $id){
+            $con = dataBase::connect();
+            $con->query("UPDATE cliente
+                         SET puntos = (SELECT puntos 
+                                       FROM cliente 
+                                       WHERE cliente_id = $id) - $puntosRestar
+                         WHERE cliente_id = $id");
+        }
+        
     }
 ?>

@@ -54,7 +54,7 @@
         <div class="col-12 col-md-3 mt-4 mb-4 ps-md-5 pe-0 infoCompra">
             <div class="d-flex justify-content-between tituloRevisar">
                 <h2 class="py-3 tituloRevisar"><b>REVISAR PEDIDO</b></h2>
-                <h2 id="puntosRellenar" class="py-3 tituloRevisar"><b>PUNTOS</b></h2>
+                <h2 id="puntosRellenar" class="py-3 tituloRevisar"></h2>
             </div>
             <?php foreach ($productos as $key => $producto) : ?>    
                 <div id="cProductos" class="d-flex justify-content-between">
@@ -71,6 +71,18 @@
                 <p><b>TOTAL</b> (IVA Incluido):</p>
                 <p id="vPrecioTotal"><?= $cantidadTotal ?></p>
             </div>
+
+            <!--CANJEAR PUNTOS-->
+            <div class="d-flex justify-content-between contenedorTotal">
+                <p><b>CANJEAR PUNTOS?</b></p>
+                <input type="checkbox" id="dejarPuntos">
+            </div>
+            <div class="d-flex justify-content-between contenedorTotal">
+                <input type="number" min="0" placeholder="0" id="contadorPuntos" step="100">
+                <button id="btnAplicar">APLICAR</button>
+            </div>
+
+            <!--DEJAR PROPINA-->
             <div class="d-flex justify-content-between contenedorTotal">
                 <p><b>QUIERES DEJAR PROPINA?</b></p>
                 <input type="checkbox" id="siPropina">
@@ -78,6 +90,7 @@
             <div class="d-flex justify-content-between contenedorTotal">
                 <input type="number" min="1" value="3" max="100" placeholder="3" id="contadorPropina">
             </div>
+
             <!--Si existen las siguientes condiciones, se muestra el siguiente div -->
             <?php if (isset($_SESSION['idCliente']) && isset($idUltimoUsuario) && $_SESSION['idCliente'] == $idUltimoUsuario && isset($_COOKIE['totalUltimoPedido'])) : ?>
                 <div class="d-flex justify-content-between align-items-center contenedorTotal">

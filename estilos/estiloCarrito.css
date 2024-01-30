@@ -149,6 +149,6 @@ input[name="confirmar"]:hover{
 
 /*--- ESTILOS DE LA PARTE DE JS ---*/
 
-#contadorPropina{
+#contadorPropina, #contadorPuntos, #btnAplicar{
     display: none;
 }
