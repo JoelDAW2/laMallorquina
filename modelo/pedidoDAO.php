@@ -167,6 +167,25 @@
             $con->close();
             return $infoUser;
         }
+
+        public static function addPuntosPropina($puntosRestar, $puntosSumar, $id) {
+            $con = dataBase::connect();
+            // Obtener los puntos actuales
+            $stmt = $con->prepare("SELECT puntos FROM cliente WHERE cliente_id = ?");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $stmt->bind_result($puntos);
+            $stmt->fetch();
+            $stmt->close();
+            // Actualizar los puntos
+            $nuevosPuntos = $puntos + $puntosSumar - $puntosRestar;
+            $stmt = $con->prepare("UPDATE cliente SET puntos = ? WHERE cliente_id = ?");
+            $stmt->bind_param("ii", $nuevosPuntos, $id);
+            $stmt->execute();
+            $stmt->close();
+            $con->close();
+        }
+        
         
         
         

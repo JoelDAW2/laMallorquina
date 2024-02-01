@@ -75,7 +75,7 @@
             </div>
             <div class="d-flex justify-content-between contenedorTotal">
                 <input type="number" min="0" placeholder="0" id="contadorPuntos" step="100">
-                <button id="btnAplicar">APLICAR</button>
+                <!--<button id="btnAplicar">APLICAR</button>-->
             </div>
 
             <!--DEJAR PROPINA-->

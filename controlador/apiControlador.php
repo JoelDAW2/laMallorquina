@@ -135,5 +135,13 @@
         
             productoDAO::actualizarPuntos($puntos, $id);
         }
+
+        public static function apiActualizarPuntosPropinas(){
+            $data = json_decode(file_get_contents('php://input'), true);
+            $id = $data['cliente_id'];
+            $puntosRestar = $data['puntosRestar'];
+            $puntosSumar = $data['puntosSumar'];
+            pedidoDAO::addPuntosPropina($puntosRestar, $puntosSumar, $id);
+        }
     }
 ?>
