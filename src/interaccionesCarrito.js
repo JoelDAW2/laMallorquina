@@ -33,7 +33,7 @@ fetch(`http://localhost/laMallorquina/?controller=api&action=apiObtenerPuntosUsu
     });
 });
 
-// Restar los puntos al pulsar el boton de aplicar
+// RESTAR PUNTOS al pulsar el boton de aplicar
 btnAplicarPuntos.addEventListener( "click", () => {
     let puntosArestar = document.getElementById("contadorPuntos").value;
     if(numsPuntos.value < 4300){
@@ -54,7 +54,7 @@ btnAplicarPuntos.addEventListener( "click", () => {
     }
 });
 
-// Restar puntos segun el valor del input
+// RESTAR PUNTOS segun el valor del input
 numsPuntos.addEventListener("change", () => {
     let puntosRestar = parseInt(numsPuntos.value) || 0;
     let puntosActuales = parseInt(txtPuntos.innerHTML) || 0;
@@ -69,7 +69,7 @@ numsPuntos.addEventListener("change", () => {
     }
 });
 
-// Insertar puntos 
+// INSERTAR PUNTOS 
 btnConfirmCompra.addEventListener( "click", () => {
     fetch(`http://localhost/laMallorquina/?controller=api&action=apiInsertarPuntos&puntos=${vTotal}&id=${idCliente}`, {
             method: 'POST',

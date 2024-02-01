@@ -67,10 +67,6 @@
                 <p>Transporte</p>
                 <p>Gratis</p>
             </div>
-            <div class="d-flex justify-content-between contenedorTotal">
-                <p><b>TOTAL</b> (IVA Incluido):</p>
-                <p id="vPrecioTotal" class="d-flex align-items-end"><?= $cantidadTotal ?></p>
-            </div>
 
             <!--CANJEAR PUNTOS-->
             <div class="d-flex justify-content-between contenedorTotal">
@@ -90,6 +86,13 @@
             <div class="d-flex justify-content-between contenedorTotal">
                 <input type="number" min="1" value="3" max="100" placeholder="3" id="contadorPropina">
             </div>
+
+            <div class="d-flex justify-content-between contenedorTotal">
+                <p><b>TOTAL</b> (IVA Incluido):</p>
+                <p id="vPrecioTotal" class="d-flex align-items-end"><?= $cantidadTotal ?></p>
+            </div>
+
+            
 
             <!--Si existen las siguientes condiciones, se muestra el siguiente div -->
             <?php if (isset($_SESSION['idCliente']) && isset($idUltimoUsuario) && $_SESSION['idCliente'] == $idUltimoUsuario && isset($_COOKIE['totalUltimoPedido'])) : ?>
