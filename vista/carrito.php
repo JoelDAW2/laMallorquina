@@ -69,7 +69,7 @@
             </div>
             <div class="d-flex justify-content-between contenedorTotal">
                 <p><b>TOTAL</b> (IVA Incluido):</p>
-                <p id="vPrecioTotal"><?= $cantidadTotal ?></p>
+                <p id="vPrecioTotal" class="d-flex align-items-end"><?= $cantidadTotal ?></p>
             </div>
 
             <!--CANJEAR PUNTOS-->

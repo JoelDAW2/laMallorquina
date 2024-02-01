@@ -9,6 +9,8 @@ let idCliente = document.getElementById("idClienteActivo").value;
 let contenidoVTotal = document.getElementById("vPrecioTotal").innerHTML;
 let vTotal = parseInt(contenidoVTotal);
 
+let puntosUser;
+// Puntos del usuario
 let txtPuntos = document.getElementById("puntosRellenar");
 
 cajaBox.addEventListener( "click", () => {
@@ -19,11 +21,23 @@ cajaPuntos.addEventListener( "click", () => {
     btnAplicarPuntos.style.display = "block";
 });
 
+// Mostrar puntos del usuario
+fetch(`http://localhost/laMallorquina/?controller=api&action=apiObtenerPuntosUsuario&id=${idCliente}`)
+.then(response => response.json())
+.then(puntosData => {
+    infoObtenida = puntosData;
+    // Mostrar la información de las reseñas en la página
+    puntosData.forEach( (objs) => {
+        txtPuntos.innerHTML += infoObtenida[0].puntos;
+        puntosUser = infoObtenida[0].puntos;
+    });
+});
+
 // Restar los puntos al pulsar el boton de aplicar
-numsPuntos.addEventListener( "click", () => {
+btnAplicarPuntos.addEventListener( "click", () => {
     let puntosArestar = document.getElementById("contadorPuntos").value;
     if(numsPuntos.value < 4300){
-        fetch(`http://localhost/laMallorquina/?controller=api&action=restarPuntos&puntosParaRestar&puntos=${vTotal}&id=${idCliente}`, {
+        fetch(`http://localhost/laMallorquina/?controller=api&action=restarPuntos&puntosParaRestar&puntos=${puntosUser}&id=${idCliente}`, {
             method: 'POST',
             body: JSON.stringify({
                 cliente_id: idCliente, 
@@ -40,8 +54,20 @@ numsPuntos.addEventListener( "click", () => {
     }
 });
 
-
-/*--- PROGRAMA DE FIDELIDAD ---*/
+// Restar puntos segun el valor del input
+numsPuntos.addEventListener("change", () => {
+    let puntosRestar = parseInt(numsPuntos.value) || 0;
+    let puntosActuales = parseInt(txtPuntos.innerHTML) || 0;
+    
+    if (puntosRestar > puntosActuales) {
+        alert("No puedes restar más puntos de los disponibles.");
+        numsPuntos.value = puntosActuales;
+        vTotalJs.innerHTML = parseInt(vTotalJs) - parseInt(txtPuntos); 
+    } else {
+        let nuevosPuntos = puntosActuales - puntosRestar;
+        txtPuntos.innerHTML = nuevosPuntos;
+    }
+});
 
 // Insertar puntos 
 btnConfirmCompra.addEventListener( "click", () => {
@@ -59,15 +85,3 @@ btnConfirmCompra.addEventListener( "click", () => {
         .catch(err => console.log(err));
 });
 
-// Mostrar puntos del usuario
-
-fetch(`http://localhost/laMallorquina/?controller=api&action=apiObtenerPuntosUsuario&id=${idCliente}`)
-.then(response => response.json())
-.then(puntosData => {
-    infoObtenida = puntosData;
-    // Mostrar la información de las reseñas en la página
-    puntosData.forEach( (objs) => {
-        txtPuntos.innerHTML += infoObtenida[0].puntos;
-    });
-
-});
