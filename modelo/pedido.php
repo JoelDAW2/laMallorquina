@@ -5,6 +5,7 @@
         private $cliente_id;
         private $estado;
         private $precio_total;
+        private $propina;
 
         function __construct(){
             
@@ -48,6 +49,14 @@
 
         public function setPrecioTotal($precio_total){
             $this->precio_total = $precio_total;
+        }
+
+        public function getPropina(){
+            return $this->propina;
+        }
+
+        public function setPropina($propina){
+            $this->propina = $propina;
         }
     }
 ?>

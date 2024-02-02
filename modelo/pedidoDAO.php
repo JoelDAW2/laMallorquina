@@ -2,11 +2,11 @@
     include_once 'pedido.php';
     class pedidoDAO{
         // Funcion para insertar pedidos
-        public static function insertarPedido($fecha, $clienteId, $total){
+        public static function insertarPedido($fecha, $clienteId, $total, $propina){
             // Creamos la conexion con la BBBDD
             $con = dataBase::connect();
             // Declaramos la consulta: INSERTAR EN LA TABLA PEDIDO TODOS LOS VALORES QUE LE PASAMOS A LA FUNCION
-            $insertarPedido = ("INSERT INTO `pedido`(`fecha_pedido`, `cliente_id`, `estado`, `precio_total`) VALUES ('$fecha','$clienteId', 'En proceso', '$total')");
+            $insertarPedido = ("INSERT INTO `pedido`(`fecha_pedido`, `cliente_id`, `estado`, `precio_total`, `propina`) VALUES ('$fecha','$clienteId', 'En proceso', '$total', '$propina')");
             // Ejecutamos la consulta
             $con->query($insertarPedido);
             // Guardamos el ultimo id insertado en una variable para poder usarlo posteriormente en otra funcion

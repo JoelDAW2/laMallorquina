@@ -45,8 +45,15 @@
                 $total = self::calcularTotalInsertarPedido();
                 // Guardamos el id del cliente que ha iniciado sesion
                 $clienteId = $_SESSION['idCliente'];
+                // Guardamos el valor de la propina 
+                // Guardamos el valor de la propina
+                if(isset($_POST["valorPropinaHidden"])){
+                    $propina = $_POST["valorPropinaHidden"];
+                }else{
+                    $propina = 0;
+                }
                 //Insertamos el pedido y guardamos el ID del pedido insertado
-                $pedido_id = pedidoDAO::insertarPedido($fecha, $clienteId, $total);
+                $pedido_id = pedidoDAO::insertarPedido($fecha, $clienteId, $total, $propina);
                 // Comprobamos si el insert se ha realizado correctamente
                 if ($pedido_id > 0) {
                     // Pasamos la informacion necesaria a la funcion DAO que se encargara de realizar el insert en la tabla pedido_producto

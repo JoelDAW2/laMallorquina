@@ -48,7 +48,6 @@ numsPuntos.addEventListener( "change", () => {
 btnConfirmCompra.addEventListener( "click", () => {
     let puntosRestar = numsPuntos.value;
     let puntosSumar = vTotal * 100;
-    let propina = ((numsPropinas.value * vTotalFloat) / 100);
 
     fetch(`http://localhost/laMallorquina/?controller=api&action=apiActualizarPuntosPropinas&puntosRestar=${puntosRestar}&puntosSumar=${puntosSumar}&id=${idCliente}`, {
             method: 'POST',
@@ -67,6 +66,12 @@ btnConfirmCompra.addEventListener( "click", () => {
 
 });
 
+let escondidoPropinas = document.getElementById("cantidadPropinaAlmacenar");
+
+numsPropinas.addEventListener("change", () => {
+    escondidoPropinas.value = (numsPropinas.value * vTotalFloat) / 100;
+    console.log("Valor de escondidoPropinas:", escondidoPropinas.value);
+});
 
 
 // RESTAR PUNTOS al pulsar el boton de aplicar

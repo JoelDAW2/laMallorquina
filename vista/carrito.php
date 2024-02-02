@@ -81,14 +81,15 @@
             <!--DEJAR PROPINA-->
             <div class="d-flex justify-content-between contenedorTotal">
                 <p><b>QUIERES DEJAR PROPINA?</b></p>
-                <input type="checkbox" id="siPropina">
+                <input type="checkbox" name="cantidadPropina" id="siPropina">
             </div>
             <div class="d-flex justify-content-between contenedorTotal">
-                <input type="number" min="1" value="3" max="100" placeholder="3" id="contadorPropina">
+                <input type="number" min="1" max="100" placeholder="3" id="contadorPropina">
             </div>
 
             <div class="d-flex justify-content-between contenedorTotal">
                 <p><b>TOTAL</b> (IVA Incluido):</p>
+                <input type="hidden" id="vTotalEscondido" value="<?= $cantidadTotal ?>">
                 <p id="vPrecioTotal" class="d-flex align-items-end"><?= $cantidadTotal ?></p>
             </div>
 
@@ -113,6 +114,7 @@
                 <input id="idClienteActivo" type="hidden" value="<?= $_SESSION['idCliente'] ?>">
             <?php endif; ?>
             <form id="formularioInsertarPedido" action="<?= URL ?>?controller=pedido&action=insertarPedido" method="post">
+                <input type="hidden" name="valorPropinaHidden" id="cantidadPropinaAlmacenar">
                 <input id="inputInsertarPedido" class="py-3 mt-4" type="submit" name="confirmar" value="CONFIRMAR Y PAGAR PEDIDO">
             </form>
         </div>
