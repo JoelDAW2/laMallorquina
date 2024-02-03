@@ -14,26 +14,12 @@ let puntosUser;
 // Puntos del usuario
 let txtPuntos = document.getElementById("puntosRellenar");
 
-// Input que muestra la cantidad de propina
 cajaBox.addEventListener( "click", () => {
-    if(cajaBox.checked == true){
-        numsPropinas.style.display = "block";
-    }else if(cajaBox.checked == false){
-        numsPropinas.style.display = "none";
-        numsPropinas.disabled = true;
-    }
+    numsPropinas.style.display = "block";
 });
-
-// Input que muestra la cantidad de puntos
 cajaPuntos.addEventListener( "click", () => {
-    if(cajaPuntos.checked == true){
-        numsPuntos.style.display = "block";
-    }else if(cajaPuntos.checked == false){
-        numsPuntos.style.display = "none";
-        numsPuntos.value = 0;
-        numsPuntos.disabled = true;
-        console.log(numsPuntos.value);
-    }
+    numsPuntos.style.display = "block";
+    btnAplicarPuntos.style.display = "block";
 });
 
 // Mostrar puntos del usuario
@@ -49,6 +35,7 @@ fetch(`http://localhost/laMallorquina/?controller=api&action=apiObtenerPuntosUsu
 });
 
 // CONTROLAR QUE EL VALOR DEL INPUT DE PUNTOS SEA INFERIOR AL TOTAL DE PUNTOS GUARDADOS
+
 numsPuntos.addEventListener( "change", () => {
     if(numsPuntos.value > parseInt(txtPuntos.innerHTML)){
         alert("Has suprado el limite de puntos!");
@@ -57,6 +44,7 @@ numsPuntos.addEventListener( "change", () => {
 });
 
 // ENVIAR PUNTOS Y PROPINA EN UN MISMO CLICK
+
 btnConfirmCompra.addEventListener( "click", () => {
     let puntosRestar = numsPuntos.value;
     let puntosSumar = vTotal * 100;
