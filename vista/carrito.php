@@ -114,8 +114,8 @@
                 <input id="idClienteActivo" type="hidden" value="<?= $_SESSION['idCliente'] ?>">
             <?php endif; ?>
             <form id="formularioInsertarPedido" action="<?= URL ?>?controller=pedido&action=insertarPedido" method="post">
-                <input type="hidden" name="valorPropinaHidden" id="cantidadPropinaAlmacenar">
                 <input id="inputInsertarPedido" class="py-3 mt-4" type="submit" name="confirmar" value="CONFIRMAR Y PAGAR PEDIDO">
+                <input type="hidden" name="valorPropinaHidden" id="cantidadPropinaAlmacenar">
             </form>
         </div>
     </div>

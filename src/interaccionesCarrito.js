@@ -18,6 +18,7 @@ let txtPuntos = document.getElementById("puntosRellenar");
 cajaBox.addEventListener( "click", () => {
     if(cajaBox.checked == true){
         numsPropinas.style.display = "block";
+        numsPropinas.disabled = false;
     }else if(cajaBox.checked == false){
         numsPropinas.style.display = "none";
         numsPropinas.disabled = true;
@@ -28,6 +29,7 @@ cajaBox.addEventListener( "click", () => {
 cajaPuntos.addEventListener( "click", () => {
     if(cajaPuntos.checked == true){
         numsPuntos.style.display = "block";
+        numsPuntos.disabled = false;
     }else if(cajaPuntos.checked == false){
         numsPuntos.style.display = "none";
         numsPuntos.value = 0;
