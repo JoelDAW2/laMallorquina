@@ -48,15 +48,47 @@ fetch(`http://localhost/laMallorquina/?controller=api&action=apiObtenerPuntosUsu
         txtPuntos.innerHTML += infoObtenida[0].puntos;
         puntosUser = infoObtenida[0].puntos;
     });
-});
+}); 
+
+// VALOR ESCONDIDO DEL PRECIO TOTAL DEL PEDIDO
+let valorTotalModificar = document.getElementById("vTotalEscondido").value;
 
 // CONTROLAR QUE EL VALOR DEL INPUT DE PUNTOS SEA INFERIOR AL TOTAL DE PUNTOS GUARDADOS
-numsPuntos.addEventListener( "change", () => {
-    if(numsPuntos.value > parseInt(txtPuntos.innerHTML)){
-        alert("Has suprado el limite de puntos!");
+let puntos;
+let vTotalShow = vTotal;
+
+numsPuntos.addEventListener("change", () => {
+    puntos = numsPuntos.value;
+    let puntosEnEuros = puntos.slice(0, -2);
+    let modificarPrecio = valorTotalModificar - puntosEnEuros;
+
+    if(modificarPrecio < 0){
+        alert("Precio mínimo alcanzado");
+        numsPuntos.value = numsPuntos.value - 100;
+    }
+
+    if (numsPuntos.value > parseInt(txtPuntos.innerHTML)) {
+        alert("Has superado el límite de puntos!");
         numsPuntos.value = parseInt(txtPuntos.innerHTML);
     }
+
+    vTotalShow = modificarPrecio;
+    console.log("Valor total a mostrar: " + vTotalShow);
 });
+
+let escondidoPropinas = document.getElementById("cantidadPropinaAlmacenar");
+// INPUT DEL PORCENTAJE DE LAS PROPINAS
+let propinaTotal;
+numsPropinas.addEventListener("change", () => {
+    propinaTotal = (vTotal * numsPropinas.value) / 100;
+    escondidoPropinas.value = (numsPropinas.value * vTotalFloat) / 100;
+    
+    vTotalShow = vTotalShow + propinaTotal;
+    
+    console.log("Valor de escondidoPropinas:", escondidoPropinas.value);
+    console.log("Valor total a mostrar: " + vTotalShow);
+});
+
 
 // ENVIAR PUNTOS Y PROPINA EN UN MISMO CLICK
 btnConfirmCompra.addEventListener( "click", () => {
@@ -80,68 +112,4 @@ btnConfirmCompra.addEventListener( "click", () => {
 
 });
 
-let escondidoPropinas = document.getElementById("cantidadPropinaAlmacenar");
 
-numsPropinas.addEventListener("change", () => {
-    escondidoPropinas.value = (numsPropinas.value * vTotalFloat) / 100;
-    console.log("Valor de escondidoPropinas:", escondidoPropinas.value);
-});
-
-
-// RESTAR PUNTOS al pulsar el boton de aplicar
-/*
-btnAplicarPuntos.addEventListener( "click", () => {
-    let puntosArestar = document.getElementById("contadorPuntos").value;
-    if(numsPuntos.value < 4300){
-        fetch(`http://localhost/laMallorquina/?controller=api&action=restarPuntos&puntosParaRestar&puntos=${puntosUser}&id=${idCliente}`, {
-            method: 'POST',
-            body: JSON.stringify({
-                cliente_id: idCliente, 
-                puntos: puntosArestar
-            }),
-            headers: {
-                'Content-Type': 'application/json; charset=UTF-8',
-            }
-        }).then(response => response.json()) 
-        .then(json => console.log(json))
-        .catch(err => console.log(err));
-    }else{
-        alert("HAS SUPERADO LA CANTIDAD TOTAL DE TUS PUNTOS!")
-    }
-});
-*/
-
-// RESTAR PUNTOS segun el valor del input
-/*
-numsPuntos.addEventListener("change", () => {
-    let puntosRestar = parseInt(numsPuntos.value) || 0;
-    let puntosActuales = parseInt(txtPuntos.innerHTML) || 0;
-    
-    if (puntosRestar > puntosActuales) {
-        alert("No puedes restar más puntos de los disponibles.");
-        numsPuntos.value = puntosActuales;
-        vTotalJs.innerHTML = parseInt(vTotalJs) - parseInt(txtPuntos); 
-    } else {
-        let nuevosPuntos = puntosActuales - puntosRestar;
-        txtPuntos.innerHTML = nuevosPuntos;
-    }
-});
-*/
-
-// INSERTAR PUNTOS 
-/*
-btnConfirmCompra.addEventListener( "click", () => {
-    fetch(`http://localhost/laMallorquina/?controller=api&action=apiInsertarPuntos&puntos=${vTotal}&id=${idCliente}`, {
-            method: 'POST',
-            body: JSON.stringify({
-                cliente_id: idCliente, 
-                puntos: vTotal * 100
-            }),
-            headers: {
-                'Content-Type': 'application/json; charset=UTF-8',
-            }
-        }).then(response => response.json()) 
-        .then(json => console.log(json))
-        .catch(err => console.log(err));
-});
-*/
