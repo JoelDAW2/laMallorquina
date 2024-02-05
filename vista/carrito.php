@@ -84,7 +84,7 @@
                 <input type="checkbox" name="cantidadPropina" id="siPropina">
             </div>
             <div class="d-flex justify-content-between contenedorTotal">
-                <input type="number" min="1" max="100" placeholder="3" id="contadorPropina">
+                <input type="number" min="0" max="100" placeholder="3" id="contadorPropina">
             </div>
 
             <div class="d-flex justify-content-between contenedorTotal">
