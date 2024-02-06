@@ -78,8 +78,21 @@ btn.addEventListener( "click", () => {
         }).then(response => response.json()) 
         .then(json => console.log(json))
         .catch(err => console.log(err));
+        notie.alert({
+            type: 1, // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
+            text: "Reseña insertada!",
+            stay: false, // optional, default = false
+            time: 3, // optional, default = 3, minimum = 1,
+            position: "top" // optional, default = 'top', enum: ['top', 'bottom']
+        });
         }else{
-            alert("Selecciona una puntuacion");
+            notie.alert({
+                type: 2, // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
+                text: "Error, selecciona una puntuación!",
+                stay: false, // optional, default = false
+                time: 3, // optional, default = 3, minimum = 1,
+                position: "top" // optional, default = 'top', enum: ['top', 'bottom']
+            });
         }
 });
 
