@@ -35,6 +35,7 @@ include_once 'controlador/apiControlador.php';
                 <!-- Button trigger modal -->
                 <button type="button" id="btnDejarOpinion" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Deja tú opinión</button>
             </div>
+            <a id="enlaceReviews" href="<?php URL ?>?controller=reseñas">Consulta las reseñas</a>
         </article>
     </section>
     
@@ -60,7 +61,11 @@ include_once 'controlador/apiControlador.php';
           <div class="modal-body">
             <div id="estrellasSeleccionar" class="d-flex justify-content-center flex-wrap"></div>
             <form action="">
-                <input type="text" id="txtReviewInsertar" placeholder="Cuéntanos tú experiencia">
+                <!--<input type="text" placeholder="Cuéntanos tú experiencia">-->
+                <div class="mb-3">
+                  <label for="message-text" class="col-form-label">Cuéntanos tú experiencia:</label>
+                  <textarea class="form-control" id="txtReviewInsertar"></textarea>
+                </div>
             </form>
           </div>
           <div class="modal-footer">

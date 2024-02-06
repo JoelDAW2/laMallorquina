@@ -10,14 +10,11 @@ let puntos; // Declarar la variable en un ámbito más amplio
 
 function aplicarEstrellasVacias() {
     for (let i = 0; i < 5; i++) {
-        estrellasPuntuacion.appendChild(estrellaVacia.cloneNode(true));
+        estrellasPuntuacion.appendChild(estrellaLlena.cloneNode(true));
     }
 }
 
 aplicarEstrellasVacias();
-
-
-
 
 
 
@@ -87,7 +84,7 @@ btn.addEventListener( "click", () => {
         });
         }else{
             notie.alert({
-                type: 2, // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
+                type: "error", // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
                 text: "Error, selecciona una puntuación!",
                 stay: false, // optional, default = false
                 time: 3, // optional, default = 3, minimum = 1,
