@@ -116,6 +116,7 @@
             <form id="formularioInsertarPedido" action="<?= URL ?>?controller=pedido&action=insertarPedido" method="post">
                 <input id="inputInsertarPedido" class="py-3 mt-4" type="submit" name="confirmar" value="CONFIRMAR Y PAGAR PEDIDO">
                 <input type="hidden" name="valorPropinaHidden" id="cantidadPropinaAlmacenar">
+                <input type="hidden" name="pTHidden" id="pTinsertar">
             </form>
         </div>
     </div>

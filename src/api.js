@@ -9,6 +9,17 @@ estrellaGris.src = "img/eGris.svg";
 
 let listadoReseñas;
 
+// Función para mostrar la puntuación dentro del div
+function mostrarPuntuacion(puntuacion, contenedorPuntuacion){
+    for (let i = 0; i < 5; i++) {
+        if(i < puntuacion){
+            contenedorPuntuacion.innerHTML += `<img src="img/eAmarilla.svg" alt="Estrella amarilla">`;
+        }else{
+            contenedorPuntuacion.innerHTML += `<img src="img/eGris.svg" alt="Estrella gris">`;
+        }
+    }
+}
+
 // Llamar a la API para obtener reseñas usando fetch
 fetch("http://localhost/laMallorquina/?controller=api&action=apiGetAllReviews")
 .then(response => response.json())
@@ -28,7 +39,7 @@ fetch("http://localhost/laMallorquina/?controller=api&action=apiGetAllReviews")
                             <p class="pe-1">${reseña.nombre_cliente}</p>
                             <p>${reseña.apellido_cliente}</p>
                         </div>
-                        <div id="divPuntuacion" class="puntuacion">${reseña.puntuacion}</div>
+                        <div id="divPuntuacion" class="puntuacion"></div>
                     </div
                     <div class="infoOpinion d-flex flex-column align-items-start">
                         <p>${reseña.fecha}</p>
@@ -38,6 +49,11 @@ fetch("http://localhost/laMallorquina/?controller=api&action=apiGetAllReviews")
             </div>
         `;
         reseñasContainer.appendChild(reseñaElemento);
+
+        // Obtener el div que contiene la puntuación
+        let contenedorPuntuacion = reseñaElemento.querySelector('.puntuacion');
+        // Mostrar la puntuación dentro del div
+        mostrarPuntuacion(reseña.puntuacion, contenedorPuntuacion);
     });
 });
 

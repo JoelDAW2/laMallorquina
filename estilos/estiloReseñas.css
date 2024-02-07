@@ -86,9 +86,12 @@ section{
 }
 
 #txtDescripcion{
-    max-height: 90px;
-    overflow: scroll;
+    max-width: 515px;
+    overflow-wrap: break-word; /* Envuelve el texto si no cabe horizontalmente */
+    overflow-y: auto; /* Aplica scroll vertical si el contenido excede la altura del contenedor */
+    max-height: 100px; /* Establece una altura máxima para el contenedor */
 }
+
 
 
 /*--- SCROLL BAR ---*/

@@ -23,6 +23,7 @@ cajaBox.addEventListener("click", () => {
         numsPropinas.value = 0;
     }
     actualizarPrecioTotal();
+    actualizarPTHidden();
 });
 
 cajaPuntos.addEventListener("click", () => {
@@ -34,6 +35,7 @@ cajaPuntos.addEventListener("click", () => {
         numsPuntos.value = 0;
         numsPuntos.disabled = true;
         actualizarPrecioTotal(); // Llamar a la función para que el precio total vuelva al inicial
+        actualizarPTHidden();
     }
 });
 
@@ -60,6 +62,7 @@ escondidoPropinas.value = vTotalInicial;
 
 numsPuntos.addEventListener("input", () => {
     actualizarPrecioTotal();
+    actualizarPTHidden();
 });
 
 numsPropinas.addEventListener("input", () => {
@@ -70,8 +73,10 @@ numsPropinas.addEventListener("input", () => {
     escondidoPropinas.value = propinaEnEuros.toFixed(2);
 
     actualizarPrecioTotal();
+    actualizarPTHidden();
 });
 
+let pTotalInsert = document.getElementById("vPrecioTotal");
 
 function actualizarPrecioTotal() {
     let puntos = parseFloat(numsPuntos.value) || 0;
@@ -81,13 +86,28 @@ function actualizarPrecioTotal() {
     let propinaEnEuros = vTotalInicial * (propina / 100);
 
     let nuevoTotal = vTotalInicial - puntosEnEuros + propinaEnEuros;
-
     document.getElementById("vPrecioTotal").innerHTML = nuevoTotal.toFixed(2) + " €";
     vTotal = nuevoTotal; // Actualizar la variable global con el nuevo precio total
 }
 
+function actualizarPTHidden() {
+    document.getElementById("pTinsertar").value = vTotal.toFixed(2); // Actualizar el valor del campo pTHidden
+}
+
 // ENVIAR PUNTOS Y PROPINA EN UN MISMO CLICK
 btnConfirmCompra.addEventListener("click", () => {
+    // Actualizar pTHidden con el valor total actualizado
+    actualizarPTHidden();
+    
+    // Actualizar escondidoPropinas con el valor de propina actualizado
+    if (cajaBox.checked) {
+        let propinaPorcentaje = parseFloat(numsPropinas.value) || 0;
+        let propinaEnEuros = (vTotalInicial * propinaPorcentaje) / 100;
+        escondidoPropinas.value = propinaEnEuros.toFixed(2);
+    } else {
+        escondidoPropinas.value = 0;
+    }
+
     let puntosRestar = numsPuntos.value;
     let puntosSumar = parseInt(vTotal) * 100;
 
