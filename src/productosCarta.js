@@ -57,8 +57,8 @@ btnFiltrarProductos.addEventListener("click", () => {
                     </form>
                 </div>
                 <div class="col-6 d-flex p-0 justify-content-center accion">
-                    <form class="w-100" action="<?= URL ?>?controller=producto&action=añadirProductoArray" method="post">
-                        <input id="btnCesta" type="submit" name="añadirCarrito" value="<?= $product->getProductoId() ?>">
+                    <form class="w-100" action="?controller=producto&action=añadirProductoArray" method="post">
+                        <input id="btnCesta" type="submit" name="añadirCarrito" value="${e.producto_id}">
                     </form>
                 </div>
             </div>
