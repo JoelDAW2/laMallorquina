@@ -9,7 +9,9 @@
 </head>
 <body>
     
-    <button id="botonFiltrarProductos" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">F</button>
+    <button id="botonFiltrarProductos" class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+        <img src="img/logoEditarBlanco.svg" alt="">
+    </button>
     
     <h1 id="tituloInvisible" class="tituloBorrar">PRODUCTOS FILTRADOS</h1>
     <h1 class="pt-4">ENSALADAS</h1>
@@ -103,15 +105,15 @@
         <hr>
         <div class="offcanvas-body d-flex flex-column">
             <h3>Categorías:</h3>
-            <form>
+            <form class="d-flex justify-content-between">
                 <label for="ensaladas">Ensaladas: </label>
                 <input type="checkbox" id="checkEnsaladas" class="cBox">
             </form>
-            <form>
+            <form class="d-flex justify-content-between">
                 <label for="sopas">Sopas: </label>
                 <input type="checkbox" id="checkSopas" class="cBox">
             </form>
-            <form>
+            <form class="d-flex justify-content-between">
                 <label for="cremas">Cremas: </label>
                 <input type="checkbox" id="checkCremas" class="cBox">
             </form>
