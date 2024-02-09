@@ -42,8 +42,9 @@ const idPedido = urlParams.get('pedido_id');
 
 let btn = document.getElementById("btnEnviarDatos");
 
+// Insertar review
 btn.addEventListener( "click", () => {
-        let idCliente = document.getElementsByName("numIdCliente").value;
+        let idCliente = document.getElementById("numIdCliente");
         let vInputText = document.getElementById("txtReviewInsertar").value;
         
         let fecha = new Date();
@@ -57,40 +58,58 @@ btn.addEventListener( "click", () => {
         let name = document.getElementById("nombre").textContent;
         let lastname = document.getElementById("apellido").textContent;
 
-        if(puntos != undefined){
-            fetch("http://localhost/laMallorquina/?controller=api&action=apiInsertReview", {
-            method: 'POST',
-            body: JSON.stringify({
-                cliente_id: idCliente, // Cogerlo con lo del storage alomejor
-                pedido_id: idPedido,
-                nombre_cliente: name,
-                apellido_cliente: lastname,
-                puntuacion: puntos, 
-                descripcion: vInputText,
-                fecha: fechaActual
-            }),
-            headers: {
-                'Content-Type': 'application/json; charset=UTF-8',
+        fetch(`http://localhost/laMallorquina/?controller=api&action=apiGetReviewById&pedidoId=${pedidoId}`)
+        .then( data => data.json())
+        .then( exists => {
+            console.log(exists);
+
+            if(exists == false){
+                if(puntos != undefined){
+                    fetch("http://localhost/laMallorquina/?controller=api&action=apiInsertReview", {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        cliente_id: idCliente.value, // Cogerlo con lo del storage alomejor
+                        pedido_id: idPedido,
+                        nombre_cliente: name,
+                        apellido_cliente: lastname,
+                        puntuacion: puntos, 
+                        descripcion: vInputText,
+                        fecha: fechaActual
+                    }),
+                    headers: {
+                        'Content-Type': 'application/json; charset=UTF-8',
+                    }
+                }).then(response => response.json()) 
+                .then(json => console.log(json))
+                .catch(err => console.log(err));
+                notie.alert({
+                    type: 1, // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
+                    text: "Reseña insertada!",
+                    stay: false, // optional, default = false
+                    time: 3, // optional, default = 3, minimum = 1,
+                    position: "top" // optional, default = 'top', enum: ['top', 'bottom']
+                });
+                }else{
+                    notie.alert({
+                        type: "error", // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
+                        text: "Error, selecciona una puntuación!",
+                        stay: false, // optional, default = false
+                        time: 3, // optional, default = 3, minimum = 1,
+                        position: "top" // optional, default = 'top', enum: ['top', 'bottom']
+                    });
+                }
+            }else{
+                notie.alert({
+                    type: "error", // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
+                    text: "No se puede repetir reseña!",
+                    stay: false, // optional, default = false
+                    time: 3, // optional, default = 3, minimum = 1,
+                    position: "top" // optional, default = 'top', enum: ['top', 'bottom']
+                });
             }
-        }).then(response => response.json()) 
-        .then(json => console.log(json))
-        .catch(err => console.log(err));
-        notie.alert({
-            type: 1, // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
-            text: "Reseña insertada!",
-            stay: false, // optional, default = false
-            time: 3, // optional, default = 3, minimum = 1,
-            position: "top" // optional, default = 'top', enum: ['top', 'bottom']
-        });
-        }else{
-            notie.alert({
-                type: "error", // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
-                text: "Error, selecciona una puntuación!",
-                stay: false, // optional, default = false
-                time: 3, // optional, default = 3, minimum = 1,
-                position: "top" // optional, default = 'top', enum: ['top', 'bottom']
-            });
-        }
+        })
+
+        
 });
 
 

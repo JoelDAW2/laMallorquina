@@ -143,5 +143,13 @@
             $puntosSumar = $data['puntosSumar'];
             pedidoDAO::addPuntosPropina($puntosRestar, $puntosSumar, $id);
         }
+
+        public static function apiGetReviewById(){
+            $id = $_GET['pedidoId'];
+            $found = reseñasDAO::obtenerReview($id);
+            $found = json_encode($found, JSON_UNESCAPED_UNICODE);
+            echo $found;
+            return;
+        }
     }
 ?>

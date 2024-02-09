@@ -39,8 +39,6 @@ include_once 'controlador/apiControlador.php';
         </article>
     </section>
     
-    
-
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -49,7 +47,7 @@ include_once 'controlador/apiControlador.php';
             <div class="infoUsuario d-flex align-items-center">
                 <?php if (isset($_SESSION['idCliente'])) : ?>
                   <form action="">
-                    <input type="hidden" name="numIdCliente" value="<?= $_SESSION['idCliente'] ?>">
+                    <input type="hidden" id="numIdCliente" value="<?= $_SESSION['idCliente'] ?>">
                   </form>
                 <?php endif; ?>
                 <img src="img/panel1.svg" alt="Imagen por defecto del usuario">

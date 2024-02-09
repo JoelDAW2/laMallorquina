@@ -132,6 +132,16 @@
             }
             return $infoUsuario;
         }
+        public static function obtenerReview($id){
+            $con = dataBase::connect();
+            $result = $con->query("SELECT count(*) AS nReviews FROM review WHERE pedido_id = '$id';");
+            $row = $result->fetch_assoc();
+            if($row['nReviews']){
+                return true;
+            }else{
+                return false;
+            }
+        }
         
     }
 ?>
