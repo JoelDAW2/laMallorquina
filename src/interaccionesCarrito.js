@@ -92,6 +92,7 @@ function actualizarPrecioTotal() {
 
 function actualizarPTHidden() {
     document.getElementById("pTinsertar").value = vTotal.toFixed(2); // Actualizar el valor del campo pTHidden
+    document.getElementById("points").value = numsPuntos.value;
 }
 
 // ENVIAR PUNTOS Y PROPINA EN UN MISMO CLICK

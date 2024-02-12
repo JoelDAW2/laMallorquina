@@ -29,6 +29,14 @@ fetch(`http://localhost/laMallorquina/?controller=api&action=apiGetPedidoById&pe
                     <p>${item.cantidad} uds.</p>
                     <p>${item.precio_unidad} €</p>
                 </div>
+                <div class="d-flex justify-content-between flex-wrap">
+                    <p>Puntos gastados</p>
+                    <p>${item.puntos_usados} €</p>
+                </div>
+                <div class="d-flex justify-content-between flex-wrap">
+                    <p>Propina</p>
+                    <p>${item.propina} €</p>
+                </div>
             `;
             pedidoContent.appendChild(productoElement);
             precioTotal.innerHTML = `

@@ -58,9 +58,15 @@
                 }else{
                     $pt = 0;
                 }
+
+                if(isset($_POST["puntosHidden"])){
+                    $ptsUsados = $_POST["puntosHidden"];
+                }else{
+                    $ptsUsados = 0;
+                }
                 
                 //Insertamos el pedido y guardamos el ID del pedido insertado
-                $pedido_id = pedidoDAO::insertarPedido($fecha, $clienteId, $pt, $propina);
+                $pedido_id = pedidoDAO::insertarPedido($fecha, $clienteId, $pt, $propina, $ptsUsados);
                 // Comprobamos si el insert se ha realizado correctamente
                 if ($pedido_id > 0) {
                     // Pasamos la informacion necesaria a la funcion DAO que se encargara de realizar el insert en la tabla pedido_producto
