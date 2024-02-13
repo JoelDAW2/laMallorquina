@@ -96,7 +96,7 @@ function actualizarPTHidden() {
 }
 
 // ENVIAR PUNTOS Y PROPINA EN UN MISMO CLICK
-btnConfirmCompra.addEventListener("click", () => {
+btnConfirmCompra.addEventListener("click", () => {  
     // Actualizar pTHidden con el valor total actualizado
     actualizarPTHidden();
     
@@ -112,6 +112,7 @@ btnConfirmCompra.addEventListener("click", () => {
     let puntosRestar = numsPuntos.value;
     let puntosSumar = parseInt(vTotal) * 100;
 
+    // Enviamos los datos a la api
     fetch(`http://localhost/laMallorquina/?controller=api&action=apiActualizarPuntosPropinas&puntosRestar=${puntosRestar}&puntosSumar=${puntosSumar}&id=${idCliente}`, {
         method: 'POST',
         body: JSON.stringify({
