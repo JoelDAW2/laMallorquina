@@ -16,7 +16,7 @@ fetch(`http://localhost/laMallorquina/?controller=api&action=apiGetPedidoById&pe
 
         let fechaPedido = document.createElement("div");
         fechaPedido.innerHTML = `
-            <p>${pedidoData[0].fecha_pedido}</p>
+            <p>Fecha: ${pedidoData[0].fecha_pedido}</p>
             <hr>
         `;
         pedidoContent.appendChild(fechaPedido);
@@ -29,17 +29,19 @@ fetch(`http://localhost/laMallorquina/?controller=api&action=apiGetPedidoById&pe
                     <p>${item.cantidad} uds.</p>
                     <p>${item.precio_unidad} €</p>
                 </div>
-                <div class="d-flex justify-content-between flex-wrap">
-                    <p>Puntos gastados</p>
-                    <p>${item.puntos_usados} €</p>
-                </div>
-                <div class="d-flex justify-content-between flex-wrap">
-                    <p>Propina</p>
-                    <p>${item.propina} €</p>
-                </div>
             `;
             pedidoContent.appendChild(productoElement);
             precioTotal.innerHTML = `
+            <hr>
+            <div class="d-flex justify-content-between flex-wrap">
+                <p>Puntos gastados</p>
+                <p>${item.puntos_usados} €</p>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between flex-wrap">
+                <p>Propina</p>
+                <p>${item.propina} €</p>
+            </div>
             <hr>
             <p class="text-end"><b>TOTAL: ${pedidoData[0].precio_total} €</b></p>
             `;

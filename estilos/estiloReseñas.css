@@ -30,7 +30,7 @@ section{
 }
 
 #formularioEstrellas{
-    background-color: transparent;
+    background-color: white;
     border: none;
     display: flex;
     align-items: center;

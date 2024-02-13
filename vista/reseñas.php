@@ -14,7 +14,7 @@ include_once 'controlador/apiControlador.php';
 </head>
 <body>
 
-    <section>
+    <section class="mt-5">
         <div class="tituloForm">
             <h2 id="titulo">Valoraciones</h2>
             <button id="formularioEstrellas">Filtrar por: ▼</button>

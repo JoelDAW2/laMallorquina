@@ -54,7 +54,10 @@
         <div class="col-12 col-md-3 mt-4 mb-4 ps-md-5 pe-0 infoCompra">
             <div class="d-flex justify-content-between tituloRevisar">
                 <h2 class="py-3 tituloRevisar"><b>REVISAR PEDIDO</b></h2>
-                <h2 id="puntosRellenar" class="py-3 tituloRevisar"></h2>
+                <div class="d-flex">
+                    <h2 class="py-3 pe-1 tituloRevisar"><b>Mis puntos: </b></h2>
+                    <h2 id="puntosRellenar" class="py-3 tituloRevisar"></h2>
+                </div>
             </div>
             <?php foreach ($productos as $key => $producto) : ?>    
                 <div id="cProductos" class="d-flex justify-content-between">
