@@ -35,7 +35,7 @@ fetch(`http://localhost/laMallorquina/?controller=api&action=apiGetPedidoById&pe
             <hr>
             <div class="d-flex justify-content-between flex-wrap">
                 <p>Puntos gastados</p>
-                <p>${item.puntos_usados} €</p>
+                <p>${item.puntos_usados}</p>
             </div>
             <hr>
             <div class="d-flex justify-content-between flex-wrap">

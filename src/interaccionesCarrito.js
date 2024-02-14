@@ -12,6 +12,7 @@ let puntosUser;
 let txtPuntos = document.getElementById("puntosRellenar");
 let escondidoPropinas = document.getElementById("cantidadPropinaAlmacenar");
 
+// Mostrar el input de las propinas
 cajaBox.addEventListener("click", () => {
     if (cajaBox.checked) {
         numsPropinas.style.display = "block";
@@ -26,6 +27,7 @@ cajaBox.addEventListener("click", () => {
     actualizarPTHidden();
 });
 
+// Mostrar el input de los puntos
 cajaPuntos.addEventListener("click", () => {
     if (cajaPuntos.checked) {
         numsPuntos.style.display = "block";
@@ -60,11 +62,13 @@ fetch(`http://localhost/laMallorquina/?controller=api&action=apiObtenerPuntosUsu
 
 escondidoPropinas.value = vTotalInicial;
 
+// Cada vez que se modifica el valor de los puntos, se ejecutan las siguientes funciones
 numsPuntos.addEventListener("input", () => {
     actualizarPrecioTotal();
     actualizarPTHidden();
 });
 
+// Cuando se modifica la propina, se aplica el siguiente calculo
 numsPropinas.addEventListener("input", () => {
     let propinaPorcentaje = parseFloat(numsPropinas.value) || 0;
     let propinaEnEuros = (vTotalInicial * propinaPorcentaje) / 100;
@@ -78,6 +82,7 @@ numsPropinas.addEventListener("input", () => {
 
 let pTotalInsert = document.getElementById("vPrecioTotal");
 
+// Funcion para calcular el precio total del pedido
 function actualizarPrecioTotal() {
     let puntos = parseFloat(numsPuntos.value) || 0;
     let propina = parseFloat(numsPropinas.value) || 0;
@@ -90,6 +95,7 @@ function actualizarPrecioTotal() {
     vTotal = nuevoTotal; // Actualizar la variable global con el nuevo precio total
 }
 
+// Funcion para actualizar el valor del input hidden del precio total
 function actualizarPTHidden() {
     document.getElementById("pTinsertar").value = vTotal.toFixed(2); // Actualizar el valor del campo pTHidden
     document.getElementById("points").value = numsPuntos.value;
