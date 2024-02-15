@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>README</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><p>** PROYECTO JS**</p>
+<p><strong>- Reseñas del restaurante</strong><br>
+Las reseñas de la página web se imprimen por pantalla mediante el uso del fetch, que llama a la API que recorre la tabla de las reseñas para ir imprimiendo y añadiendo en el div toda la información que se pide (imagen por defecto del usuario, nombre, apellido, puntuación, la fecha de creación y la descripción). Es decir, se añade la información de la reseña en un div y posteriormente, se añade este al div general que contiene todas las reseñas mediante el appendChild.</p>
+<p>Respecto al filtro, se ha usado el método .filter(). Dependiendo de la condición que se establezca en dicho método, se mostrarán unas reseñas u otras (segun el filtro que pulsemos).</p>
+<p>Por último, para la inserción de reseñas, haremos uso de un modal. Al pulsar el botón de añadir reseña, este se abrirá y deberemos seleccionar la puntuación y añadir una descripción (esta última es opcional). Tras pulsar el botón de enviar, la reseña se creará mediante un fetch de tipo post (que llamará al controlador y modelo necesarios) y nos aparecerá la notificación de “success” de NotieJs. Y en caso de error, aparecerá la de “error”. Mencionar que solo se puede añadir una reseña por pedido, en caso contrario no funcionará y se nos avisará mediante otra notificación de error.</p>
+<p>En caso de querer visualizar las reseñas, podremos acceder a la vista de dos formas: Tras realizar el pedido, donde tendremos un enlace directo o bien, accediendo al enlace de bienvenida, situado en el header y que nos llevará a la sección de información sobre la cuenta. Una vez dentro, podremos acceder al apartado de reseñas.</p>
+<p><strong>- Programa de fidelidad y propinas</strong><br>
+Para el pago del pedido, se han añadido dos funcionalidades adicionales: sistema de puntos (con cada pedido, el usuario obtiene ciertos puntos según el precio de este, teniendo en cuenta que un euro son cien puntos) y propinas (la cantidad de propina se calcula en base al precio inicial del pedido para, posteriormente, sumarse al precio final, tras el uso de los puntos o de la propina).</p>
+<p>Ambos se activan pulsando sobre las checkbox que aparecen en el carrito. Y a medida que cambiemos el valor tanto de los puntos como de las propinas, el valor total del pedido también se actualizará. Con cada cambio del valor de los inputs, se realizan los cálculos para determinar el valor total. Y una vez pulsemos el botón de confirmar la compra, se envían los datos necesarios a la API para que inserte las cifras necesarias a la base de datos, así como los puntos usados, la propina o el precio final del pedido.</p>
+<p>Mencionar que los puntos del usuario se mostrarán en todo momento por pantalla, justo en la sección del carrito.</p>
+<p><strong>- Código QR</strong><br>
+Para el uso del código QR, se ha importado una librería externa que nos permite generar directamente una imagen del código cada vez que realizamos un pedido.</p>
+<p>A dicha imagen, solo le pasaremos dos parámetros, el enlace al que nos tiene que redirigir y que contiene el id del pedido realizado y la imagen que se usará y que se actualizará con cada pedido.</p>
+<p>Entonces, una vez escaneemos el código, nos aparecerá el enlace que tenemos que añadir en el navegador para poder visualizar la vista o el ticket que contiene la información del pedido (los productos comprados, los precios unitarios de cada uno, las cantidades, los puntos utilizados, la propina añadida y el precio total).</p>
+<p><strong>- Filtro de productos</strong><br>
+En la página de la carta, se ha añadido un pequeño botón fijado en la parte superior de la página. Al pulsarlo se nos abrirá un menú lateral que nos permitirá filtrar los productos según la categoría que especifiquemos al pulsar cada una de las checkbox.</p>
+<p>Respecto al sistema de filtrado, se ha usado el método de array .filter(), para filtrar el id de la categoría, entonces, dependiendo de las categorías que hayamos seleccionado, al pulsar el botón de filtrar se esconderán los productos impresos mediante PHP y se mostrarán los productos obtenidos mediante el fetch de JS y que cumplen con la condición del .filter.</p>
+<p><strong>- Información adicional</strong><br>
+Para facilitar el uso de la página web, se puede utilizar la cuenta del usuario administrador:<br>
+CORREO: <a href="mailto:admin@gmail.com">admin@gmail.com</a><br>
+CONTRASEÑA: 1234</p>
+</div>
+</body>
+
+</html>
